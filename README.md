@@ -61,26 +61,5 @@ We are working toward an advanced architecture where:
 
  ## Current Model Architecture:
 
- AlgPred 2.0 Data Source
-│
-├── ① FASTA protein sequence
-│     └──▶ ESM-2 Embedding
-│
-├── ② PDB 3D protein structure (predicted via ESMFold)
-│     └──▶ DSSP-extracted structural features
-│
-├── ③ Epitope sequence (potentially)
-│
-└────────────┬───────────────────────────────
-             │
-             ▼
-      [Combined Feature Input]
-             │
-             ▼
-         CNN / GNN / XGBoost
-             │
-             ▼
-   Allergenicity Prediction
-
-
+AlgPred 2.0 Data Source │ ├── ① FASTA protein sequence │ └──▶ ESM-2 Embedding │ ├── ② PDB 3D protein structure (predicted via ESMFold) │ └──▶ DSSP-extracted structural features │ ├── ③ Epitope sequence (potentially) │ └────────────┬─────────────────────────────── │ ▼ [Combined Feature Input] │ ▼ CNN / GNN / XGBoost │ ▼ Allergenicity Prediction
 
