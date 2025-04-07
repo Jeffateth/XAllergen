@@ -59,3 +59,28 @@ We are working toward an advanced architecture where:
   - **Google Colab Pro+** (with A100 GPU)
   - **Access to ETH GPU workstations or Euler cluster with GPU support**
 
+ ## Current Model Architecture:
+
+ AlgPred 2.0 Data Source
+│
+├── ① FASTA protein sequence
+│     └──▶ ESM-2 Embedding
+│
+├── ② PDB 3D protein structure (predicted via ESMFold)
+│     └──▶ DSSP-extracted structural features
+│
+├── ③ Epitope sequence (potentially)
+│
+└────────────┬───────────────────────────────
+             │
+             ▼
+      [Combined Feature Input]
+             │
+             ▼
+         CNN / GNN / XGBoost
+             │
+             ▼
+   Allergenicity Prediction
+
+
+
