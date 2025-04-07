@@ -2,6 +2,8 @@
 
 **AllergenAI** is a collaborative course project in digital chemistry at ETH Zurich focused on using AI to predict protein allergenicity from sequence and structure. By combining traditional bioinformatics descriptors, protein language model embeddings, and structural data, we aim to build an end-to-end pipeline for accurate and interpretable allergenicity prediction. We aim to develop a novel approach to integrate 3D protein data to our model. 
 
+Our google drive link for larger files: https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing
+
 ---
 
 ## 🚀 Project Overview
