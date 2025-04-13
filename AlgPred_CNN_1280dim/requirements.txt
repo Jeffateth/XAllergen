@@ -1,0 +1,4 @@
+git+https://github.com/facebookresearch/esm.git
+torch==2.1.0
+pandas
+tqdm
