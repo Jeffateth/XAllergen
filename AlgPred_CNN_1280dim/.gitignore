@@ -1,4 +1,0 @@
-# Don’t track cache or model checkpoints
-.cache/
-checkpoints/
-*.pt
