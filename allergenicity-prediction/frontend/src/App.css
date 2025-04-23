@@ -1,0 +1,230 @@
+/* App.css */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --text-color: #333;
+    --light-bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .main-content {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  .about-section, .prediction-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+  }
+  
+  .about-section h2, .prediction-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .about-section p {
+    margin-bottom: 15px;
+  }
+  
+  .prediction-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: monospace;
+    font-size: 14px;
+    resize: vertical;
+  }
+  
+  .examples {
+    margin: 20px 0;
+  }
+  
+  .example-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .example-button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .example-button:hover {
+    background-color: #e1e1e1;
+  }
+  
+  .submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .submit-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: var(--danger-color);
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: var(--border-radius);
+  }
+  
+  .result-card {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .result-card.allergenic {
+    border-left: 5px solid var(--danger-color);
+    background-color: rgba(231, 76, 60, 0.05);
+  }
+  
+  .result-card.non-allergenic {
+    border-left: 5px solid var(--success-color);
+    background-color: rgba(46, 204, 113, 0.05);
+  }
+  
+  .result-card h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+  }
+  
+  .result-content {
+    margin-bottom: 20px;
+  }
+  
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .result-label {
+    font-weight: 600;
+  }
+  
+  .probability-bar {
+    height: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  
+  .probability-fill {
+    height: 100%;
+    background-color: var(--warning-color);
+    transition: width 0.5s ease-out;
+  }
+  
+  .probability-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
