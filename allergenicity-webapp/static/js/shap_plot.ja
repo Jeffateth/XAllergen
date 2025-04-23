@@ -1,0 +1,40 @@
+// shap_plot.js
+// Renders a simple bar chart of SHAP values using D3.js
+function shap_plot(container_id, values) {
+  const data = values.map((v, i) => ({ index: i + 1, value: v }));
+  const width = 700;
+  const height = 200;
+  const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+
+  const x = d3.scaleBand()
+    .domain(data.map(d => d.index))
+    .range([margin.left, width - margin.right])
+    .padding(0.1);
+
+  const y = d3.scaleLinear()
+    .domain(d3.extent(data, d => d.value)).nice()
+    .range([height - margin.bottom, margin.top]);
+
+  const svg = d3.select('#' + container_id)
+    .append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+  svg.append('g')
+    .selectAll('rect')
+    .data(data)
+    .enter().append('rect')
+      .attr('x', d => x(d.index))
+      .attr('y', d => y(Math.max(0, d.value)))
+      .attr('height', d => Math.abs(y(d.value) - y(0)))
+      .attr('width', x.bandwidth())
+      .attr('fill', '#007bff');
+
+  svg.append('g')
+      .attr('transform', `translate(0,${y(0)})`)
+      .call(d3.axisBottom(x).tickSizeOuter(0));
+
+  svg.append('g')
+      .attr('transform', `translate(${margin.left},0)`)
+      .call(d3.axisLeft(y));
+}
