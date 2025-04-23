@@ -1,23 +1,24 @@
-# app.py
 import os
 import json
-import torch
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from safetensors.torch import load_file
+import torch
 
 app = Flask(__name__)
-CORS(app)  # Enable cross-origin requests
+CORS(app)
 
 # Load configuration
 with open('config.json', 'r') as f:
     config = json.load(f)
 
-# Load tokenizer and model
 MODEL_PATH = 'model.safetensors'
+
+# Load tokenizer
 tokenizer = AutoTokenizer.from_pretrained("facebook/esm2_t6_8M_UR50D", cache_dir="./cache")
 
-# Load special tokens if available
+# Optional: Load special tokens
 try:
     with open('special_tokens_map.json', 'r') as f:
         special_tokens = json.load(f)
@@ -26,15 +27,16 @@ try:
 except FileNotFoundError:
     print("No special tokens map found. Using default tokenizer.")
 
-# Load the fine-tuned model
+# Load model with safetensors
+state_dict = load_file(MODEL_PATH, device='cpu')
 model = AutoModelForSequenceClassification.from_pretrained(
     pretrained_model_name_or_path=None,
     config=config,
-    state_dict=torch.load(MODEL_PATH, map_location=torch.device('cpu'))
+    state_dict=state_dict
 )
 model.eval()
 
-# Load vocabulary if available
+# Load vocab
 try:
     with open('vocab.txt', 'r') as f:
         vocab = f.read().splitlines()
@@ -46,41 +48,31 @@ def predict():
     data = request.json
     if not data or 'sequence' not in data:
         return jsonify({"error": "No protein sequence provided"}), 400
-    
+
     sequence = data['sequence']
-    # Basic input validation
     if not sequence or len(sequence) < 5:
         return jsonify({"error": "Sequence too short"}), 400
-    
-    # Check if sequence contains valid amino acids
+
     valid_aa = "ACDEFGHIKLMNPQRSTVWY"
     if not all(aa in valid_aa for aa in sequence.upper()):
         return jsonify({"error": "Sequence contains invalid amino acids"}), 400
-    
+
     try:
-        # Tokenize sequence
         inputs = tokenizer(sequence, return_tensors="pt", padding=True, truncation=True, max_length=1024)
-        
-        # Make prediction
         with torch.no_grad():
             outputs = model(**inputs)
             logits = outputs.logits
             probabilities = torch.softmax(logits, dim=1)
             prediction = torch.argmax(probabilities, dim=1).item()
             confidence = probabilities[0][prediction].item()
-        
-        # Get class label
-        if len(vocab) > prediction:
-            label = vocab[prediction]
-        else:
-            label = "Class " + str(prediction)
-        
+
+        label = vocab[prediction] if len(vocab) > prediction else f"Class {prediction}"
+
         return jsonify({
             "prediction": label,
             "confidence": round(confidence * 100, 2),
             "allergenic_probability": round(probabilities[0][1].item() * 100, 2) if probabilities.shape[1] > 1 else None
         })
-    
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
