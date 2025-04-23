@@ -1,10 +1,15 @@
-FROM python:3.10-slim
+FROM python:3.10-slim-bullseye
+
+# Update the base image to ensure it has the latest security patches
+RUN apt-get update && apt-get upgrade -y && apt-get clean
 
 WORKDIR /app
 
+# Copy and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy application code
 COPY . .
 
 # Expose the port the app will run on
