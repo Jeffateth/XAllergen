@@ -30,9 +30,51 @@ tokenizer, model = load_model()
 # SHAP explainer
 explainer = shap.Explainer(model, tokenizer)
 
+# Input validation constants
+MIN_SEQ_LEN = 5       # minimum number of amino acids
+MAX_SEQ_LEN = 2000    # maximum allowed length to prevent abuse
+
 @app.route('/', methods=['GET', 'POST'])
 @login_required
 def index():
+    result = None
+    explanation = None
+    error = None
+    if request.method == 'POST':
+        seq = request.form['sequence'].strip().upper().replace(' ', '')
+
+        # Input validation: non-empty
+        if not seq:
+            error = "Please enter an amino acid sequence."
+        # Check length boundaries
+        elif len(seq) < MIN_SEQ_LEN:
+            error = f"Sequence too short (min {MIN_SEQ_LEN} AA). Please provide a longer sequence."
+        elif len(seq) > MAX_SEQ_LEN:
+            error = f"Sequence too long (max {MAX_SEQ_LEN} AA). Please shorten your input."
+        # Only standard amino acids
+        elif not re.fullmatch(r"[ACDEFGHIKLMNPQRSTVWY]+", seq):
+            error = "Invalid characters found. Use only the 20 standard amino acids (A,C,D,E,F,G,H,I,K,L,M,N,P,Q,R,S,T,V,W,Y)."
+        else:
+            thresh = float(request.form.get('threshold', 0.5))
+            inputs = tokenizer(seq, return_tensors='pt', padding=True, truncation=True)
+            with torch.no_grad():
+                logits = model(**inputs).logits
+                probs = torch.softmax(logits, dim=1)
+                allergen_prob = probs[0,1].item()
+            shap_vals = explainer([seq])[0].values
+            result = {
+                'prediction': 'Allergen' if allergen_prob > thresh else 'Non-allergen',
+                'probability': allergen_prob,
+                'threshold': thresh
+            }
+            explanation = shap_vals.tolist()
+
+    return render_template(
+        'index.html',
+        result=result,
+        explanation=explanation,
+        error=error
+    )
     result = None
     explanation = None
     error = None
