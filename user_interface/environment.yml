@@ -1,0 +1,15 @@
+name: allergen_app_env
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9
+  - streamlit
+  - pytorch
+  - numpy
+  - joblib
+  - xgboost
+  - pip
+  - pip:
+      - git+https://github.com/facebookresearch/esm.git
