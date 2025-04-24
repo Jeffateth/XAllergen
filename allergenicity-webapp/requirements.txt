@@ -1,9 +1,0 @@
-flask
-torch
-transformers
-safetensors
-bertviz        # for attention visualization
-shap           # for SHAP explainability
-flask-limiter  # for rate limiting
-flask-login    # for user auth
-flasgger      # for Swagger API docs
