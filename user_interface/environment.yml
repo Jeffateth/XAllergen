@@ -6,6 +6,10 @@ channels:
 dependencies:
   - python=3.9
   - streamlit
+<<<<<<< HEAD
+=======
+  - matplotlib
+>>>>>>> 2e4eb2b923c6ec4512c1fa47b577d2bd36197c85
   - pytorch
   - numpy
   - joblib

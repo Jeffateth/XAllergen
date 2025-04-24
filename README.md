@@ -63,3 +63,16 @@ We are working toward an advanced architecture where:
 
 ![allergenAI_architecture_diagram](https://github.com/user-attachments/assets/94bfb00a-4b27-4a5d-a9f1-abd54d075803)
 
+
+
+### 🔍 What Happens When You Input a New Protein Sequence?
+
+1. **The sequence is validated**: only standard amino acids (A, C, D, ..., Y) are accepted.
+2. **The model tokenizes and evaluates** the sequence using a fine-tuned ESM-2 transformer.
+3. **Raw model probabilities** are calibrated using `IsotonicRegression` for realism.
+4. The result is compared against a threshold (e.g., 0.5) to label the sequence:
+   - 🟢 Allergen
+   - 🔴 Non-allergen
+5. **Optional**: SHAP explainability highlights the influence of specific amino acids.
+
+This system allows researchers to **quickly assess allergenicity risk** from sequence alone — ideal for filtering, triaging, and guiding lab work. However, it does **not replace experimental validation**.
