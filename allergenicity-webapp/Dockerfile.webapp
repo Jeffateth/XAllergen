@@ -1,15 +1,7 @@
-# Rename this file to Dockerfile.webapp (or another distinctive name)
 FROM python:3.8-slim
 WORKDIR /app
-
-# Install dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy application code
 COPY . .
-
-# Expose port and start
-ENV FLASK_APP=app.py
-EXPOSE 8000
+EXPOSE 8000  # container now listens on port 8000
 CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]
