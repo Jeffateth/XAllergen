@@ -1,121 +1,117 @@
-import re
-import torch
-import shap
+# ==========================================
+# 🧬 Protein Allergenicity Predictor (Streamlit)
+# – Uses FAIR’s ESM-2 (1280-dim) + XGBoost + SHAP
+# – Includes runtime hacks to avoid MKL/OpenMP & numpy._core issues
+# ==========================================
+
+# 1) ENVIRONMENT VARIABLE HACKS (must be first!)
+import os, sys
+# Allow duplicate OpenMP runtimes (Intel MKL vs PyTorch’s)
+os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
+os.environ["OMP_NUM_THREADS"]     = "1"
+
+# 2) numpy._core ALIAS (before any joblib.load / pickle-based imports)
+import numpy as _np
+sys.modules['numpy._core'] = _np.core
+
+# 3) STANDARD IMPORTS
 import streamlit as st
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
+import torch
 import joblib
+import shap
+import matplotlib.pyplot as plt
 
-from sklearn.calibration import calibration_curve
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from esm import pretrained
 
-# Constants
-MIN_SEQ_LEN = 5
-MAX_SEQ_LEN = 2000
-AMINO_REGEX = re.compile(r"^[ACDEFGHIKLMNPQRSTVWY]+$")
-
-CALIBRATOR_PATH = "model/calibrator.joblib"
-VAL_CALIB_PROBS_PATH = "model/val_calibrated_probs.npy"
-VALIDATION_LABELS_URL = "https://raw.githubusercontent.com/Jeffateth/AllergenPredict/main/algpred2_test.csv"
-
-# Load model/tokenizer/explainer once
+# ==========================================
+# === 4) MODEL & TOKENIZER LOADING
+# ==========================================
 @st.cache_resource
-def load_model():
-    model_dir = "model"
-    tokenizer = AutoTokenizer.from_pretrained(model_dir, local_files_only=True)
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir, local_files_only=True)
+def load_esm2_model():
+    # Uses the 1280-dim ESM-2 model
+    model, alphabet = pretrained.esm2_t33_650M_UR50D()
     model.eval()
-    explainer = shap.Explainer(model, tokenizer)
-    return tokenizer, model, explainer
+    batch_converter = alphabet.get_batch_converter()
+    return model, batch_converter
 
-tokenizer, model, explainer = load_model()
-
-# Load calibrator + validation probs
 @st.cache_resource
-def load_calibrator():
-    try:
-        calibrator = joblib.load(CALIBRATOR_PATH)
-        val_probs = np.load(VAL_CALIB_PROBS_PATH)
-        return calibrator, val_probs
-    except Exception as e:
-        st.warning(f"Calibration file not loaded: {e}")
-        return None, None
+def load_xgb_model(path):
+    return joblib.load(path)
 
-calibrator, val_probs = load_calibrator()
+@st.cache_resource
+def load_shap_explainer(xgb_pipeline):
+    # TreeExplainer under the hood for XGBoost
+    return shap.Explainer(xgb_pipeline)
 
-# Title
-st.title("🧪 Allergenicity Predictor (ESM-2)")
+# ==========================================
+# === 5) PREDICTION & SHAP FUNCTIONS
+# ==========================================
+def predict(sequence, esm_model, batch_converter, xgb_model, explainer):
+    seq = ''.join(filter(str.isalpha, sequence.strip().upper()))
+    valid = set("ACDEFGHIKLMNPQRSTVWY")
 
-# Threshold slider
-threshold = st.sidebar.slider(
-    "Decision Threshold", min_value=0.0, max_value=1.0, value=0.5, step=0.01
-)
+    if not seq:
+        return "⚠️ Please enter a protein sequence.", None, None
+    if any(aa not in valid for aa in seq):
+        return "❌ Invalid sequence: use only 20 standard amino acids.", None, None
+    if not (5 <= len(seq) <= 2000):
+        return "⚠️ Sequence length must be 5–2000 AA.", None, None
 
-# Show calibration confidence distribution
-if val_probs is not None:
-    st.sidebar.markdown("**Confidence Histogram (Validation Set)**")
-    st.sidebar.bar_chart(np.histogram(val_probs, bins=20)[0])
-
-# Input form
-seq_input = st.text_area(
-    "Enter protein sequence (A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y):",
-    height=150
-).strip().upper().replace(" ", "")
-
-# Validation
-if not seq_input:
-    st.warning("Please enter a protein sequence.")
-elif len(seq_input) < MIN_SEQ_LEN:
-    st.error(f"Sequence too short (min {MIN_SEQ_LEN} AA).")
-elif len(seq_input) > MAX_SEQ_LEN:
-    st.error(f"Sequence too long (max {MAX_SEQ_LEN} AA).")
-elif not AMINO_REGEX.match(seq_input):
-    st.error("Invalid characters detected. Use only 20 standard amino acids.")
-else:
-    # Predict
-    inputs = tokenizer(seq_input, return_tensors='pt', padding=True, truncation=True)
+    # Get [CLS] embedding
+    batch = [("prot", seq)]
+    _, _, tokens = batch_converter(batch)
     with torch.no_grad():
-        logits = model(**inputs).logits
-        probs = torch.softmax(logits, dim=1)[0]
-        raw_prob = float(probs[1])
-        calibrated_prob = float(calibrator.transform([raw_prob])[0]) if calibrator else raw_prob
+        out = esm_model(tokens, repr_layers=[33], return_contacts=False)
+    emb = out["representations"][33][0, 0, :].cpu().numpy().reshape(1, -1)
 
-    label = "🟢 Allergen" if calibrated_prob > threshold else "🔴 Non-allergen"
+    # Predict
+    prob = xgb_model.predict_proba(emb)[0, 1]
+    pred = xgb_model.predict(emb)[0]
+    label = "🟢 Allergen" if pred else "🔴 Non-Allergen"
+    result = f"**Label:** {label}  \n**P(Allergen):** `{prob:.4f}`"
 
-    # Show result
-    st.subheader("Prediction Result")
-    st.write(f"**Label:** {label}")
-    st.write(f"**Probability (Allergen):** {calibrated_prob:.4f}")
-    st.caption(f"Raw model output: {raw_prob:.4f} → Calibrated: {calibrated_prob:.4f}")
+    # SHAP
+    shap_vals = explainer(emb)
+    return result, shap_vals, emb
 
-    # SHAP Explanation
-    st.subheader("SHAP Explanation")
-    try:
-        shap_result = explainer([seq_input])
-        sv = shap_result.values
-        if sv.ndim == 2:
-            shap_vals = sv[:, 1]
-        else:
-            shap_vals = sv
-        st.bar_chart(shap_vals)
-    except Exception as e:
-        st.error(f"SHAP explanation unavailable: {e}")
+def plot_shap(shap_vals):
+    plt.figure(figsize=(8,4))
+    shap.plots.bar(shap_vals, max_display=10, show=False)
+    st.pyplot(plt)
 
-    # Calibration curve
-    st.subheader("📈 Calibration Curve")
-    try:
-        y_true = pd.read_csv(VALIDATION_LABELS_URL)["label"].values
-        y_pred = val_probs
-        prob_true, prob_pred = calibration_curve(y_true, y_pred, n_bins=10)
+def plot_top_dims(shap_vals):
+    vals = shap_vals.values[0]
+    idx = _np.argsort(_np.abs(vals))[-10:][::-1]
+    dims = [f"Dim {i}" for i in idx]
+    cont = vals[idx]
+    fig, ax = plt.subplots(figsize=(6,4))
+    ax.barh(dims, cont)
+    ax.invert_yaxis()
+    ax.set_title("Top 10 SHAP-Contributing Dimensions")
+    st.pyplot(fig)
 
-        fig, ax = plt.subplots()
-        ax.plot(prob_pred, prob_true, marker='o', label="Calibrated")
-        ax.plot([0, 1], [0, 1], linestyle='--', color='gray', label="Perfect")
-        ax.set_xlabel("Predicted probability")
-        ax.set_ylabel("True frequency")
-        ax.set_title("Calibration Curve (Validation Set)")
-        ax.legend()
-        st.pyplot(fig)
-    except Exception as e:
-        st.warning(f"Could not display calibration curve: {e}")
+# ==========================================
+# === 6) STREAMLIT APP
+# ==========================================
+def main():
+    st.set_page_config(page_title="Protein Allergenicity Predictor", layout="centered")
+    st.title("🧬 Protein Allergenicity Predictor")
+    st.markdown("Paste a protein sequence (A,C,D,...,Y) and click **Predict**.")
+
+    seq_in = st.text_area("Protein Sequence", height=150)
+
+    # Lazy-load models
+    esm_model, batch_converter = load_esm2_model()
+    xgb_model = load_xgb_model("XGBoost_ESM-2_1280dim_algpred2_xgboost_model.pkl")
+    explainer  = load_shap_explainer(xgb_model)
+
+    if st.button("Predict Allergenicity"):
+        result, shap_vals, emb = predict(seq_in, esm_model, batch_converter, xgb_model, explainer)
+        st.markdown(result)
+        if shap_vals is not None:
+            st.subheader("🧠 SHAP Explainability")
+            plot_shap(shap_vals)
+            plot_top_dims(shap_vals)
+
+if __name__ == "__main__":
+    main()
