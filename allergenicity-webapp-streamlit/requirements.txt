@@ -1,8 +1,8 @@
 streamlit
-transformers
 torch
-shap
+numpy
 joblib
-scikit-learn
+shap
+fair-esm
 matplotlib
-watchdog
+xgboost
