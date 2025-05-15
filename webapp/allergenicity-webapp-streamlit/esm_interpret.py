@@ -1,3 +1,18 @@
+import os
+import torch
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from typing import Optional, List, Tuple, Dict
+from scipy.stats import entropy
+
+import esm  # make sure fair-esm is installed: pip install fair-esm
+# If using IntegratedGradients from Captum
+from captum.attr import IntegratedGradients
+
+
 class ESMModelInterpreter:
     """
     A class for interpreting ESM-2 models using integrated gradients and attention visualization.
@@ -237,133 +252,133 @@ class ESMModelInterpreter:
 
 
 
-    # def integrated_gradients_attributions(
-    #     self,
-    #     sequence: str,
-    #     n_steps: int = 50,
-    #     internal_batch_size: int = 5,
-    #     save_path: Optional[str] = None
-    # ) -> Tuple[np.ndarray, list, float]:
-    #     """
-    #     Compute attributions using embedding-level integrated gradients.
-    #     This works by accessing the embedding layer of the ESM model directly.
+    def integrated_gradients_attributions(
+        self,
+        sequence: str,
+        n_steps: int = 50,
+        internal_batch_size: int = 5,
+        save_path: Optional[str] = None
+    ) -> Tuple[np.ndarray, list, float]:
+        """
+        Compute attributions using embedding-level integrated gradients.
+        This works by accessing the embedding layer of the ESM model directly.
 
-    #     Args:
-    #         sequence: Protein sequence to analyze
-    #         n_steps: Number of steps in integral approximation
-    #         internal_batch_size: Batch size for internal processing
-    #         save_path: Path to save the visualization
+        Args:
+            sequence: Protein sequence to analyze
+            n_steps: Number of steps in integral approximation
+            internal_batch_size: Batch size for internal processing
+            save_path: Path to save the visualization
 
-    #     Returns:
-    #         Tuple of (attributions, amino_acids, prediction)
-    #     """
-    #     # Prepare input
-    #     batch_labels = [("protein", sequence)]
-    #     _, _, tokens = self.batch_converter(batch_labels)
-    #     tokens = tokens.to(self.device)
+        Returns:
+            Tuple of (attributions, amino_acids, prediction)
+        """
+        # Prepare input
+        batch_labels = [("protein", sequence)]
+        _, _, tokens = self.batch_converter(batch_labels)
+        tokens = tokens.to(self.device)
 
-    #     # Extract the embedding layer
-    #     embedding_layer = self.esm_model.embed_tokens
+        # Extract the embedding layer
+        embedding_layer = self.esm_model.embed_tokens
 
-    #     # Create a wrapper model that exposes embeddings
-    #     class EmbeddingModel(torch.nn.Module):
-    #         def __init__(self, embedding_layer, model):
-    #             super().__init__()
-    #             self.embedding_layer = embedding_layer
-    #             self.model = model
+        # Create a wrapper model that exposes embeddings
+        class EmbeddingModel(torch.nn.Module):
+            def __init__(self, embedding_layer, model):
+                super().__init__()
+                self.embedding_layer = embedding_layer
+                self.model = model
 
-    #         def forward(self, embeddings):
-    #             # Replace the embedding lookup in the original model with our input
-    #             def hook_fn(module, input, output):
-    #                 return embeddings
+            def forward(self, embeddings):
+                # Replace the embedding lookup in the original model with our input
+                def hook_fn(module, input, output):
+                    return embeddings
 
-    #             # Register hook to override embeddings
-    #             handle = self.embedding_layer.register_forward_hook(hook_fn)
+                # Register hook to override embeddings
+                handle = self.embedding_layer.register_forward_hook(hook_fn)
 
-    #             # Use a dummy input for token IDs - the hook will replace embeddings
-    #             dummy_input = torch.zeros_like(tokens)
-    #             output = self.model(dummy_input)
+                # Use a dummy input for token IDs - the hook will replace embeddings
+                dummy_input = torch.zeros_like(tokens)
+                output = self.model(dummy_input)
 
-    #             # Remove hook
-    #             handle.remove()
+                # Remove hook
+                handle.remove()
 
-    #             return output
+                return output
 
-    #     embedding_model = EmbeddingModel(embedding_layer, self.model)
+        embedding_model = EmbeddingModel(embedding_layer, self.model)
 
-    #     # Get original embeddings
-    #     with torch.no_grad():
-    #         original_embeddings = embedding_layer(tokens)
-    #         # Create a baseline of all zeros for the embedding
-    #         baseline_embeddings = torch.zeros_like(original_embeddings)
+        # Get original embeddings
+        with torch.no_grad():
+            original_embeddings = embedding_layer(tokens)
+            # Create a baseline of all zeros for the embedding
+            baseline_embeddings = torch.zeros_like(original_embeddings)
 
-    #     # Now we can use regular integrated gradients on the embeddings
-    #     integrated_gradients = IntegratedGradients(embedding_model)
+        # Now we can use regular integrated gradients on the embeddings
+        integrated_gradients = IntegratedGradients(embedding_model)
 
-    #     # Get a regular prediction for comparison
-    #     with torch.no_grad():
-    #         pred = torch.sigmoid(self.model(tokens)).item()
-    #         print(f"Regular prediction: {pred:.4f}")
+        # Get a regular prediction for comparison
+        with torch.no_grad():
+            pred = torch.sigmoid(self.model(tokens)).item()
+            print(f"Regular prediction: {pred:.4f}")
 
-    #     # Compute attributions on the embeddings
-    #     attributions = integrated_gradients.attribute(
-    #         original_embeddings,
-    #         baselines=baseline_embeddings,
-    #         n_steps=n_steps,
-    #         internal_batch_size=internal_batch_size
-    #     )
+        # Compute attributions on the embeddings
+        attributions = integrated_gradients.attribute(
+            original_embeddings,
+            baselines=baseline_embeddings,
+            n_steps=n_steps,
+            internal_batch_size=internal_batch_size
+        )
 
-    #     # Sum across embedding dimensions to get token-level attributions
-    #     token_attributions = attributions.sum(dim=2).squeeze(0)
-    #     token_attributions = token_attributions.cpu().detach().numpy()
+        # Sum across embedding dimensions to get token-level attributions
+        token_attributions = attributions.sum(dim=2).squeeze(0)
+        token_attributions = token_attributions.cpu().detach().numpy()
 
-    #     # Normalize attributions for visualization
-    #     attr_sum = np.sum(np.abs(token_attributions))
-    #     if attr_sum > 0:  # avoid division by zero
-    #         norm_attributions = token_attributions / attr_sum
-    #     else:
-    #         norm_attributions = token_attributions
+        # Normalize attributions for visualization
+        attr_sum = np.sum(np.abs(token_attributions))
+        if attr_sum > 0:  # avoid division by zero
+            norm_attributions = token_attributions / attr_sum
+        else:
+            norm_attributions = token_attributions
 
-    #     # Convert tokens to amino acids
-    #     amino_acids = []
-    #     for token_idx in tokens[0]:
-    #         amino_acid = self.alphabet.get_tok(token_idx.item())
-    #         amino_acids.append(amino_acid)
+        # Convert tokens to amino acids
+        amino_acids = []
+        for token_idx in tokens[0]:
+            amino_acid = self.alphabet.get_tok(token_idx.item())
+            amino_acids.append(amino_acid)
 
-    #     # Filter out special tokens
-    #     valid_attributions = []
-    #     valid_amino_acids = []
-    #     for i, aa in enumerate(amino_acids):
-    #         if aa not in ['<cls>', '<pad>', '<eos>', '<unk>', '<mask>']:
-    #             valid_attributions.append(norm_attributions[i])
-    #             valid_amino_acids.append(aa)
+        # Filter out special tokens
+        valid_attributions = []
+        valid_amino_acids = []
+        for i, aa in enumerate(amino_acids):
+            if aa not in ['<cls>', '<pad>', '<eos>', '<unk>', '<mask>']:
+                valid_attributions.append(norm_attributions[i])
+                valid_amino_acids.append(aa)
 
-    #     # Visualize attributions
-    #     plt.figure(figsize=(15, 5))
+        # Visualize attributions
+        plt.figure(figsize=(15, 5))
 
-    #     # Create bar plot with colors
-    #     colors = ['red' if x < 0 else 'blue' for x in valid_attributions]
-    #     bars = plt.bar(range(len(valid_attributions)), valid_attributions, color=colors)
+        # Create bar plot with colors
+        colors = ['red' if x < 0 else 'blue' for x in valid_attributions]
+        bars = plt.bar(range(len(valid_attributions)), valid_attributions, color=colors)
 
-    #     # Add amino acid labels
-    #     if len(valid_amino_acids) <= 100:  # Only show labels if sequence is not too long
-    #         plt.xticks(range(len(valid_attributions)), valid_amino_acids, rotation='vertical')
-    #     else:
-    #         plt.xticks([])  # Remove x-axis labels if too many
+        # Add amino acid labels
+        if len(valid_amino_acids) <= 100:  # Only show labels if sequence is not too long
+            plt.xticks(range(len(valid_attributions)), valid_amino_acids, rotation='vertical')
+        else:
+            plt.xticks([])  # Remove x-axis labels if too many
 
-    #     plt.xlabel('Amino Acid Position')
-    #     plt.ylabel('Attribution Score')
-    #     plt.title(f'Integrated Gradients Attribution (Prediction: {pred:.4f})')
-    #     plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
-    #     plt.tight_layout()
+        plt.xlabel('Amino Acid Position')
+        plt.ylabel('Attribution Score')
+        plt.title(f'Integrated Gradients Attribution (Prediction: {pred:.4f})')
+        plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+        plt.tight_layout()
 
-    #     if save_path:
-    #         plt.savefig(save_path)
+        if save_path:
+            plt.savefig(save_path)
 
-    #     plt.show()
+        plt.show()
 
-    #     # Return the processed attributions and prediction
-    #     return valid_attributions, valid_amino_acids, pred
+        # Return the processed attributions and prediction
+        return valid_attributions, valid_amino_acids, pred
 
 
     def get_top_influential_residues(

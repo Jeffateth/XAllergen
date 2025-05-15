@@ -114,8 +114,9 @@ import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 import pandas as pd
-
+import seaborn as sns
 from esm import pretrained
+from esm_interpret import ESMModelInterpreter
 
 # ==========================================
 # === 3) MODEL ARCHITECTURE
@@ -174,6 +175,10 @@ def load_custom_model(checkpoint_path):
     model.eval()
     return model, batch_converter
 
+@st.cache_resource
+def load_model_for_interpretation(model_path: str) -> ESMModelInterpreter:
+    return ESMModelInterpreter(model_path)
+
 # ==========================================
 # === 5) PREDICTION FUNCTION
 # ==========================================
@@ -205,7 +210,7 @@ def predict(sequence, model, batch_converter):
 def main():
     st.set_page_config(page_title="Protein Allergenicity Predictor", layout="centered")
     st.title("🧬 Protein Allergenicity Predictor")
-    st.markdown("Paste one or more protein sequences (A,C,D,...,Y), separated by line breaks. Click **Predict**.")
+    st.markdown("Paste one or more protein sequences, separated by line breaks. Click **Predict**.")
 
     seq_input = st.text_area("Protein Sequence(s)", height=200)
 
@@ -223,7 +228,70 @@ def main():
                 results.append((f"Sequence {idx}", label, prob))
 
         df = pd.DataFrame(results, columns=["Sequence", "Prediction", "P(Allergen)"])
-        st.dataframe(df, use_container_width=True)
+        st.session_state["last_predictions"] = df  # 🔑 STORE the result
+    if "last_predictions" in st.session_state:
+        st.subheader("Prediction Results")
+        st.dataframe(st.session_state["last_predictions"].reset_index(drop=True), use_container_width=True)
+
+
+        st.markdown("---")
+        st.header("🧬 Interpret Model Prediction")
+        # Parse sequences from input
+        sequences = [s for s in seq_input.strip().splitlines() if s.strip()]
+        if sequences:
+            seq_map = {f"Sequence {i+1}": seq for i, seq in enumerate(sequences)}
+            selected_label = st.selectbox("Select sequence to interpret:", list(seq_map.keys()))
+            selected_seq = seq_map[selected_label]
+
+
+            if st.button("Run Interpretation"):
+                with st.spinner("Running interpretation..."):
+                    interpreter = load_model_for_interpretation(model_path)
+
+                    # Prediction
+                    st.subheader("Prediction")
+                    pred = interpreter.predict(selected_seq)
+                    st.markdown(f"**Prediction (P[Allergen]):** `{pred:.4f}`")
+
+                    # Integrated Gradients Plot
+                    st.subheader("Integrated Gradients Attribution")
+                    attributions, amino_acids, _ = interpreter.integrated_gradients_attributions(selected_seq)
+                    fig, ax = plt.subplots(figsize=(15, 5))
+                    colors = ['red' if x < 0 else 'blue' for x in attributions]
+                    ax.bar(range(len(attributions)), attributions, color=colors)
+                    if len(amino_acids) <= 100:
+                        ax.set_xticks(range(len(amino_acids)))
+                        ax.set_xticklabels(amino_acids, rotation='vertical')
+                    else:
+                        ax.set_xticks([])
+                    ax.set_title("Integrated Gradients Attribution")
+                    st.pyplot(fig)
+
+                    # Attention Heatmap
+                    st.subheader("Attention Heatmap")
+                    entropies, attention_matrix, valid_tokens = interpreter.visualize_attention(selected_seq)
+                    fig2, ax2 = plt.subplots(figsize=(10, 8))
+                    import seaborn as sns
+                    sns.heatmap(attention_matrix, xticklabels=valid_tokens, yticklabels=valid_tokens, cmap="viridis", ax=ax2)
+                    ax2.set_title("Attention Heatmap")
+                    st.pyplot(fig2)
+
+                    # Top Residues by Attribution
+                    st.subheader("Top Influential Residues")
+                    top_df = interpreter.get_top_influential_residues(selected_seq)
+                    st.dataframe(top_df)
+
+                    # Top Attention-Sending/Receiving
+                    st.subheader("Top Attention-Receiving Residues")
+                    _, _ = ESMModelInterpreter.plot_top_attention_residues(attention_matrix, valid_tokens, top_k=10, mode='received')
+                    st.pyplot(plt.gcf())
+
+                    st.subheader("Top Attention-Sending Residues")
+                    _, _ = ESMModelInterpreter.plot_top_attention_residues(attention_matrix, valid_tokens, top_k=10, mode='sent')
+                    st.pyplot(plt.gcf())
+
+        elif seq_input.strip():
+            st.warning("No valid sequences found. Please enter protein sequences using only A,C,D,...,Y.")
 
 
 if __name__ == "__main__":
