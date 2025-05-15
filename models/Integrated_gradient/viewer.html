@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>P_7275 Attention Map</title>
+  <script src="https://cdn.jsdelivr.net/npm/ngl@0.10.4/dist/ngl.js"></script>
+  <style>html,body{margin:0;overflow:hidden;width:100%;height:100%}
+         #viewport{width:100%;height:100%}</style>
+</head>
+<body>
+  <div id="viewport"></div>
+  <script>
+    const stage = new NGL.Stage("viewport");
+    stage.loadFile("P_7275_attribution_mapped.pdb").then(comp => {
+      comp.addRepresentation("cartoon", {
+        color: "bfactor",
+        colorScale: "linear",
+        colorDomain: [-100,100]
+      });
+      stage.autoView();
+    });
+  </script>
+</body>
+</html>
