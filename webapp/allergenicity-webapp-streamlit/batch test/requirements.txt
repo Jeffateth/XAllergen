@@ -1,8 +1,0 @@
-streamlit
-transformers
-torch
-shap
-joblib
-scikit-learn
-matplotlib
-watchdog
