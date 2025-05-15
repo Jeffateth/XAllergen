@@ -1,6 +1,7 @@
 import os
 
-class Logger():
+
+class Logger:
     def __init__(self):
         self.log_file = None
         self.log_dir = None
@@ -13,7 +14,7 @@ class Logger():
         self.log_dir = log_dir
 
     def set_filename(self, filename):
-        self.log_file = open(os.path.join('./', filename), 'a')
+        self.log_file = open(os.path.join("./", filename), "a")
 
     def close(self):
         if self.log_file is not None:

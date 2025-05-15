@@ -17,14 +17,18 @@ BATCH_SIZE = 16
 MAX_LEN = 1024
 
 # GitHub data source
-CSV_URL = "https://raw.githubusercontent.com/Jeffateth/AllergenPredict/main/algpred2_test.csv"
+CSV_URL = (
+    "https://raw.githubusercontent.com/Jeffateth/AllergenPredict/main/algpred2_test.csv"
+)
 
 # -----------------------
 # Load model & tokenizer
 # -----------------------
 print("🔄 Loading model from", MODEL_PATH)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, local_files_only=True)
-model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH, local_files_only=True)
+model = AutoModelForSequenceClassification.from_pretrained(
+    MODEL_PATH, local_files_only=True
+)
 model.eval()
 
 # -----------------------
@@ -42,8 +46,10 @@ print(f"📊 Running inference on {len(sequences)} sequences...")
 raw_probs = []
 
 for i in range(0, len(sequences), BATCH_SIZE):
-    batch = sequences[i:i + BATCH_SIZE]
-    inputs = tokenizer(batch, return_tensors="pt", padding=True, truncation=True, max_length=MAX_LEN)
+    batch = sequences[i : i + BATCH_SIZE]
+    inputs = tokenizer(
+        batch, return_tensors="pt", padding=True, truncation=True, max_length=MAX_LEN
+    )
     with torch.no_grad():
         logits = model(**inputs).logits
         probs = torch.softmax(logits, dim=1)[:, 1]  # allergen class

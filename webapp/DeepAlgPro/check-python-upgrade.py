@@ -68,7 +68,11 @@ def get_pypi_package_info(package_name, current_version, target_python_version):
             if release_info.get("requires_python")
             and target_python_version in SpecifierSet(release_info["requires_python"])
         }
-        min_version = min(compatible_releases, key=parse_version) if compatible_releases else "Unknown"
+        min_version = (
+            min(compatible_releases, key=parse_version)
+            if compatible_releases
+            else "Unknown"
+        )
         try:
             requires_update = target_python_version not in SpecifierSet(
                 data["releases"][current_version][0]["requires_python"]
@@ -91,8 +95,10 @@ def process_requirements(file_path, target_python_version):
     for line in lines:
         if "==" in line:
             package_name, current_version = line.strip("\\\n ").split("==")
-            latest_version, latest_release_date, min_version, requires_update = get_pypi_package_info(
-                package_name, current_version, target_python_version
+            latest_version, latest_release_date, min_version, requires_update = (
+                get_pypi_package_info(
+                    package_name, current_version, target_python_version
+                )
             )
             # We do not have a direct way to get the minimum compatible version with Python 3.12 without internet access
             requirements_info.append(
@@ -134,11 +140,16 @@ def generate_markdown_report(requirements_info, file=None):
     # Determine the maximum width for each column
     column_widths = [max(len(str(row[i])) for row in rows) for i in range(len(headers))]
     # Create the header row
-    header_row = " | ".join(header.ljust(column_widths[i]) for i, header in enumerate(headers))
+    header_row = " | ".join(
+        header.ljust(column_widths[i]) for i, header in enumerate(headers)
+    )
     # Create the separator row
     separator_row = " | ".join("-" * column_widths[i] for i, _ in enumerate(headers))
     # Create the data rows
-    data_rows = [" | ".join(str(row[i]).ljust(column_widths[i]) for i in range(len(headers))) for row in rows]
+    data_rows = [
+        " | ".join(str(row[i]).ljust(column_widths[i]) for i in range(len(headers)))
+        for row in rows
+    ]
 
     # Combine all rows into a single string
     markdown_output = "\n".join([header_row, separator_row, *data_rows])
@@ -152,25 +163,37 @@ def generate_markdown_report(requirements_info, file=None):
 
 
 def generate_csv_report(requirements_info, filename):
-    fieldnames = ['Package', 'Current Version', 'Latest Version', 'Latest Release Date', 'Min Version for Python', 'Requires Update']
+    fieldnames = [
+        "Package",
+        "Current Version",
+        "Latest Version",
+        "Latest Release Date",
+        "Min Version for Python",
+        "Requires Update",
+    ]
 
     with open(filename, "w", newline="") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for req_info in requirements_info:
             row = {
-                'Package': req_info['package'],
-                'Current Version': req_info['current_version'],
-                'Latest Version': req_info['latest_version'],
-                'Latest Release Date': req_info['latest_release_date'],
-                'Min Version for Python': req_info['python_target_min_version'],
-                'Requires Update': req_info['requires_update'],
+                "Package": req_info["package"],
+                "Current Version": req_info["current_version"],
+                "Latest Version": req_info["latest_version"],
+                "Latest Release Date": req_info["latest_release_date"],
+                "Min Version for Python": req_info["python_target_min_version"],
+                "Requires Update": req_info["requires_update"],
             }
             writer.writerow(row)
 
+
 # Set up the argument parser
-parser = argparse.ArgumentParser(description="Check package compatibility with a specified version of Python.")
-parser.add_argument("requirements_file", type=str, help="Path to the requirements.txt file.")
+parser = argparse.ArgumentParser(
+    description="Check package compatibility with a specified version of Python."
+)
+parser.add_argument(
+    "requirements_file", type=str, help="Path to the requirements.txt file."
+)
 parser.add_argument(
     "-o",
     "--output",
@@ -188,7 +211,9 @@ parser.add_argument(
 args = parser.parse_args()
 
 # Process the requirements file
-requirements_info = process_requirements(args.requirements_file, args.target_python_version)
+requirements_info = process_requirements(
+    args.requirements_file, args.target_python_version
+)
 if args.output:
     file_ext = os.path.splitext(args.output)[-1]
     if file_ext.lower() == ".csv":

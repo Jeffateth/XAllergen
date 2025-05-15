@@ -6,6 +6,7 @@
 
 # 1) ENVIRONMENT VARIABLE HACKS (must be first!)
 import os
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 os.environ["OMP_NUM_THREADS"] = "1"
 
@@ -17,6 +18,7 @@ import matplotlib.pyplot as plt
 
 from esm import pretrained
 
+
 # ==========================================
 # === 4) MODEL & TOKENIZER LOADING
 # ==========================================
@@ -27,15 +29,17 @@ def load_esm2_model():
     batch_converter = alphabet.get_batch_converter()
     return model, batch_converter
 
+
 @st.cache_resource
 def load_xgb_model(path):
     return joblib.load(path)
+
 
 # ==========================================
 # === 5) PREDICTION FUNCTION
 # ==========================================
 def predict(sequence, esm_model, batch_converter, xgb_model):
-    seq = ''.join(filter(str.isalpha, sequence.strip().upper()))
+    seq = "".join(filter(str.isalpha, sequence.strip().upper()))
     valid = set("ACDEFGHIKLMNPQRSTVWY")
 
     if not seq:
@@ -60,6 +64,7 @@ def predict(sequence, esm_model, batch_converter, xgb_model):
 
     return result, emb
 
+
 # ==========================================
 # === 6) STREAMLIT APP
 # ==========================================
@@ -77,6 +82,7 @@ def main():
     if st.button("Predict Allergenicity"):
         result, emb = predict(seq_in, esm_model, batch_converter, xgb_model)
         st.markdown(result)
+
 
 if __name__ == "__main__":
     main()

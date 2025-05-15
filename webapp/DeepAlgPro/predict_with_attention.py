@@ -3,15 +3,35 @@ import numpy as np
 from model import convATTnet
 
 AA_DICT = {
-    'A': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'K': 9, 'L': 10,
-    'M': 11, 'N': 12, 'P': 13, 'Q': 14, 'R': 15, 'S': 16, 'T': 17, 'V': 18, 'W': 19, 'Y': 20
+    "A": 1,
+    "C": 2,
+    "D": 3,
+    "E": 4,
+    "F": 5,
+    "G": 6,
+    "H": 7,
+    "I": 8,
+    "K": 9,
+    "L": 10,
+    "M": 11,
+    "N": 12,
+    "P": 13,
+    "Q": 14,
+    "R": 15,
+    "S": 16,
+    "T": 17,
+    "V": 18,
+    "W": 19,
+    "Y": 20,
 }
+
 
 def encode_sequence(seq, max_len=1000):
     encoded = [0] * (1000 - len(seq))
     for a in seq:
         encoded.append(int(AA_DICT.get(a.upper(), 0)))
     return torch.tensor(encoded).unsqueeze(0).long()  # [1, 1000]
+
 
 def load_model(model_path="model.pt", device=None):
     if device is None:
@@ -20,6 +40,7 @@ def load_model(model_path="model.pt", device=None):
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
     return model, device
+
 
 def predict_single(seq, model, device):
     x = encode_sequence(seq).to(device)
@@ -39,4 +60,3 @@ def predict_single(seq, model, device):
         top_residues = [(i, seq[i], importance[i]) for i in topk_idx]
 
     return score, label, attn_matrix, top_residues
-

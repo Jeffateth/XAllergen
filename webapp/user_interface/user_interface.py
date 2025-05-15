@@ -5,13 +5,17 @@ import joblib
 from esm import pretrained
 import os
 
+
 # === Load ESM2 model ===
 @st.cache_resource
 def load_esm2_model():
-    model, alphabet = pretrained.esm2_t6_8M_UR50D()  # adjust if you used another variant
+    model, alphabet = (
+        pretrained.esm2_t6_8M_UR50D()
+    )  # adjust if you used another variant
     model.eval()
     batch_converter = alphabet.get_batch_converter()
     return model, alphabet, batch_converter
+
 
 # === Load trained bootstrap models ===
 @st.cache_resource
@@ -22,8 +26,11 @@ def load_bootstrap_models(model_dir, base_model_name, n_models=5):
         models.append(joblib.load(model_path))
     return models
 
+
 # === Prediction Function using bootstrap models ===
-def predict_with_uncertainty(sequence, esm_model, batch_converter, bootstrap_models, alphabet):
+def predict_with_uncertainty(
+    sequence, esm_model, batch_converter, bootstrap_models, alphabet
+):
     sequence = sequence.strip().upper()
     valid_aa = set("ACDEFGHIKLMNPQRSTVWY")
     if not all(aa in valid_aa for aa in sequence):
@@ -52,12 +59,15 @@ def predict_with_uncertainty(sequence, esm_model, batch_converter, bootstrap_mod
 
     return majority_vote, mean_prob, std_prob
 
+
 # === Streamlit App ===
 def main():
     st.set_page_config(page_title="Protein Allergenicity Predictor", layout="centered")
     st.title("🧬 Protein Allergenicity Predictor")
-    st.markdown("Enter a protein sequence below and click **Predict** to determine if it's an allergen.\n"
-                "_(Prediction shows mean ± std deviation across 5 bootstrap models)_")
+    st.markdown(
+        "Enter a protein sequence below and click **Predict** to determine if it's an allergen.\n"
+        "_(Prediction shows mean ± std deviation across 5 bootstrap models)_"
+    )
 
     # Input
     sequence_input = st.text_area("Protein Sequence", height=150)
@@ -68,14 +78,18 @@ def main():
     transformer_name = "ESM-2_320dim"
     dataset_name = "algpred2"
     model_base_name = f"{model_name}_{transformer_name}_{dataset_name}"
-    bootstrap_models = load_bootstrap_models(".", model_base_name, n_models=5)  # Assuming models in same folder
+    bootstrap_models = load_bootstrap_models(
+        ".", model_base_name, n_models=5
+    )  # Assuming models in same folder
 
     # Predict
     if st.button("🔍 Predict Allergenicity"):
         if sequence_input.strip() == "":
             st.warning("Please enter a protein sequence.")
         else:
-            pred_class, mean_prob, std_prob = predict_with_uncertainty(sequence_input, esm_model, batch_converter, bootstrap_models, alphabet)
+            pred_class, mean_prob, std_prob = predict_with_uncertainty(
+                sequence_input, esm_model, batch_converter, bootstrap_models, alphabet
+            )
 
             # Make a nice result box
             result_html = f"""
@@ -88,6 +102,7 @@ def main():
             </div>
             """
             st.markdown(result_html, unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()
