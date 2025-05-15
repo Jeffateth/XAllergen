@@ -1,0 +1,38 @@
+Trial 30 Complete [00h 00m 22s]
+val_accuracy: 0.9640198349952698
+
+Best val_accuracy So Far: 0.9652605652809143
+Total elapsed time: 00h 04m 53s
+
+Best hyperparameters found for MLP:
+ - Layers: 2
+   - Layer 1: 192 units, dropout 0.2
+   - Layer 2: 64 units, dropout 0.2
+ - Learning Rate: 0.0004231890726974646
+
+Training final MLP model...
+Epoch 1/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 4ms/step - accuracy: 0.9173 - loss: 0.2089 - val_accuracy: 0.9274 - val_loss: 0.2200
+Epoch 2/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 7s 4ms/step - accuracy: 0.9664 - loss: 0.0997 - val_accuracy: 0.9625 - val_loss: 0.1232
+Epoch 3/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.9751 - loss: 0.0785 - val_accuracy: 0.9774 - val_loss: 0.0701
+Epoch 4/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 7s 4ms/step - accuracy: 0.9794 - loss: 0.0653 - val_accuracy: 0.9380 - val_loss: 0.1816
+Epoch 5/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 7s 4ms/step - accuracy: 0.9855 - loss: 0.0492 - val_accuracy: 0.9730 - val_loss: 0.0933
+Epoch 6/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 7s 4ms/step - accuracy: 0.9857 - loss: 0.0429 - val_accuracy: 0.9637 - val_loss: 0.1294
+126/126 ━━━━━━━━━━━━━━━━━━━━ 0s 2ms/step
+
+Final Evaluation on Test Set (MLP):
+Final Test ROC-AUC: 0.9718
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8869    0.9687    0.9260      2015
+           1     0.9656    0.8764    0.9188      2015
+
+    accuracy                         0.9226      4030
+   macro avg     0.9262    0.9226    0.9224      4030
+weighted avg     0.9262    0.9226    0.9224      4030

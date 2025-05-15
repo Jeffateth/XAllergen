@@ -1,0 +1,85 @@
+XGBoost model chosen
+iedb dataset chosen
+✅ Loaded: Train=(9559, 320), Test=(2390, 320)
+
+📉 DummyClassifier (Stratified) on Training Set (CV):
+
+📊 Dummy ROC-AUC: 0.5012 ± 0.0068
+
+🚀 5-Fold Cross-Validation (XGBoost) on Training Set...
+
+📂 Fold 1 AUC: 0.7533
+              precision    recall  f1-score   support
+
+           0     0.7055    0.8202    0.7586      1107
+           1     0.6816    0.5292    0.5958       805
+
+    accuracy                         0.6977      1912
+   macro avg     0.6936    0.6747    0.6772      1912
+weighted avg     0.6954    0.6977    0.6900      1912
+
+------
+📂 Fold 2 AUC: 0.7486
+              precision    recall  f1-score   support
+
+           0     0.6956    0.8193    0.7524      1107
+           1     0.6711    0.5068    0.5775       805
+
+    accuracy                         0.6878      1912
+   macro avg     0.6833    0.6631    0.6649      1912
+weighted avg     0.6852    0.6878    0.6788      1912
+
+------
+📂 Fold 3 AUC: 0.7551
+              precision    recall  f1-score   support
+
+           0     0.7171    0.8130    0.7621      1107
+           1     0.6849    0.5590    0.6156       805
+
+    accuracy                         0.7061      1912
+   macro avg     0.7010    0.6860    0.6888      1912
+weighted avg     0.7036    0.7061    0.7004      1912
+
+------
+📂 Fold 4 AUC: 0.7596
+              precision    recall  f1-score   support
+
+           0     0.7220    0.8049    0.7612      1107
+           1     0.6814    0.5739    0.6231       805
+
+    accuracy                         0.7076      1912
+   macro avg     0.7017    0.6894    0.6921      1912
+weighted avg     0.7049    0.7076    0.7030      1912
+
+------
+📂 Fold 5 AUC: 0.7620
+              precision    recall  f1-score   support
+
+           0     0.7046    0.8237    0.7595      1106
+           1     0.6845    0.5255    0.5945       805
+
+    accuracy                         0.6981      1911
+   macro avg     0.6945    0.6746    0.6770      1911
+weighted avg     0.6961    0.6981    0.6900      1911
+
+------
+
+✅ Mean CV ROC-AUC: 0.7557 ± 0.0052 (SE = 0.0023)
+
+🔒 Final Evaluation on Hold-Out Test Set...
+
+              precision    recall  f1-score   support
+
+           0     0.7054    0.8165    0.7569      1384
+           1     0.6777    0.5308    0.5953      1006
+
+    accuracy                         0.6962      2390
+   macro avg     0.6915    0.6736    0.6761      2390
+weighted avg     0.6937    0.6962    0.6889      2390
+
+🎯 Final Test ROC-AUC: 0.7610
+
+🧪 Y-Scrambling (sanity check) on Training Set...
+
+🔀 Y-Scrambled ROC-AUC: 0.4889 ± 0.0078
+👉 This should be near 0.5 if your real model learned something.

@@ -1,0 +1,80 @@
+FFNN model chosen
+AllergenAI dataset chosen
+✅ Loaded: Train=(15208, 320), Test=(3803, 320)
+
+📉 DummyClassifier (Stratified) on Training Set (CV):
+
+📊 Dummy ROC-AUC: 0.4942 ± 0.0060
+
+🚀 5-Fold Cross-Validation (NN) on Training Set...
+
+📂 Fold 1 AUC: 0.9670
+              precision    recall  f1-score   support
+
+         0.0     0.8668    0.9324    0.8984      1508
+         1.0     0.9282    0.8592    0.8923      1534
+
+    accuracy                         0.8955      3042
+   macro avg     0.8975    0.8958    0.8954      3042
+weighted avg     0.8978    0.8955    0.8954      3042
+
+------
+📂 Fold 2 AUC: 0.9699
+              precision    recall  f1-score   support
+
+         0.0     0.9286    0.8879    0.9078      1508
+         1.0     0.8944    0.9329    0.9132      1534
+
+    accuracy                         0.9106      3042
+   macro avg     0.9115    0.9104    0.9105      3042
+weighted avg     0.9113    0.9106    0.9105      3042
+
+------
+📂 Fold 3 AUC: 0.9713
+              precision    recall  f1-score   support
+
+         0.0     0.9109    0.9151    0.9130      1508
+         1.0     0.9162    0.9120    0.9141      1534
+
+    accuracy                         0.9135      3042
+   macro avg     0.9135    0.9136    0.9135      3042
+weighted avg     0.9136    0.9135    0.9135      3042
+
+------
+📂 Fold 4 AUC: 0.9650
+              precision    recall  f1-score   support
+
+         0.0     0.9034    0.9117    0.9075      1507
+         1.0     0.9125    0.9042    0.9083      1534
+
+    accuracy                         0.9079      3041
+   macro avg     0.9079    0.9080    0.9079      3041
+weighted avg     0.9080    0.9079    0.9079      3041
+
+------
+📂 Fold 5 AUC: 0.9655
+              precision    recall  f1-score   support
+
+         0.0     0.9095    0.9137    0.9116      1507
+         1.0     0.9149    0.9107    0.9128      1534
+
+    accuracy                         0.9122      3041
+   macro avg     0.9122    0.9122    0.9122      3041
+weighted avg     0.9122    0.9122    0.9122      3041
+
+------
+
+✅ Mean CV ROC-AUC: 0.9677 ± 0.0025
+
+🔒 Final Evaluation on Hold-Out Test Set...
+
+              precision    recall  f1-score   support
+
+         0.0     0.9427    0.9337    0.9382      1885
+         1.0     0.9354    0.9442    0.9398      1918
+
+    accuracy                         0.9390      3803
+   macro avg     0.9391    0.9389    0.9390      3803
+weighted avg     0.9390    0.9390    0.9390      3803
+
+🎯 Final Test ROC-AUC: 0.9847

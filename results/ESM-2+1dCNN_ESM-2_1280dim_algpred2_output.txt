@@ -1,0 +1,56 @@
+Trial 30 Complete [00h 00m 23s]
+val_accuracy: 0.628722071647644
+
+Best val_accuracy So Far: 0.7099875807762146
+Total elapsed time: 00h 05m 15s
+
+Best hyperparameters found:
+ - Filters: 16
+ - Kernel Size: 5
+ - Dropout Rate: 0.2
+ - Dense Units: 64
+ - Learning Rate: 0.0036569295366168696
+
+Training final model...
+Epoch 1/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 9s 5ms/step - accuracy: 0.6260 - loss: 0.6636 - val_accuracy: 0.1678 - val_loss: 1.1206
+Epoch 2/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.6730 - loss: 0.6019 - val_accuracy: 0.7602 - val_loss: 0.5504
+Epoch 3/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7044 - loss: 0.5477 - val_accuracy: 0.4907 - val_loss: 0.7543
+Epoch 4/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7267 - loss: 0.5307 - val_accuracy: 0.8189 - val_loss: 0.5329
+Epoch 5/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7268 - loss: 0.5217 - val_accuracy: 0.8524 - val_loss: 0.4700
+Epoch 6/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7381 - loss: 0.5042 - val_accuracy: 0.8285 - val_loss: 0.4959
+Epoch 7/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7452 - loss: 0.4945 - val_accuracy: 0.8452 - val_loss: 0.4466
+Epoch 8/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7525 - loss: 0.4878 - val_accuracy: 0.7919 - val_loss: 0.5272
+Epoch 9/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7631 - loss: 0.4851 - val_accuracy: 0.5872 - val_loss: 0.7038
+Epoch 10/20
+1612/1612 ━━━━━━━━━━━━━━━━━━━━ 8s 5ms/step - accuracy: 0.7580 - loss: 0.4805 - val_accuracy: 0.8396 - val_loss: 0.4528
+126/126 ━━━━━━━━━━━━━━━━━━━━ 1s 4ms/step
+
+Final Evaluation on Test Set:
+Final Test ROC-AUC: 0.7453
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.6115    0.8367    0.7066      2015
+           1     0.7416    0.4685    0.5742      2015
+
+    accuracy                         0.6526      4030
+   macro avg     0.6765    0.6526    0.6404      4030
+weighted avg     0.6765    0.6526    0.6404      4030
+
+101/101 ━━━━━━━━━━━━━━━━━━━━ 0s 4ms/step
+101/101 ━━━━━━━━━━━━━━━━━━━━ 0s 4ms/step
+101/101 ━━━━━━━━━━━━━━━━━━━━ 0s 4ms/step
+101/101 ━━━━━━━━━━━━━━━━━━━━ 0s 4ms/step
+101/101 ━━━━━━━━━━━━━━━━━━━━ 1s 5ms/step
+Y-Scrambled AUC: 0.4976 ± 0.0016
+
+✅ Logs saved to: /content/drive/MyDrive/AllergenAI-new/CNN/evaluation_log_cpu.txt
