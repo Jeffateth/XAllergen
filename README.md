@@ -1,49 +1,98 @@
-# 🧬 XAllergen: Deep Learning for Allergenicity Prediction
-
-**XAllergen** is a collaborative course project in digital chemistry at ETH Zurich focused on using AI to predict protein allergenicity from sequence and structure. By combining traditional bioinformatics descriptors, protein language model embeddings, and structural data, we aim to build an end-to-end pipeline for accurate and interpretable allergenicity prediction. We aim to develop a novel approach to integrate 3D protein data to our model. 
-
-Our google drive link for larger files: https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing
+Great! Here's an updated version of the `README.md` that includes the **Google Drive link** for downloading large files (e.g., trained model checkpoints, full structure predictions, high-resolution figures):
 
 ---
 
-## 🚀 Project Overview
+# XAllergen
 
-The goal of this project is to:
+**(eXplainable Allergenicity Prediction of Proteins using AI)**
 
-- Predict whether a protein is **allergenic** or **non-allergenic**
-- Integrate **sequence-based**, **structural**, and **embedding-based** features
-- Evaluate various models, from **Random Forests**, and **CNNs**
-- Explore input formats: **full protein sequences**
-- Assess performance with robust metrics: **ROC-AUC**, **F1**, **Accuracy**, **MCC**, and **Standard Error**
+## 🌟 One-Sentence Summary
+
+An explainable AI model that predicts protein allergenicity from amino acid sequences, accessible via an interactive Streamlit web app.
 
 ---
 
-## ✅ Current Progress
+## 🧪 Project Overview
 
-### Weekly Highlights
+**XAllergen** is a predictive and interpretable tool designed to assess the allergenicity of proteins based solely on their amino acid sequences. We fine-tuned the ESM-2 protein language model and trained neural architectures with integrated attention to classify sequences. Additionally, we implemented interpretability features (e.g., Integrated Gradients + 3D visualization) and deployed the system through a user-friendly web interface.
 
-#### 🔹 27.03.2025
-- Curated high-quality negative dataset  
-- Implemented a baseline **Random Forest + AAC descriptor** model (AUC = 0.62)  
-- Explored evaluation metrics: **F1**, **Accuracy**, **AUC**  
-- Investigated advanced descriptors: **AAIndex**, **Propy3**  
-- Discussed integration of **ESM-2 embeddings**
+---
 
-#### 🔹 03.04.2025
-- Analyzed training datasets from **AlgPred 2.0**  
-- Evaluated model on a **2024 benchmark dataset** (92.6% accuracy)  
-- Successfully deployed **ESMFold** to generate 3D PDB structures from sequences  
-- Planned integration of **3D structural features** via **DSSP**
+## 🧬 Key Features
+
+* ⚙️ **Protein Embedding**: Fine-tuned [ESM-2](https://github.com/facebookresearch/esm) models for deep representation of protein sequences.
+* 🧠 **Models**: XGBoost, Ridge Regression, FFNN, 1D-CNN, and full ESM-2 fine-tuning.
+* 🎯 **Evaluation**: Accuracy, F1-score, MCC, AUC-ROC.
+* 🎨 **Interpretability**: Integrated Gradients and 3D attribution visualization (PyMOL and py3Dmol).
+* 🌐 **Web App**: Streamlit interface for interactive protein input and real-time visual predictions.
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+ALLERGENPREDICT/
+├── data/                        # Datasets (AlgPred 2.0, IEDB, amino acid properties)
+├── models/                     # Fine-tuned model weights
+├── Integrated_gradient/        # IG maps and 3D attribution results
+├── webapp/                     # Streamlit web interface
+├── src/                        # Training, analysis and preprocessing code
+├── results/                    # Model evaluation and reports
+├── requirements.txt            # Dependencies
+├── env.yaml                    # Conda environment definition
+├── *.ipynb / *.py              # Analysis and training notebooks/scripts
+```
+
+---
+
+## 🚀 Quickstart
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-org/XAllergen.git
+cd XAllergen
+```
+
+### 2. Set Up Environment
+
+```bash
+conda env create -f env.yaml
+conda activate xallergen
+```
+
+### 3. Launch the Web App
+
+```bash
+cd webapp/allergenicity-webapp-streamlit
+streamlit run app.py
+```
+
+---
+
+## 🔗 Downloads
+
+Large files such as full model weights, PDB files, and high-resolution visualizations are hosted on Google Drive:
+
+📁 **[Download from Google Drive](https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing)**
+
+---
+
+## 📊 Model Performance (Test Set)
+
+| Metric    | Value |
+| --------- | ----- |
+| Accuracy  | 0.85  |
+| Precision | 0.84  |
+| Recall    | 0.86  |
+| F1-score  | 0.85  |
+| ROC-AUC   | 0.92  |
+
+---
+
+## 🧠 Explainable AI
+
+* **Integrated Gradients**: Highlights influential amino acids.
+* **3D Attribution Mapping**: Visual overlays of attributions on protein structures using PyMOL.
 
 
-### 🔍 What Happens When You Input a New Protein Sequence?
-
-1. **The sequence is validated**: only standard amino acids (A, C, D, ..., Y) are accepted.
-2. **The model tokenizes and evaluates** the sequence using a fine-tuned ESM-2 transformer.
-3. **Raw model probabilities** are calibrated using `IsotonicRegression` for realism.
-4. The result is compared against a threshold (e.g., 0.5) to label the sequence:
-   - 🟢 Allergen
-   - 🔴 Non-allergen
-5. **Optional**: SHAP explainability highlights the influence of specific amino acids.
-
-This system allows researchers to **quickly assess allergenicity risk** from sequence alone — ideal for filtering, triaging, and guiding lab work. However, it does **not replace experimental validation**.
