@@ -110,14 +110,17 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 # 2) STANDARD IMPORTS
 import streamlit as st
+import py3Dmol
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import numpy as np
 from esm import pretrained
 from esm_interpret import ESMModelInterpreter
-
+import streamlit.components.v1 as components
+import plotly.graph_objs as go
 # ==========================================
 # === 3) MODEL ARCHITECTURE
 # ==========================================
@@ -203,16 +206,181 @@ def predict(sequence, model, batch_converter):
     label = "🟢 Allergen" if pred else "🔴 Non-Allergen"
     result = f"**Label:** {label}  \n**P(Allergen):** `{prob:.4f}`"
     return result, prob
+### 3D representation of the protein sequence
+#_____________________________
+def get_color(attr, norm_score):
+    if norm_score < 1e-6:
+        return "#FFFFFF"  # White for near-zero attributions
+    elif attr > 0:
+        # Blue → White fade
+        r = int(255 * (1 - norm_score))
+        g = int(255 * (1 - norm_score))
+        b = 255
+    else:
+        # Red → White fade
+        r = 255
+        g = int(255 * (1 - norm_score))
+        b = int(255 * (1 - norm_score))
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+def show_3d_structure(pdb_path, attributions, sequence, spin=True):
+    with open(pdb_path) as f:
+        pdb_data = f.read()
+
+    abs_attr = np.abs(attributions)
+    norm_attr = abs_attr / abs_attr.max() if abs_attr.max() > 0 else abs_attr
+
+    view = py3Dmol.view(width=800, height=500)
+    view.addModel(pdb_data, "pdb")
+    view.setStyle({"cartoon": {"opacity": 1.0}})
+
+
+    for i, (aa, score) in enumerate(zip(sequence, norm_attr)):
+        color = get_color(attributions[i], score)
+        resi = i + 1
+        view.addStyle({"resi": str(resi)}, {"cartoon": {"color": color}})
+
+
+    view.zoomTo()
+    view.spin(spin)  # 🔁 Controlled here
+    return view
+
+## with vertical description bar to the right of the 3D viewer
+# def render_pdb_in_streamlit(view):
+#     inner_html = view._make_html()
+
+#     bordered_viewer = f"""
+#     <div style="
+#         width: 800px;
+#         height: 500px;
+#         border: 1px solid black;
+#         overflow: hidden;
+#         background-color: grey;
+#     ">
+#         {inner_html}
+#     </div>
+#     """
+
+#     color_legend = """
+#     <div style="height: 500px; display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
+#         <!-- Color bar -->
+#         <div style="height: 450px; width: 20px; background: linear-gradient(to top, red, white, blue); 
+#                     border: 1px solid black; position: relative;">
+#         </div>
+
+#         <!-- Labels -->
+#         <div style="height: 450px; display: flex; flex-direction: column; justify-content: space-between;
+#                     margin-left: 6px; font-family: monospace; font-size: 12px;">
+#             <div>+1</div>
+#             <div>+0.5</div>
+#             <div>0</div>
+#             <div>-0.5</div>
+#             <div>-1</div>
+#         </div>
+
+#         <!-- Vertical label on the right -->
+#         <div style="writing-mode: vertical-rl; transform: rotate(0deg); 
+#                     font-family: monospace; font-size: 12px; margin-left: 12px;">
+#             Integrated Gradients Attribution
+#         </div>
+#     </div>
+#     """
+
+#     combined = f"""
+#     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+#         {bordered_viewer}
+#         {color_legend}
+#     </div>
+#     """
+
+#     st.components.v1.html(combined, height=520, width=920)
+
+
+# with horizontal description bar under the 3D viewer
+def render_pdb_in_streamlit(view):
+    inner_html = view._make_html()
+
+    bordered_viewer = f"""
+    <div style="
+        width: 800px;
+        height: 500px;
+        border: 1px solid black;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.2);
+    ">
+        {inner_html}
+    </div>
+    """
+
+    color_legend_horizontal = """
+    <div style="width: 600px; display: flex; flex-direction: column; align-items: center; margin-top: 14px;">
+        <!-- Color bar -->
+        <div style="width: 500px; height: 24px; background: linear-gradient(to right, red, white, blue); 
+                    border: 1px solid black;">
+        </div>
+
+        <!-- Tick labels -->
+        <div style="width: 500px; display: flex; justify-content: space-between;
+                    font-family: monospace; font-size: 14px; margin-top: 4px;">
+            <span>-1</span>
+            <span>-0.5</span>
+            <span>0</span>
+            <span>0.5</span>
+            <span>1</span>
+        </div>
+
+        <!-- Caption -->
+        <div style="margin-top: 8px; font-family: monospace; font-size: 14px; font-weight: bold;">
+            Integrated Gradients Attribution
+        </div>
+    </div>
+    """
+
+    combined = f"""
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        {bordered_viewer}
+        {color_legend_horizontal}
+    </div>
+    """
+
+    st.components.v1.html(combined, height=640, width=820)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ==========================================
 # === 6) STREAMLIT APP
 # ==========================================
 def main():
+
     st.set_page_config(page_title="Protein Allergenicity Predictor", layout="centered")
     st.title("🧬 Protein Allergenicity Predictor")
     st.markdown("Paste one or more protein sequences, separated by line breaks. Click **Predict**.")
 
-    seq_input = st.text_area("Protein Sequence(s)", height=200)
+    EXAMPLE_SEQUENCE = "MKNYLSFGMFALLFALTFGTVNSVQAIAGPEWLLDRPSVNNSQLVVSVAGTVEGTNQDISLKFFEIDLTSRPAHGGKTEQGLSPKSKPFATDSGAMSHKLEKADLLKAIQEQLIANVHSNDDYFEVIDFASDATITDRNGKVYFADKDGSVTLPTQPVQEFLLSGHVRVRPYKEKPIQNQAKSVDVEYTVQFTPLNPDDDFRPGLKDTKLLKTLAIGDTITSQELLAQAQSILNKNHPGYTIYERDSSIVTHDNDIFRTILPMDQEFTYRVKNREQAYRINKKSGLNEEINNTDLISEKYYVLKKGEKPYDPFDRSHLKLFTIKYVDVDTNELLKSEQLLTASERNLDFRDLYDPRDKAKLLYNNLDAFGIMDYTLTGKVEDNHDDTNRIITVYMGKRPEGENASYHLAYDKDRYTEEEREVYSYLRYTGTPIPDNPNDK"
+
+    if "seq_input" not in st.session_state:
+        st.session_state["seq_input"] = ""
+
+    if st.button("Insert Example Sequence"):
+        st.session_state["seq_input"] = EXAMPLE_SEQUENCE
+
+    seq_input = st.text_area("Protein Sequence(s)", height=200, value=st.session_state["seq_input"], key="seq_input_area")
+
 
     # Load model + batch converter
     with st.spinner("Loading ESM + classifier model..."):
@@ -231,7 +399,7 @@ def main():
         st.session_state["last_predictions"] = df  # 🔑 STORE the result
     if "last_predictions" in st.session_state:
         st.subheader("Prediction Results")
-        st.dataframe(st.session_state["last_predictions"].reset_index(drop=True), use_container_width=True)
+        st.dataframe(st.session_state["last_predictions"], hide_index = True, use_container_width=True)
 
 
         st.markdown("---")
@@ -243,56 +411,117 @@ def main():
             selected_label = st.selectbox("Select sequence to interpret:", list(seq_map.keys()))
             selected_seq = seq_map[selected_label]
 
-
             if st.button("Run Interpretation"):
                 with st.spinner("Running interpretation..."):
                     interpreter = load_model_for_interpretation(model_path)
-
-                    # Prediction
-                    st.subheader("Prediction")
                     pred = interpreter.predict(selected_seq)
-                    st.markdown(f"**Prediction (P[Allergen]):** `{pred:.4f}`")
-
-                    # Integrated Gradients Plot
-                    st.subheader("Integrated Gradients Attribution")
+                    st.session_state["interpretation_done"] = True
+                    st.session_state["selected_seq"] = selected_seq
+                    st.session_state["pred"] = pred
                     attributions, amino_acids, _ = interpreter.integrated_gradients_attributions(selected_seq)
-                    fig, ax = plt.subplots(figsize=(15, 5))
-                    colors = ['red' if x < 0 else 'blue' for x in attributions]
-                    ax.bar(range(len(attributions)), attributions, color=colors)
-                    if len(amino_acids) <= 100:
-                        ax.set_xticks(range(len(amino_acids)))
-                        ax.set_xticklabels(amino_acids, rotation='vertical')
-                    else:
-                        ax.set_xticks([])
-                    ax.set_title("Integrated Gradients Attribution")
-                    st.pyplot(fig)
-
-                    # Attention Heatmap
-                    st.subheader("Attention Heatmap")
+                    st.session_state["attributions"] = attributions
+                    st.session_state["amino_acids"] = amino_acids
+                    st.session_state["pdb_path"] = "P_7275.pdb"
+                    st.session_state["top_df"] = interpreter.get_top_influential_residues(selected_seq)
                     entropies, attention_matrix, valid_tokens = interpreter.visualize_attention(selected_seq)
-                    fig2, ax2 = plt.subplots(figsize=(10, 8))
-                    import seaborn as sns
-                    sns.heatmap(attention_matrix, xticklabels=valid_tokens, yticklabels=valid_tokens, cmap="viridis", ax=ax2)
-                    ax2.set_title("Attention Heatmap")
-                    st.pyplot(fig2)
+                    st.session_state["attention_matrix"] = attention_matrix
+                    st.session_state["valid_tokens"] = valid_tokens
+                    st.session_state["spin"] = True
+        st.session_state.setdefault("show_interpretation_outputs", False)
 
-                    # Top Residues by Attribution
-                    st.subheader("Top Influential Residues")
-                    top_df = interpreter.get_top_influential_residues(selected_seq)
-                    st.dataframe(top_df)
+        if st.session_state.get("interpretation_done"):
 
-                    # Top Attention-Sending/Receiving
-                    st.subheader("Top Attention-Receiving Residues")
-                    _, _ = ESMModelInterpreter.plot_top_attention_residues(attention_matrix, valid_tokens, top_k=10, mode='received')
-                    st.pyplot(plt.gcf())
+            
+            st.subheader("Prediction")
+            
 
-                    st.subheader("Top Attention-Sending Residues")
-                    _, _ = ESMModelInterpreter.plot_top_attention_residues(attention_matrix, valid_tokens, top_k=10, mode='sent')
-                    st.pyplot(plt.gcf())
+            prediction_label = "Allergen" if st.session_state["pred"] >= 0.5 else "Non-Allergen"
+            prediction_df = pd.DataFrame(
+                [[prediction_label, st.session_state["pred"]]],
+                columns=["Prediction", "P(Allergen)"]
+            )
+            st.dataframe(prediction_df, use_container_width=True, hide_index = True)
 
-        elif seq_input.strip():
-            st.warning("No valid sequences found. Please enter protein sequences using only A,C,D,...,Y.")
 
+            st.subheader("Integrated Gradients Attribution")
+            
+
+            attributions = st.session_state["attributions"]
+            amino_acids = st.session_state["amino_acids"]
+            colors = ['red' if x < 0 else 'blue' for x in attributions]
+
+            fig = go.Figure(data=[
+                go.Bar(
+                    x=list(range(len(attributions))),
+                    y=attributions,
+                    marker_color=colors,
+                    text=amino_acids if len(amino_acids) <= 100 else None,
+                    hovertext=[f"{aa}: {score:.4f}" for aa, score in zip(amino_acids, attributions)],
+                    hoverinfo="text"
+                )
+            ])
+
+            fig.update_layout(
+                
+                xaxis=dict(title="Residue Position", tickmode='array', tickvals=list(range(len(amino_acids))), ticktext=amino_acids if len(amino_acids) <= 100 else None),
+                yaxis=dict(title="Attribution Score"),
+                height=500,
+                margin=dict(l=40, r=40, t=40, b=40),
+            )
+
+            st.plotly_chart(fig, use_container_width=True)
+
+
+            st.subheader("Top Influential Residues")
+            df = st.session_state["top_df"]
+            st.dataframe(df.reset_index(drop=True), hide_index = True)
+
+
+
+            # st.subheader("Attention Heatmap")
+            # fig2, ax2 = plt.subplots(figsize=(10, 8))
+            # sns.heatmap(st.session_state["attention_matrix"], xticklabels=st.session_state["valid_tokens"], yticklabels=st.session_state["valid_tokens"], cmap="viridis", ax=ax2)
+            # ax2.set_title("Attention Heatmap")
+            # st.pyplot(fig2)
+
+            # st.subheader("Top Attention-Receiving Residues")
+            # _, _ = ESMModelInterpreter.plot_top_attention_residues(st.session_state["attention_matrix"], st.session_state["valid_tokens"], top_k=10, mode='received')
+            # st.pyplot(plt.gcf())
+
+        if (
+            st.session_state.get("interpretation_done")
+            and os.path.exists(st.session_state.get("pdb_path", ""))
+        ):
+            st.markdown("---")
+            st.subheader("🧬 3D Structure Visualization")
+
+            # --- Toggle Spin ---
+            spin_now = st.toggle("Spin structure", value=st.session_state.get("spin", False), key="spin_toggle")
+
+            # Check if value changed and trigger rerun
+            if "spin" in st.session_state and st.session_state["spin"] != spin_now:
+                st.session_state["spin"] = spin_now
+                st.rerun()  # <-- Ensures immediate visual/state update
+
+            
+
+
+            view = show_3d_structure(
+                st.session_state["pdb_path"],
+                st.session_state["attributions"],
+                st.session_state["amino_acids"],
+                spin=st.session_state["spin"]
+            )
+            render_pdb_in_streamlit(view)
+
+                    
+
+
+
+            
+
+
+            
 
 if __name__ == "__main__":
     main()

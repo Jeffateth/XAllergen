@@ -306,11 +306,23 @@ class ESMModelInterpreter:
 
         embedding_model = EmbeddingModel(embedding_layer, self.model)
 
+        # # Get original embeddings
+        # with torch.no_grad():
+        #     original_embeddings = embedding_layer(tokens)
+        #     # Create a baseline of all zeros for the embedding
+        #     baseline_embeddings = torch.zeros_like(original_embeddings)
         # Get original embeddings
         with torch.no_grad():
             original_embeddings = embedding_layer(tokens)
-            # Create a baseline of all zeros for the embedding
-            baseline_embeddings = torch.zeros_like(original_embeddings)
+
+            # Clone and mask the tokens (replace AA tokens with [MASK])
+            masked_tokens = tokens.clone()
+            seq_len = tokens.shape[1] - 2  # exclude BOS and EOS
+            mask_idx = self.alphabet.mask_idx
+            masked_tokens[0, 1:1+seq_len] = mask_idx  # mask everything except BOS/EOS
+
+            # Pass masked tokens through same embedding layer
+            baseline_embeddings = embedding_layer(masked_tokens)
 
         # Now we can use regular integrated gradients on the embeddings
         integrated_gradients = IntegratedGradients(embedding_model)
