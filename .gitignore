@@ -1,1 +1,3 @@
 .DS_Store
+data/outputs/X_seq_train.npy
+data/outputs/X_seq_test.npy
