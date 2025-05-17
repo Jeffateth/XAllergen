@@ -22,7 +22,14 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import StratifiedKFold
 from sklearn.dummy import DummyClassifier
-from sklearn.metrics import roc_auc_score, accuracy_score
+from sklearn.metrics import (
+    roc_auc_score,
+    accuracy_score,
+    f1_score,
+    matthews_corrcoef,
+    precision_score,
+    recall_score,
+)
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -161,6 +168,42 @@ def eval_epoch(model, loader, device):
     return np.array(ys), np.array(ps)
 
 
+def calculate_metrics(y_true, y_pred_probs, threshold=0.5):
+    """Calculate comprehensive classification metrics"""
+    y_pred = (y_pred_probs > threshold).astype(int)
+
+    try:
+        auc = roc_auc_score(y_true, y_pred_probs)
+    except:
+        auc = 0.5
+
+    # Handle edge cases where all predictions are the same class
+    if len(np.unique(y_pred)) == 1:
+        if len(np.unique(y_true)) == 1 and y_pred[0] == y_true[0]:
+            # Perfect prediction of single class
+            precision = recall = f1 = accuracy = 1.0
+            mcc = 1.0
+        else:
+            # All predictions same, but true labels vary
+            accuracy = accuracy_score(y_true, y_pred)
+            precision = recall = f1 = mcc = 0.0
+    else:
+        accuracy = accuracy_score(y_true, y_pred)
+        precision = precision_score(y_true, y_pred, zero_division=0)
+        recall = recall_score(y_true, y_pred, zero_division=0)
+        f1 = f1_score(y_true, y_pred, zero_division=0)
+        mcc = matthews_corrcoef(y_true, y_pred)
+
+    return {
+        "auc": float(auc),
+        "accuracy": float(accuracy),
+        "precision": float(precision),
+        "recall": float(recall),
+        "f1": float(f1),
+        "mcc": float(mcc),
+    }
+
+
 def load_previous_results(output_dir):
     """Load previous nested CV results if resuming"""
     nested_csv = os.path.join(output_dir, "nested_cv_metrics.csv")
@@ -239,9 +282,13 @@ def main(args):
         dummy = DummyClassifier(strategy="most_frequent")
         dummy.fit(Xst_tr_o, y_tr_o)
         dummy_probs = dummy.predict_proba(Xst_val_o)[:, 1]
-        auc_dummy = roc_auc_score(y_val_o, dummy_probs)
-        print(f"[CV][Fold {outer_fold}] Dummy AUC = {auc_dummy:.4f}")
-        results.append({"fold": outer_fold, "model": "dummy", "auc": float(auc_dummy)})
+        dummy_metrics = calculate_metrics(y_val_o, dummy_probs)
+        print(
+            f"[CV][Fold {outer_fold}] Dummy metrics: AUC={dummy_metrics['auc']:.4f}, F1={dummy_metrics['f1']:.4f}, MCC={dummy_metrics['mcc']:.4f}"
+        )
+        dummy_result = {"fold": outer_fold, "model": "dummy"}
+        dummy_result.update(dummy_metrics)
+        results.append(dummy_result)
 
         # Inner CV to choose early stopping epoch
         stop_epochs = []
@@ -288,9 +335,10 @@ def main(args):
                     break
 
                 try:
-                    auc_i = roc_auc_score(ys_i, ps_i)
+                    metrics_i = calculate_metrics(ys_i, ps_i)
+                    auc_i = metrics_i["auc"]
                     print(
-                        f"[CV][Fold {outer_fold}][Inner {inner_fold}] Val AUC = {auc_i:.4f}"
+                        f"[CV][Fold {outer_fold}][Inner {inner_fold}] Val AUC = {auc_i:.4f}, F1 = {metrics_i['f1']:.4f}"
                     )
 
                     if auc_i > best_auc_i:
@@ -304,7 +352,7 @@ def main(args):
                             break
                 except Exception as e:
                     print(
-                        f"[CV][Fold {outer_fold}][Inner {inner_fold}] Error calculating AUC: {e}"
+                        f"[CV][Fold {outer_fold}][Inner {inner_fold}] Error calculating metrics: {e}"
                     )
                     break
 
@@ -341,6 +389,7 @@ def main(args):
         if args.resume and os.path.isfile(ckpt_path):
             start_epoch = load_ckpt(model_o, optimizer_o, ckpt_path)
 
+        best_metrics_o = None
         best_auc_o, no_improve = 0.0, 0
         max_epochs = max(chosen_epoch + args.patience, args.epochs)
 
@@ -363,11 +412,14 @@ def main(args):
                 break
 
             try:
-                auc_o = roc_auc_score(ys_o, ps_o)
-                print(f"[CV][Fold {outer_fold}] Val AUC = {auc_o:.4f}")
+                metrics_o = calculate_metrics(ys_o, ps_o)
+                auc_o = metrics_o["auc"]
+                print(
+                    f"[CV][Fold {outer_fold}] Val AUC = {auc_o:.4f}, F1 = {metrics_o['f1']:.4f}, MCC = {metrics_o['mcc']:.4f}"
+                )
 
                 if auc_o > best_auc_o:
-                    best_auc_o, no_improve = auc_o, 0
+                    best_auc_o, best_metrics_o, no_improve = auc_o, metrics_o, 0
                     save_ckpt(model_o, optimizer_o, outer_fold, epoch, args.output_dir)
                 else:
                     no_improve += 1
@@ -377,31 +429,31 @@ def main(args):
                         )
                         break
             except Exception as e:
-                print(f"[CV][Fold {outer_fold}] Error calculating outer AUC: {e}")
+                print(f"[CV][Fold {outer_fold}] Error calculating outer metrics: {e}")
                 break
 
         # Record results with fallback
-        if best_auc_o > 0:
-            results.append(
-                {
-                    "fold": outer_fold,
-                    "model": "CNN",
-                    "auc": float(best_auc_o),
-                    "stop_epoch": chosen_epoch,
-                }
-            )
+        if best_metrics_o is not None:
+            cnn_result = {
+                "fold": outer_fold,
+                "model": "CNN",
+                "stop_epoch": chosen_epoch,
+            }
+            cnn_result.update(best_metrics_o)
+            results.append(cnn_result)
         else:
             print(
                 f"[CV][Fold {outer_fold}] CNN training failed, recording dummy result"
             )
-            results.append(
-                {
-                    "fold": outer_fold,
-                    "model": "CNN",
-                    "auc": 0.5,
-                    "stop_epoch": chosen_epoch,
-                }
-            )
+            dummy_result = {
+                "fold": outer_fold,
+                "model": "CNN",
+                "stop_epoch": chosen_epoch,
+            }
+            dummy_result.update(
+                calculate_metrics(np.array([0, 1]), np.array([0.5, 0.5]))
+            )  # Random baseline
+            results.append(dummy_result)
 
         # Save intermediate results after each fold
         try:
@@ -463,18 +515,21 @@ def main(args):
         ys_test, ps_test = eval_epoch(final_model, test_dl, device)
 
         if len(ys_test) > 0:
-            test_auc = roc_auc_score(ys_test, ps_test)
-            test_acc = accuracy_score(ys_test, (ps_test > 0.5).astype(int))
-            print(f"[Final] Test AUC = {test_auc:.4f}, Test ACC = {test_acc:.4f}")
+            test_metrics = calculate_metrics(ys_test, ps_test)
+            print(f"[Final] Test metrics:")
+            print(f"  AUC: {test_metrics['auc']:.4f}")
+            print(f"  Accuracy: {test_metrics['accuracy']:.4f}")
+            print(f"  Precision: {test_metrics['precision']:.4f}")
+            print(f"  Recall: {test_metrics['recall']:.4f}")
+            print(f"  F1: {test_metrics['f1']:.4f}")
+            print(f"  MCC: {test_metrics['mcc']:.4f}")
 
             # Save final model and metrics
             final_model_path = os.path.join(args.output_dir, "final_model.pth")
             torch.save(final_model.state_dict(), final_model_path)
 
             test_metrics_path = os.path.join(args.output_dir, "test_metrics.csv")
-            pd.DataFrame([{"test_auc": test_auc, "test_acc": test_acc}]).to_csv(
-                test_metrics_path, index=False
-            )
+            pd.DataFrame([test_metrics]).to_csv(test_metrics_path, index=False)
             print(
                 f"[Final] Saved final model to {final_model_path} and metrics to {test_metrics_path}"
             )
