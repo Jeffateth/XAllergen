@@ -1,14 +1,6 @@
-Great! Here's an updated version of the `README.md` that includes the **Google Drive link** for downloading large files (e.g., trained model checkpoints, full structure predictions, high-resolution figures):
-
----
-
 # XAllergen
 
 **(eXplainable Allergenicity Prediction of Proteins using AI)**
-
-## 🌟 One-Sentence Summary
-
-An explainable AI model that predicts protein allergenicity from amino acid sequences, accessible via an interactive Streamlit web app.
 
 ---
 
@@ -75,18 +67,6 @@ streamlit run app.py
 Large files such as full model weights, PDB files, and high-resolution visualizations are hosted on Google Drive:
 
 📁 **[Download from Google Drive](https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing)**
-
----
-
-## 📊 Model Performance (Test Set)
-
-| Metric    | Value |
-| --------- | ----- |
-| Accuracy  | 0.85  |
-| Precision | 0.84  |
-| Recall    | 0.86  |
-| F1-score  | 0.85  |
-| ROC-AUC   | 0.92  |
 
 ---
 
