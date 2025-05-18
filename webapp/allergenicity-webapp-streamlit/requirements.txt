@@ -1,8 +1,11 @@
 streamlit
 torch
+pandas
 numpy
-joblib
-shap
-fair-esm
 matplotlib
-xgboost
+seaborn
+py3Dmol
+plotly
+scipy
+esm
+captum

@@ -1,0 +1,20 @@
+name: allergen_app_env
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - streamlit
+  - pytorch
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - py3Dmol
+  - plotly
+  - scipy
+  - pip
+  - pip:
+      - esm
+      - captum
