@@ -17,12 +17,13 @@ This repository provides a web interface for XAllergen: an explainable machine l
 
 ## Getting Started
 
-### 1. Clone the Repository
+1. Clone the Repository
 
-```bash
+
 git clone https://github.com/Jeffateth/XAllergen.git
 cd XAllergen/webapp/allergenicity-webapp-streamlit
-### 2. Set Up the Environment
+
+2. Set Up the Environment
 It is recommended to use conda or venv to create an isolated Python environment.
 Required Python version: Python 3.9 or 3.10
 
@@ -32,6 +33,10 @@ conda activate xallergen_env
 
 # Install requirements
 pip install -r requirements.txt
+
+or 
+
+
 3. Download Model Weights
 The app requires pre-trained or fine-tuned model weights. Download or place the weights in the specified folder (see documentation or the app’s sidebar for details).
 
