@@ -1,85 +1,37 @@
 XGBoost model chosen
 algpred2 dataset chosen
-✅ Loaded: Train=(15311, 1038), Test=(3946, 1038)
+✅ Loaded: Train=(15311, 334), Test=(3946, 334)
 
 📉 DummyClassifier (Stratified) on Training Set (CV):
 
 📊 Dummy ROC-AUC: 0.4936 ± 0.0001
 
-🚀 5-Fold Cross-Validation (XGBoost) on Training Set...
+🔍 Hyperparameter Tuning with GridSearchCV...
 
-📂 Fold 1 AUC: 0.9983
-              precision    recall  f1-score   support
+Fitting 5 folds for each of 72 candidates, totalling 360 fits
 
-           0     0.9770    0.9877    0.9823      1460
-           1     0.9887    0.9788    0.9837      1603
-
-    accuracy                         0.9830      3063
-   macro avg     0.9828    0.9832    0.9830      3063
-weighted avg     0.9831    0.9830    0.9830      3063
-
-------
-📂 Fold 2 AUC: 0.9985
-              precision    recall  f1-score   support
-
-           0     0.9870    0.9870    0.9870      1459
-           1     0.9881    0.9881    0.9881      1603
-
-    accuracy                         0.9876      3062
-   macro avg     0.9876    0.9876    0.9876      3062
-weighted avg     0.9876    0.9876    0.9876      3062
-
-------
-📂 Fold 3 AUC: 0.9986
-              precision    recall  f1-score   support
-
-           0     0.9848    0.9801    0.9825      1459
-           1     0.9820    0.9863    0.9841      1603
-
-    accuracy                         0.9833      3062
-   macro avg     0.9834    0.9832    0.9833      3062
-weighted avg     0.9834    0.9833    0.9833      3062
-
-------
-📂 Fold 4 AUC: 0.9978
-              precision    recall  f1-score   support
-
-           0     0.9869    0.9774    0.9821      1459
-           1     0.9796    0.9881    0.9839      1603
-
-    accuracy                         0.9830      3062
-   macro avg     0.9832    0.9828    0.9830      3062
-weighted avg     0.9831    0.9830    0.9830      3062
-
-------
-📂 Fold 5 AUC: 0.9987
-              precision    recall  f1-score   support
-
-           0     0.9890    0.9836    0.9863      1459
-           1     0.9851    0.9900    0.9876      1603
-
-    accuracy                         0.9869      3062
-   macro avg     0.9870    0.9868    0.9869      3062
-weighted avg     0.9869    0.9869    0.9869      3062
-
-------
-
-✅ Mean CV ROC-AUC: 0.9984 ± 0.0003 (SE = 0.0002)
+🏆 Best Parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.2, 'max_depth': 7, 'n_estimators': 100, 'subsample': 1.0}
+🏆 Best CV ROC-AUC: 0.9977
 
 🔒 Final Evaluation on Hold-Out Test Set...
 
-              precision    recall  f1-score   support
+✅ Model saved to: XGBoost_ProtBert_1024dim_algpred2_xgboost_model.pkl
+🧪 Final Test Set Metrics:
+ - Accuracy     : 0.8142
+ - Sensitivity  : 0.6655
+ - Specificity  : 0.9690
+ - ROC-AUC      : 0.9266
+ - MCC          : 0.6630
+ - F1-Score     : 0.7851
+ - Precision    : 0.9571
 
-           0     0.7229    0.9809    0.8324      1934
-           1     0.9720    0.6387    0.7708      2012
+🧾 Confusion Matrix on Hold-Out Test Set:
 
-    accuracy                         0.8064      3946
-   macro avg     0.8475    0.8098    0.8016      3946
-weighted avg     0.8499    0.8064    0.8010      3946
-
-🎯 Final Test ROC-AUC: 0.9481
+          Predicted 0  Predicted 1
+Actual 0         1874           60
+Actual 1          673         1339
 
 🧪 Y-Scrambling (sanity check) on Training Set...
 
-🔀 Y-Scrambled ROC-AUC: 0.5024 ± 0.0064
+🔀 Y-Scrambled ROC-AUC: 0.5041 ± 0.0101
 👉 This should be near 0.5 if your real model learned something.
