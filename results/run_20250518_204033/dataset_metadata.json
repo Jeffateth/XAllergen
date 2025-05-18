@@ -1,0 +1,11 @@
+{
+    "train_shape_original": [
+        16120,
+        1280
+    ],
+    "test_shape_original": [
+        4030,
+        1280
+    ],
+    "embedding_dim": 1280
+}

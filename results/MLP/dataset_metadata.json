@@ -1,0 +1,19 @@
+{
+    "train_shape": [
+        16120,
+        1280
+    ],
+    "test_shape": [
+        4030,
+        1280
+    ],
+    "embedding_dim": 1280,
+    "train_label_counts": [
+        8060,
+        8060
+    ],
+    "test_label_counts": [
+        2015,
+        2015
+    ]
+}

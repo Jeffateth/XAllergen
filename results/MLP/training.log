@@ -1,0 +1,1551 @@
+2025-05-18 22:23:35,490 - __main__ - INFO - Setting global random seed to 42
+2025-05-18 22:23:35,514 - __main__ - INFO - Using device: mps
+2025-05-18 22:23:35,514 - __main__ - INFO - Loading ESM-2 embeddings data...
+2025-05-18 22:23:38,076 - __main__ - INFO - Data loading completed in 2.56s
+2025-05-18 22:23:38,076 - __main__ - INFO - Full training samples: 16120, Test samples: 4030
+2025-05-18 22:23:38,076 - __main__ - INFO - Training class distribution: [8060 8060]
+2025-05-18 22:23:38,076 - __main__ - INFO - Test class distribution: [2015 2015]
+2025-05-18 22:23:38,077 - __main__ - INFO - Embedding dimension: 1280
+2025-05-18 22:23:38,105 - __main__ - INFO - --- Starting Cross-Validation (skipped in this snippet) ---
+2025-05-18 22:23:38,105 - __main__ - INFO - Starting Optuna Hyperparameter Optimization with 30 trials
+2025-05-18 22:23:40,465 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:23:40,839 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1686 AUC: 0.9851 | Val Loss: 0.0958 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:23:42,012 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:23:42,200 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0833 AUC: 0.9953 | Val Loss: 0.0756 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:23:43,344 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:23:43,520 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0610 AUC: 0.9973 | Val Loss: 0.0705 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:23:44,647 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:23:44,826 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0453 AUC: 0.9986 | Val Loss: 0.0646 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:23:45,948 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0364 AUC: 0.9991 | Val Loss: 0.0664 AUC: 0.9951 | Patience: 1/3
+2025-05-18 22:23:47,167 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:23:47,346 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0288 AUC: 0.9994 | Val Loss: 0.0655 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:23:48,506 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0241 AUC: 0.9996 | Val Loss: 0.0683 AUC: 0.9948 | Patience: 1/3
+2025-05-18 22:23:49,695 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0184 AUC: 0.9998 | Val Loss: 0.0715 AUC: 0.9949 | Patience: 2/3
+2025-05-18 22:23:50,884 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0165 AUC: 0.9998 | Val Loss: 0.0736 AUC: 0.9949 | Patience: 3/3
+2025-05-18 22:23:50,885 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:23:52,259 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:23:52,451 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1682 AUC: 0.9842 | Val Loss: 0.0915 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:23:53,696 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:23:53,882 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0831 AUC: 0.9948 | Val Loss: 0.0740 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:23:55,137 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:23:55,335 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0616 AUC: 0.9969 | Val Loss: 0.0631 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:23:56,594 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:23:56,784 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0459 AUC: 0.9983 | Val Loss: 0.0581 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:23:58,065 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:23:58,266 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0377 AUC: 0.9989 | Val Loss: 0.0540 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:23:59,411 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:23:59,576 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0299 AUC: 0.9993 | Val Loss: 0.0544 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:24:00,701 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0250 AUC: 0.9996 | Val Loss: 0.0560 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:24:01,823 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:24:02,005 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0204 AUC: 0.9998 | Val Loss: 0.0541 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:24:03,147 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0191 AUC: 0.9998 | Val Loss: 0.0614 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:24:04,332 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0147 AUC: 0.9999 | Val Loss: 0.0550 AUC: 0.9967 | Patience: 2/3
+2025-05-18 22:24:05,590 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:24:05,774 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1741 AUC: 0.9837 | Val Loss: 0.0937 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:24:06,968 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:24:07,240 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0838 AUC: 0.9945 | Val Loss: 0.0739 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:24:08,385 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9970. Model saved.
+2025-05-18 22:24:08,571 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0626 AUC: 0.9970 | Val Loss: 0.0603 AUC: 0.9970 | Patience: 0/3
+2025-05-18 22:24:09,684 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0488 AUC: 0.9982 | Val Loss: 0.0593 AUC: 0.9970 | Patience: 1/3
+2025-05-18 22:24:10,869 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0378 AUC: 0.9987 | Val Loss: 0.0643 AUC: 0.9964 | Patience: 2/3
+2025-05-18 22:24:12,104 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9977. Model saved.
+2025-05-18 22:24:12,283 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0318 AUC: 0.9991 | Val Loss: 0.0537 AUC: 0.9977 | Patience: 0/3
+2025-05-18 22:24:13,535 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0272 AUC: 0.9993 | Val Loss: 0.0544 AUC: 0.9975 | Patience: 1/3
+2025-05-18 22:24:14,769 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0226 AUC: 0.9997 | Val Loss: 0.0604 AUC: 0.9967 | Patience: 2/3
+2025-05-18 22:24:16,027 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0177 AUC: 0.9998 | Val Loss: 0.0568 AUC: 0.9967 | Patience: 3/3
+2025-05-18 22:24:16,027 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:24:17,370 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:24:17,558 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1448 AUC: 0.9862 | Val Loss: 0.0917 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:24:18,701 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:24:18,885 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0897 AUC: 0.9937 | Val Loss: 0.0758 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:24:20,005 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:24:20,174 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0721 AUC: 0.9958 | Val Loss: 0.0762 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:24:21,302 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0589 AUC: 0.9973 | Val Loss: 0.0799 AUC: 0.9947 | Patience: 1/3
+2025-05-18 22:24:22,419 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0547 AUC: 0.9977 | Val Loss: 0.0784 AUC: 0.9944 | Patience: 2/3
+2025-05-18 22:24:23,590 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0508 AUC: 0.9980 | Val Loss: 0.0739 AUC: 0.9948 | Patience: 3/3
+2025-05-18 22:24:23,590 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:24:24,856 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:24:25,045 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1469 AUC: 0.9857 | Val Loss: 0.0928 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:24:26,186 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:24:26,369 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0882 AUC: 0.9940 | Val Loss: 0.0785 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:24:27,510 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:24:27,699 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0724 AUC: 0.9958 | Val Loss: 0.0652 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:24:28,849 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0660 AUC: 0.9966 | Val Loss: 0.0670 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:24:30,039 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0556 AUC: 0.9974 | Val Loss: 0.0636 AUC: 0.9964 | Patience: 2/3
+2025-05-18 22:24:31,221 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0539 AUC: 0.9977 | Val Loss: 0.0605 AUC: 0.9963 | Patience: 3/3
+2025-05-18 22:24:31,221 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:24:32,473 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:24:32,659 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1491 AUC: 0.9845 | Val Loss: 0.0881 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:24:33,786 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:24:33,970 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0929 AUC: 0.9931 | Val Loss: 0.0779 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:24:35,107 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:24:35,291 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0785 AUC: 0.9949 | Val Loss: 0.0699 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:24:36,422 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:24:36,602 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0614 AUC: 0.9970 | Val Loss: 0.0673 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:24:37,731 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0591 AUC: 0.9972 | Val Loss: 0.0697 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:24:38,872 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:24:39,043 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0548 AUC: 0.9976 | Val Loss: 0.0654 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:24:40,171 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9970. Model saved.
+2025-05-18 22:24:40,348 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0478 AUC: 0.9982 | Val Loss: 0.0634 AUC: 0.9970 | Patience: 0/3
+2025-05-18 22:24:41,480 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0410 AUC: 0.9986 | Val Loss: 0.0717 AUC: 0.9964 | Patience: 1/3
+2025-05-18 22:24:42,602 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:24:42,781 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0407 AUC: 0.9987 | Val Loss: 0.0598 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:24:43,919 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0343 AUC: 0.9989 | Val Loss: 0.0652 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:24:45,181 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9868. Model saved.
+2025-05-18 22:24:45,364 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3545 AUC: 0.9460 | Val Loss: 0.1783 AUC: 0.9868 | Patience: 0/3
+2025-05-18 22:24:46,498 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9899. Model saved.
+2025-05-18 22:24:46,775 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1605 AUC: 0.9876 | Val Loss: 0.1306 AUC: 0.9899 | Patience: 0/3
+2025-05-18 22:24:47,915 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9916. Model saved.
+2025-05-18 22:24:48,102 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1258 AUC: 0.9911 | Val Loss: 0.1099 AUC: 0.9916 | Patience: 0/3
+2025-05-18 22:24:49,270 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:24:49,450 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1083 AUC: 0.9928 | Val Loss: 0.0977 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:24:50,644 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:24:50,829 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0952 AUC: 0.9945 | Val Loss: 0.0904 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:24:51,991 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:24:52,173 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0839 AUC: 0.9956 | Val Loss: 0.0838 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:24:53,343 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:24:53,529 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0737 AUC: 0.9967 | Val Loss: 0.0780 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:24:54,672 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:24:54,858 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0660 AUC: 0.9970 | Val Loss: 0.0738 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:24:55,992 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:24:56,163 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0641 AUC: 0.9972 | Val Loss: 0.0721 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:24:57,299 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:24:57,481 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0568 AUC: 0.9978 | Val Loss: 0.0684 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:24:58,728 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9884. Model saved.
+2025-05-18 22:24:58,911 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3695 AUC: 0.9453 | Val Loss: 0.1907 AUC: 0.9884 | Patience: 0/3
+2025-05-18 22:25:00,043 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9915. Model saved.
+2025-05-18 22:25:00,227 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1759 AUC: 0.9867 | Val Loss: 0.1368 AUC: 0.9915 | Patience: 0/3
+2025-05-18 22:25:01,375 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:25:01,560 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1322 AUC: 0.9910 | Val Loss: 0.1125 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:25:02,701 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:25:02,883 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1120 AUC: 0.9929 | Val Loss: 0.1008 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:25:04,015 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:25:04,199 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0993 AUC: 0.9940 | Val Loss: 0.0883 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:25:05,540 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:25:05,736 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0846 AUC: 0.9955 | Val Loss: 0.0832 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:25:07,065 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:25:07,252 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0802 AUC: 0.9958 | Val Loss: 0.0774 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:25:08,411 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:25:08,682 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0687 AUC: 0.9969 | Val Loss: 0.0760 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:25:09,844 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:25:10,014 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0648 AUC: 0.9969 | Val Loss: 0.0689 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:25:11,165 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0583 AUC: 0.9973 | Val Loss: 0.0653 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:25:12,434 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9876. Model saved.
+2025-05-18 22:25:12,624 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3546 AUC: 0.9484 | Val Loss: 0.1801 AUC: 0.9876 | Patience: 0/3
+2025-05-18 22:25:13,777 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9911. Model saved.
+2025-05-18 22:25:13,957 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1668 AUC: 0.9868 | Val Loss: 0.1297 AUC: 0.9911 | Patience: 0/3
+2025-05-18 22:25:15,106 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:25:15,297 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1281 AUC: 0.9906 | Val Loss: 0.1090 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:25:16,442 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:25:16,626 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1101 AUC: 0.9922 | Val Loss: 0.0977 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:25:17,764 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:25:17,947 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0951 AUC: 0.9941 | Val Loss: 0.0874 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:25:19,086 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:25:19,265 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0830 AUC: 0.9955 | Val Loss: 0.0806 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:25:20,406 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:25:20,585 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0748 AUC: 0.9962 | Val Loss: 0.0766 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:25:21,821 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:25:22,014 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0689 AUC: 0.9965 | Val Loss: 0.0705 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:25:23,229 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:25:23,413 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0620 AUC: 0.9970 | Val Loss: 0.0671 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:25:24,639 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:25:24,820 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0566 AUC: 0.9975 | Val Loss: 0.0642 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:25:27,383 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9909. Model saved.
+2025-05-18 22:25:27,576 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1983 AUC: 0.9791 | Val Loss: 0.1064 AUC: 0.9909 | Patience: 0/3
+2025-05-18 22:25:29,858 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:25:30,053 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1044 AUC: 0.9916 | Val Loss: 0.0869 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:25:32,479 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:25:32,683 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0833 AUC: 0.9942 | Val Loss: 0.0779 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:25:35,053 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:25:35,333 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0666 AUC: 0.9962 | Val Loss: 0.0766 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:25:37,730 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:25:37,916 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0561 AUC: 0.9970 | Val Loss: 0.0732 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:25:40,318 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0499 AUC: 0.9980 | Val Loss: 0.0722 AUC: 0.9949 | Patience: 1/3
+2025-05-18 22:25:42,706 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0456 AUC: 0.9979 | Val Loss: 0.0730 AUC: 0.9946 | Patience: 2/3
+2025-05-18 22:25:45,052 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:25:45,228 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0394 AUC: 0.9988 | Val Loss: 0.0719 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:25:47,581 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0364 AUC: 0.9988 | Val Loss: 0.0763 AUC: 0.9948 | Patience: 1/3
+2025-05-18 22:25:50,108 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0359 AUC: 0.9988 | Val Loss: 0.0779 AUC: 0.9947 | Patience: 2/3
+2025-05-18 22:25:52,884 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9924. Model saved.
+2025-05-18 22:25:53,080 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2056 AUC: 0.9784 | Val Loss: 0.1079 AUC: 0.9924 | Patience: 0/3
+2025-05-18 22:25:55,395 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:25:55,579 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1031 AUC: 0.9921 | Val Loss: 0.0867 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:25:57,769 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:25:57,947 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0841 AUC: 0.9947 | Val Loss: 0.0794 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:26:00,075 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:26:00,254 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0728 AUC: 0.9953 | Val Loss: 0.0704 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:26:02,387 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:26:02,566 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0617 AUC: 0.9963 | Val Loss: 0.0683 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:26:04,718 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:26:04,900 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0512 AUC: 0.9973 | Val Loss: 0.0645 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:26:07,039 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:26:07,214 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0380 AUC: 0.9988 | Val Loss: 0.0659 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:26:09,356 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0428 AUC: 0.9985 | Val Loss: 0.0656 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:26:11,485 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0369 AUC: 0.9988 | Val Loss: 0.0654 AUC: 0.9963 | Patience: 2/3
+2025-05-18 22:26:13,672 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:26:13,856 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0361 AUC: 0.9986 | Val Loss: 0.0633 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:26:16,124 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9924. Model saved.
+2025-05-18 22:26:16,309 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1971 AUC: 0.9786 | Val Loss: 0.1017 AUC: 0.9924 | Patience: 0/3
+2025-05-18 22:26:18,462 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:26:18,646 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1050 AUC: 0.9913 | Val Loss: 0.0844 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:26:20,781 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:26:20,964 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0832 AUC: 0.9939 | Val Loss: 0.0727 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:26:23,189 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:26:23,387 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0708 AUC: 0.9956 | Val Loss: 0.0650 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:26:25,532 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:26:25,734 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0611 AUC: 0.9965 | Val Loss: 0.0650 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:26:28,143 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:26:28,334 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0564 AUC: 0.9969 | Val Loss: 0.0643 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:26:30,636 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0476 AUC: 0.9978 | Val Loss: 0.0651 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:26:32,791 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0463 AUC: 0.9981 | Val Loss: 0.0628 AUC: 0.9963 | Patience: 2/3
+2025-05-18 22:26:34,959 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:26:35,274 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0430 AUC: 0.9983 | Val Loss: 0.0605 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:26:37,474 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0356 AUC: 0.9989 | Val Loss: 0.0617 AUC: 0.9962 | Patience: 1/3
+2025-05-18 22:26:40,794 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:26:41,009 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1508 AUC: 0.9842 | Val Loss: 0.0916 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:26:43,824 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0965 AUC: 0.9925 | Val Loss: 0.0840 AUC: 0.9938 | Patience: 1/3
+2025-05-18 22:26:46,634 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:26:46,828 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0738 AUC: 0.9955 | Val Loss: 0.0820 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:26:49,519 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:26:49,704 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0670 AUC: 0.9962 | Val Loss: 0.0734 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:26:52,383 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0574 AUC: 0.9974 | Val Loss: 0.0737 AUC: 0.9940 | Patience: 1/3
+2025-05-18 22:26:55,053 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0544 AUC: 0.9976 | Val Loss: 0.0826 AUC: 0.9948 | Patience: 2/3
+2025-05-18 22:26:57,842 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0505 AUC: 0.9981 | Val Loss: 0.0822 AUC: 0.9942 | Patience: 3/3
+2025-05-18 22:26:57,842 - __main__ - INFO - Early stopping triggered at epoch 7
+2025-05-18 22:27:00,808 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:27:01,010 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1451 AUC: 0.9852 | Val Loss: 0.0868 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:27:03,767 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:27:03,967 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0965 AUC: 0.9925 | Val Loss: 0.0740 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:27:06,744 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0780 AUC: 0.9950 | Val Loss: 0.0705 AUC: 0.9948 | Patience: 1/3
+2025-05-18 22:27:09,476 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:27:09,660 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0709 AUC: 0.9962 | Val Loss: 0.0710 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:27:12,431 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:27:12,628 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0604 AUC: 0.9971 | Val Loss: 0.0629 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:27:15,386 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0509 AUC: 0.9980 | Val Loss: 0.0656 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:27:18,098 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0475 AUC: 0.9982 | Val Loss: 0.0660 AUC: 0.9952 | Patience: 2/3
+2025-05-18 22:27:20,765 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0435 AUC: 0.9982 | Val Loss: 0.0670 AUC: 0.9956 | Patience: 3/3
+2025-05-18 22:27:20,765 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:27:23,606 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:27:23,807 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1537 AUC: 0.9832 | Val Loss: 0.0911 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:27:26,486 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:27:26,685 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0929 AUC: 0.9930 | Val Loss: 0.0688 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:27:29,381 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0831 AUC: 0.9942 | Val Loss: 0.0703 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:27:32,146 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0711 AUC: 0.9958 | Val Loss: 0.0653 AUC: 0.9965 | Patience: 2/3
+2025-05-18 22:27:34,804 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:27:34,984 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0595 AUC: 0.9968 | Val Loss: 0.0627 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:27:37,662 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0531 AUC: 0.9975 | Val Loss: 0.0628 AUC: 0.9971 | Patience: 1/3
+2025-05-18 22:27:40,474 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0492 AUC: 0.9981 | Val Loss: 0.0671 AUC: 0.9973 | Patience: 2/3
+2025-05-18 22:27:43,128 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0446 AUC: 0.9983 | Val Loss: 0.0672 AUC: 0.9969 | Patience: 3/3
+2025-05-18 22:27:43,128 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:27:44,416 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:27:44,605 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1297 AUC: 0.9887 | Val Loss: 0.0829 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:27:45,739 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:27:45,936 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0785 AUC: 0.9952 | Val Loss: 0.0717 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:27:47,069 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:27:47,252 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0619 AUC: 0.9968 | Val Loss: 0.0694 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:27:48,427 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0472 AUC: 0.9981 | Val Loss: 0.0799 AUC: 0.9942 | Patience: 1/3
+2025-05-18 22:27:49,558 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0402 AUC: 0.9988 | Val Loss: 0.0754 AUC: 0.9947 | Patience: 2/3
+2025-05-18 22:27:50,684 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0335 AUC: 0.9993 | Val Loss: 0.0806 AUC: 0.9944 | Patience: 3/3
+2025-05-18 22:27:50,684 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:27:51,972 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:27:52,164 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1320 AUC: 0.9883 | Val Loss: 0.0836 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:27:53,333 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:27:53,516 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0743 AUC: 0.9957 | Val Loss: 0.0703 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:27:54,647 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:27:54,823 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0598 AUC: 0.9970 | Val Loss: 0.0669 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:27:55,964 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:27:56,290 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0508 AUC: 0.9980 | Val Loss: 0.0657 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:27:57,449 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:27:57,623 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0434 AUC: 0.9985 | Val Loss: 0.0692 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:27:58,739 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0365 AUC: 0.9990 | Val Loss: 0.0681 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:27:59,866 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0339 AUC: 0.9992 | Val Loss: 0.0623 AUC: 0.9958 | Patience: 2/3
+2025-05-18 22:28:01,014 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:28:01,196 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0251 AUC: 0.9996 | Val Loss: 0.0618 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:28:02,341 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0162 AUC: 0.9998 | Val Loss: 0.0613 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:28:03,482 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:28:03,648 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0150 AUC: 0.9999 | Val Loss: 0.0656 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:28:04,969 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:28:05,159 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1335 AUC: 0.9873 | Val Loss: 0.0854 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:28:06,298 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:28:06,482 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0806 AUC: 0.9945 | Val Loss: 0.0704 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:28:07,619 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0615 AUC: 0.9970 | Val Loss: 0.0737 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:28:08,753 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:28:08,940 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0556 AUC: 0.9973 | Val Loss: 0.0661 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:28:10,074 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0460 AUC: 0.9985 | Val Loss: 0.0701 AUC: 0.9962 | Patience: 1/3
+2025-05-18 22:28:11,205 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:28:11,391 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0335 AUC: 0.9990 | Val Loss: 0.0629 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:28:12,518 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0245 AUC: 0.9996 | Val Loss: 0.0618 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:28:13,775 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9970. Model saved.
+2025-05-18 22:28:13,953 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0217 AUC: 0.9997 | Val Loss: 0.0614 AUC: 0.9970 | Patience: 0/3
+2025-05-18 22:28:15,115 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0190 AUC: 0.9998 | Val Loss: 0.0606 AUC: 0.9966 | Patience: 1/3
+2025-05-18 22:28:16,262 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0169 AUC: 0.9998 | Val Loss: 0.0584 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:28:18,022 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9934. Model saved.
+2025-05-18 22:28:18,221 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1886 AUC: 0.9804 | Val Loss: 0.0930 AUC: 0.9934 | Patience: 0/3
+2025-05-18 22:28:19,675 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9936. Model saved.
+2025-05-18 22:28:19,865 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0960 AUC: 0.9931 | Val Loss: 0.0836 AUC: 0.9936 | Patience: 0/3
+2025-05-18 22:28:21,316 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:28:21,501 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0819 AUC: 0.9943 | Val Loss: 0.0731 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:28:23,050 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0707 AUC: 0.9953 | Val Loss: 0.0776 AUC: 0.9940 | Patience: 1/3
+2025-05-18 22:28:24,498 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:28:24,674 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0600 AUC: 0.9971 | Val Loss: 0.0828 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:28:26,126 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0574 AUC: 0.9971 | Val Loss: 0.0809 AUC: 0.9940 | Patience: 1/3
+2025-05-18 22:28:27,566 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:28:27,756 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0472 AUC: 0.9978 | Val Loss: 0.0712 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:28:29,248 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:28:29,437 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0412 AUC: 0.9981 | Val Loss: 0.0688 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:28:30,962 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0359 AUC: 0.9988 | Val Loss: 0.0665 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:28:32,433 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0304 AUC: 0.9993 | Val Loss: 0.0725 AUC: 0.9953 | Patience: 2/3
+2025-05-18 22:28:34,153 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:28:34,355 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1882 AUC: 0.9800 | Val Loss: 0.0945 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:28:35,805 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:28:35,998 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0997 AUC: 0.9921 | Val Loss: 0.0777 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:28:37,463 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:28:37,822 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0794 AUC: 0.9946 | Val Loss: 0.0703 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:28:39,284 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:28:39,480 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0712 AUC: 0.9959 | Val Loss: 0.0664 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:28:40,946 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0620 AUC: 0.9966 | Val Loss: 0.0665 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:28:42,478 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:28:42,649 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0567 AUC: 0.9973 | Val Loss: 0.0662 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:28:44,144 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0541 AUC: 0.9976 | Val Loss: 0.0647 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:28:45,635 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0526 AUC: 0.9978 | Val Loss: 0.0603 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:28:47,082 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0502 AUC: 0.9976 | Val Loss: 0.0633 AUC: 0.9957 | Patience: 3/3
+2025-05-18 22:28:47,082 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:28:48,808 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:28:49,029 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1864 AUC: 0.9806 | Val Loss: 0.0909 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:28:50,467 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:28:50,657 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0945 AUC: 0.9926 | Val Loss: 0.0816 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:28:52,119 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:28:52,313 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0867 AUC: 0.9934 | Val Loss: 0.0730 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:28:53,761 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:28:53,961 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0687 AUC: 0.9957 | Val Loss: 0.0707 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:28:55,422 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:28:55,617 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0688 AUC: 0.9960 | Val Loss: 0.0715 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:28:57,151 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0599 AUC: 0.9966 | Val Loss: 0.0674 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:28:58,612 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0545 AUC: 0.9974 | Val Loss: 0.0721 AUC: 0.9962 | Patience: 2/3
+2025-05-18 22:29:00,050 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:29:00,240 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0540 AUC: 0.9973 | Val Loss: 0.0619 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:29:01,679 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0521 AUC: 0.9974 | Val Loss: 0.0663 AUC: 0.9967 | Patience: 1/3
+2025-05-18 22:29:03,124 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:29:03,311 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0435 AUC: 0.9981 | Val Loss: 0.0625 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:29:05,605 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9889. Model saved.
+2025-05-18 22:29:05,800 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2592 AUC: 0.9706 | Val Loss: 0.1346 AUC: 0.9889 | Patience: 0/3
+2025-05-18 22:29:07,961 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:29:08,150 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1296 AUC: 0.9885 | Val Loss: 0.0995 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:29:10,354 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9939. Model saved.
+2025-05-18 22:29:10,536 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1034 AUC: 0.9923 | Val Loss: 0.0866 AUC: 0.9939 | Patience: 0/3
+2025-05-18 22:29:12,709 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:29:12,894 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0866 AUC: 0.9941 | Val Loss: 0.0789 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:29:15,223 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:29:15,412 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0709 AUC: 0.9961 | Val Loss: 0.0709 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:29:17,579 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:29:17,760 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0660 AUC: 0.9964 | Val Loss: 0.0682 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:29:19,949 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0531 AUC: 0.9976 | Val Loss: 0.0674 AUC: 0.9953 | Patience: 1/3
+2025-05-18 22:29:22,143 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:29:22,331 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0497 AUC: 0.9978 | Val Loss: 0.0651 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:29:24,468 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:29:24,786 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0412 AUC: 0.9984 | Val Loss: 0.0649 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:29:26,962 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:29:27,131 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0419 AUC: 0.9979 | Val Loss: 0.0659 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:29:29,609 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9906. Model saved.
+2025-05-18 22:29:29,802 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2637 AUC: 0.9707 | Val Loss: 0.1349 AUC: 0.9906 | Patience: 0/3
+2025-05-18 22:29:32,104 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:29:32,298 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1317 AUC: 0.9885 | Val Loss: 0.1000 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:29:34,429 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:29:34,616 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1055 AUC: 0.9913 | Val Loss: 0.0860 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:29:36,844 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:29:37,028 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0867 AUC: 0.9942 | Val Loss: 0.0786 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:29:39,184 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:29:39,373 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0743 AUC: 0.9954 | Val Loss: 0.0728 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:29:41,576 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0643 AUC: 0.9967 | Val Loss: 0.0667 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:29:43,797 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0593 AUC: 0.9973 | Val Loss: 0.0645 AUC: 0.9960 | Patience: 2/3
+2025-05-18 22:29:45,978 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:29:46,158 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0513 AUC: 0.9974 | Val Loss: 0.0590 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:29:48,317 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0475 AUC: 0.9975 | Val Loss: 0.0577 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:29:50,468 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0424 AUC: 0.9983 | Val Loss: 0.0565 AUC: 0.9962 | Patience: 2/3
+2025-05-18 22:29:52,884 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9900. Model saved.
+2025-05-18 22:29:53,091 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2573 AUC: 0.9703 | Val Loss: 0.1311 AUC: 0.9900 | Patience: 0/3
+2025-05-18 22:29:55,348 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9937. Model saved.
+2025-05-18 22:29:55,536 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1295 AUC: 0.9887 | Val Loss: 0.0989 AUC: 0.9937 | Patience: 0/3
+2025-05-18 22:29:57,719 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:29:57,899 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1050 AUC: 0.9913 | Val Loss: 0.0844 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:30:00,047 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:30:00,232 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0864 AUC: 0.9939 | Val Loss: 0.0804 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:30:02,408 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:30:02,600 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0740 AUC: 0.9956 | Val Loss: 0.0695 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:30:04,779 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:30:04,966 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0677 AUC: 0.9960 | Val Loss: 0.0653 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:30:07,147 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:30:07,327 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0542 AUC: 0.9974 | Val Loss: 0.0626 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:30:09,485 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0500 AUC: 0.9975 | Val Loss: 0.0618 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:30:11,700 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9970. Model saved.
+2025-05-18 22:30:11,950 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0438 AUC: 0.9983 | Val Loss: 0.0584 AUC: 0.9970 | Patience: 0/3
+2025-05-18 22:30:14,462 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:30:14,850 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0409 AUC: 0.9985 | Val Loss: 0.0568 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:30:17,359 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9923. Model saved.
+2025-05-18 22:30:17,553 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1361 AUC: 0.9871 | Val Loss: 0.0945 AUC: 0.9923 | Patience: 0/3
+2025-05-18 22:30:19,654 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9940. Model saved.
+2025-05-18 22:30:19,839 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0804 AUC: 0.9945 | Val Loss: 0.0783 AUC: 0.9940 | Patience: 0/3
+2025-05-18 22:30:21,994 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:30:22,181 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0674 AUC: 0.9963 | Val Loss: 0.0697 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:30:24,326 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0566 AUC: 0.9976 | Val Loss: 0.0776 AUC: 0.9945 | Patience: 1/3
+2025-05-18 22:30:26,552 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0494 AUC: 0.9980 | Val Loss: 0.0781 AUC: 0.9937 | Patience: 2/3
+2025-05-18 22:30:28,697 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0494 AUC: 0.9980 | Val Loss: 0.0740 AUC: 0.9940 | Patience: 3/3
+2025-05-18 22:30:28,697 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:30:31,044 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:30:31,242 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1420 AUC: 0.9859 | Val Loss: 0.0831 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:30:33,387 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:30:33,570 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0851 AUC: 0.9943 | Val Loss: 0.0729 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:30:35,760 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:30:35,958 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0683 AUC: 0.9956 | Val Loss: 0.0622 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:30:38,089 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0604 AUC: 0.9973 | Val Loss: 0.0767 AUC: 0.9950 | Patience: 1/3
+2025-05-18 22:30:40,258 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0517 AUC: 0.9978 | Val Loss: 0.0689 AUC: 0.9954 | Patience: 2/3
+2025-05-18 22:30:42,402 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0460 AUC: 0.9981 | Val Loss: 0.0684 AUC: 0.9956 | Patience: 3/3
+2025-05-18 22:30:42,402 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:30:44,674 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:30:44,863 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1404 AUC: 0.9862 | Val Loss: 0.0875 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:30:47,003 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:30:47,183 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0889 AUC: 0.9934 | Val Loss: 0.0814 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:30:49,343 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:30:49,529 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0727 AUC: 0.9959 | Val Loss: 0.0675 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:30:51,666 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:30:51,845 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0575 AUC: 0.9975 | Val Loss: 0.0697 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:30:53,983 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:30:54,163 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0550 AUC: 0.9975 | Val Loss: 0.0645 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:30:56,357 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:30:56,526 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0480 AUC: 0.9981 | Val Loss: 0.0637 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:30:58,653 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0491 AUC: 0.9982 | Val Loss: 0.0608 AUC: 0.9970 | Patience: 1/3
+2025-05-18 22:31:00,829 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0436 AUC: 0.9985 | Val Loss: 0.0590 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:31:03,002 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0429 AUC: 0.9984 | Val Loss: 0.0614 AUC: 0.9968 | Patience: 3/3
+2025-05-18 22:31:03,002 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:31:05,302 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:31:05,495 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1665 AUC: 0.9829 | Val Loss: 0.0969 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:31:07,631 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:31:07,814 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0997 AUC: 0.9924 | Val Loss: 0.0854 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:31:09,971 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:31:10,155 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0776 AUC: 0.9951 | Val Loss: 0.0803 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:31:12,299 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0748 AUC: 0.9957 | Val Loss: 0.0823 AUC: 0.9941 | Patience: 1/3
+2025-05-18 22:31:14,586 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:31:14,779 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0657 AUC: 0.9962 | Val Loss: 0.0756 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:31:16,910 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:31:17,101 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0577 AUC: 0.9970 | Val Loss: 0.0769 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:31:19,296 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:31:19,630 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0531 AUC: 0.9978 | Val Loss: 0.0711 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:31:21,846 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0478 AUC: 0.9983 | Val Loss: 0.0795 AUC: 0.9948 | Patience: 1/3
+2025-05-18 22:31:23,998 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0488 AUC: 0.9983 | Val Loss: 0.0765 AUC: 0.9955 | Patience: 2/3
+2025-05-18 22:31:26,139 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0468 AUC: 0.9981 | Val Loss: 0.0761 AUC: 0.9955 | Patience: 3/3
+2025-05-18 22:31:26,139 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:31:28,504 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:31:28,699 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1615 AUC: 0.9839 | Val Loss: 0.0909 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:31:30,858 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:31:31,052 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0999 AUC: 0.9918 | Val Loss: 0.0777 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:31:33,274 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:31:33,459 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0813 AUC: 0.9946 | Val Loss: 0.0748 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:31:35,601 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:31:35,788 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0747 AUC: 0.9952 | Val Loss: 0.0697 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:31:38,033 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0684 AUC: 0.9960 | Val Loss: 0.0695 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:31:40,237 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:31:40,424 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0625 AUC: 0.9966 | Val Loss: 0.0654 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:31:42,564 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0612 AUC: 0.9970 | Val Loss: 0.0676 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:31:44,744 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0495 AUC: 0.9981 | Val Loss: 0.0610 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:31:46,900 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0462 AUC: 0.9984 | Val Loss: 0.0646 AUC: 0.9961 | Patience: 3/3
+2025-05-18 22:31:46,900 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:31:49,176 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:31:49,366 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1635 AUC: 0.9827 | Val Loss: 0.0893 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:31:51,590 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:31:51,788 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0971 AUC: 0.9924 | Val Loss: 0.0767 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:31:53,932 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:31:54,116 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0825 AUC: 0.9942 | Val Loss: 0.0689 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:31:56,280 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:31:56,464 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0743 AUC: 0.9952 | Val Loss: 0.0676 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:31:58,618 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:31:58,799 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0684 AUC: 0.9960 | Val Loss: 0.0674 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:32:00,951 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0615 AUC: 0.9967 | Val Loss: 0.0693 AUC: 0.9962 | Patience: 1/3
+2025-05-18 22:32:03,135 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:32:03,314 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0554 AUC: 0.9973 | Val Loss: 0.0716 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:32:05,455 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0470 AUC: 0.9982 | Val Loss: 0.0673 AUC: 0.9964 | Patience: 1/3
+2025-05-18 22:32:07,603 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:32:07,784 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0525 AUC: 0.9978 | Val Loss: 0.0669 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:32:09,932 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0433 AUC: 0.9982 | Val Loss: 0.0656 AUC: 0.9966 | Patience: 1/3
+2025-05-18 22:32:11,762 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9850. Model saved.
+2025-05-18 22:32:11,961 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3540 AUC: 0.9468 | Val Loss: 0.1916 AUC: 0.9850 | Patience: 0/3
+2025-05-18 22:32:13,211 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9887. Model saved.
+2025-05-18 22:32:13,431 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1690 AUC: 0.9859 | Val Loss: 0.1381 AUC: 0.9887 | Patience: 0/3
+2025-05-18 22:32:14,661 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9909. Model saved.
+2025-05-18 22:32:14,852 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1342 AUC: 0.9891 | Val Loss: 0.1178 AUC: 0.9909 | Patience: 0/3
+2025-05-18 22:32:16,046 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9920. Model saved.
+2025-05-18 22:32:16,246 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1133 AUC: 0.9923 | Val Loss: 0.1066 AUC: 0.9920 | Patience: 0/3
+2025-05-18 22:32:17,477 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:32:17,826 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1019 AUC: 0.9936 | Val Loss: 0.0975 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:32:19,070 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9936. Model saved.
+2025-05-18 22:32:19,258 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0922 AUC: 0.9946 | Val Loss: 0.0930 AUC: 0.9936 | Patience: 0/3
+2025-05-18 22:32:20,494 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:32:20,700 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0840 AUC: 0.9955 | Val Loss: 0.0858 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:32:21,968 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:32:22,162 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0773 AUC: 0.9963 | Val Loss: 0.0815 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:32:23,403 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:32:23,597 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0721 AUC: 0.9966 | Val Loss: 0.0783 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:32:24,835 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:32:25,024 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0673 AUC: 0.9971 | Val Loss: 0.0749 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:32:26,392 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9877. Model saved.
+2025-05-18 22:32:26,590 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3723 AUC: 0.9371 | Val Loss: 0.1889 AUC: 0.9877 | Patience: 0/3
+2025-05-18 22:32:27,793 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9911. Model saved.
+2025-05-18 22:32:27,987 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1710 AUC: 0.9856 | Val Loss: 0.1346 AUC: 0.9911 | Patience: 0/3
+2025-05-18 22:32:29,178 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:32:29,373 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1345 AUC: 0.9893 | Val Loss: 0.1153 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:32:30,571 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9934. Model saved.
+2025-05-18 22:32:30,761 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1142 AUC: 0.9921 | Val Loss: 0.1032 AUC: 0.9934 | Patience: 0/3
+2025-05-18 22:32:31,960 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:32:32,152 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1022 AUC: 0.9932 | Val Loss: 0.0933 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:32:33,409 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:32:33,610 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0928 AUC: 0.9946 | Val Loss: 0.0896 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:32:34,802 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:32:34,997 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0853 AUC: 0.9953 | Val Loss: 0.0838 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:32:36,189 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:32:36,382 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0773 AUC: 0.9961 | Val Loss: 0.0801 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:32:37,578 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:32:37,778 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0721 AUC: 0.9966 | Val Loss: 0.0755 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:32:39,031 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:32:39,240 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0689 AUC: 0.9967 | Val Loss: 0.0730 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:32:40,847 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9870. Model saved.
+2025-05-18 22:32:41,255 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3518 AUC: 0.9503 | Val Loss: 0.1892 AUC: 0.9870 | Patience: 0/3
+2025-05-18 22:32:42,484 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9906. Model saved.
+2025-05-18 22:32:42,679 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1693 AUC: 0.9863 | Val Loss: 0.1348 AUC: 0.9906 | Patience: 0/3
+2025-05-18 22:32:44,005 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:32:44,209 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1344 AUC: 0.9892 | Val Loss: 0.1136 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:32:45,707 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9937. Model saved.
+2025-05-18 22:32:45,915 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1150 AUC: 0.9917 | Val Loss: 0.1025 AUC: 0.9937 | Patience: 0/3
+2025-05-18 22:32:47,182 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9946. Model saved.
+2025-05-18 22:32:47,386 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1016 AUC: 0.9933 | Val Loss: 0.0947 AUC: 0.9946 | Patience: 0/3
+2025-05-18 22:32:48,609 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:32:48,808 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0928 AUC: 0.9940 | Val Loss: 0.0886 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:32:50,033 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:32:50,231 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0838 AUC: 0.9956 | Val Loss: 0.0829 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:32:51,479 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:32:51,676 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0814 AUC: 0.9953 | Val Loss: 0.0791 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:32:52,884 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:32:53,087 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0725 AUC: 0.9965 | Val Loss: 0.0751 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:32:54,410 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:32:54,615 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0701 AUC: 0.9967 | Val Loss: 0.0726 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:32:57,342 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:32:57,553 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1689 AUC: 0.9832 | Val Loss: 0.0960 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:32:59,759 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:32:59,958 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0894 AUC: 0.9944 | Val Loss: 0.0766 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:33:02,258 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:33:02,463 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0698 AUC: 0.9957 | Val Loss: 0.0677 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:33:04,925 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0508 AUC: 0.9980 | Val Loss: 0.0715 AUC: 0.9947 | Patience: 1/3
+2025-05-18 22:33:07,422 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0402 AUC: 0.9987 | Val Loss: 0.0710 AUC: 0.9952 | Patience: 2/3
+2025-05-18 22:33:09,997 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:33:10,195 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0367 AUC: 0.9988 | Val Loss: 0.0678 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:33:12,825 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0285 AUC: 0.9993 | Val Loss: 0.0742 AUC: 0.9950 | Patience: 1/3
+2025-05-18 22:33:15,316 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0235 AUC: 0.9993 | Val Loss: 0.0760 AUC: 0.9947 | Patience: 2/3
+2025-05-18 22:33:17,845 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0203 AUC: 0.9995 | Val Loss: 0.0773 AUC: 0.9942 | Patience: 3/3
+2025-05-18 22:33:17,845 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:33:20,266 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:33:20,468 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1780 AUC: 0.9812 | Val Loss: 0.0972 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:33:22,696 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:33:22,890 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0900 AUC: 0.9939 | Val Loss: 0.0766 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:33:25,123 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:33:25,326 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0726 AUC: 0.9955 | Val Loss: 0.0664 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:33:27,547 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0585 AUC: 0.9969 | Val Loss: 0.0646 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:33:29,774 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:33:30,135 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0463 AUC: 0.9978 | Val Loss: 0.0599 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:33:32,379 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0389 AUC: 0.9985 | Val Loss: 0.0585 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:33:34,603 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:33:34,793 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0316 AUC: 0.9990 | Val Loss: 0.0558 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:33:37,077 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0272 AUC: 0.9993 | Val Loss: 0.0623 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:33:39,896 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:33:40,076 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0192 AUC: 0.9996 | Val Loss: 0.0611 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:33:42,347 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:33:42,536 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0170 AUC: 0.9997 | Val Loss: 0.0574 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:33:45,000 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:33:45,208 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1678 AUC: 0.9834 | Val Loss: 0.0881 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:33:47,443 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:33:47,651 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0872 AUC: 0.9940 | Val Loss: 0.0755 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:33:49,976 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:33:50,195 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0658 AUC: 0.9961 | Val Loss: 0.0645 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:33:52,396 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:33:52,585 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0536 AUC: 0.9974 | Val Loss: 0.0617 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:33:54,812 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0464 AUC: 0.9981 | Val Loss: 0.0628 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:33:57,065 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0340 AUC: 0.9989 | Val Loss: 0.0608 AUC: 0.9969 | Patience: 2/3
+2025-05-18 22:33:59,282 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0304 AUC: 0.9992 | Val Loss: 0.0662 AUC: 0.9965 | Patience: 3/3
+2025-05-18 22:33:59,282 - __main__ - INFO - Early stopping triggered at epoch 7
+2025-05-18 22:34:00,608 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9871. Model saved.
+2025-05-18 22:34:00,801 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2965 AUC: 0.9626 | Val Loss: 0.1607 AUC: 0.9871 | Patience: 0/3
+2025-05-18 22:34:01,952 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9905. Model saved.
+2025-05-18 22:34:02,141 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1432 AUC: 0.9891 | Val Loss: 0.1190 AUC: 0.9905 | Patience: 0/3
+2025-05-18 22:34:03,294 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:34:03,490 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1124 AUC: 0.9926 | Val Loss: 0.1005 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:34:04,643 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:34:04,830 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0924 AUC: 0.9950 | Val Loss: 0.0905 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:34:06,045 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:34:06,231 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0786 AUC: 0.9964 | Val Loss: 0.0819 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:34:07,382 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:34:07,569 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0685 AUC: 0.9973 | Val Loss: 0.0748 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:34:08,715 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:34:08,894 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0608 AUC: 0.9979 | Val Loss: 0.0707 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:34:10,037 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:34:10,227 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0515 AUC: 0.9984 | Val Loss: 0.0670 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:34:11,378 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0464 AUC: 0.9988 | Val Loss: 0.0653 AUC: 0.9956 | Patience: 1/3
+2025-05-18 22:34:12,519 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0417 AUC: 0.9987 | Val Loss: 0.0625 AUC: 0.9957 | Patience: 2/3
+2025-05-18 22:34:14,007 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9896. Model saved.
+2025-05-18 22:34:14,205 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3113 AUC: 0.9592 | Val Loss: 0.1605 AUC: 0.9896 | Patience: 0/3
+2025-05-18 22:34:15,361 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9927. Model saved.
+2025-05-18 22:34:15,701 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1469 AUC: 0.9887 | Val Loss: 0.1165 AUC: 0.9927 | Patience: 0/3
+2025-05-18 22:34:16,912 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:34:17,116 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1143 AUC: 0.9922 | Val Loss: 0.0982 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:34:18,260 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:34:18,446 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0970 AUC: 0.9943 | Val Loss: 0.0878 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:34:19,592 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:34:19,785 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0845 AUC: 0.9953 | Val Loss: 0.0793 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:34:20,952 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:34:21,150 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0725 AUC: 0.9964 | Val Loss: 0.0741 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:34:22,321 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:34:22,511 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0645 AUC: 0.9972 | Val Loss: 0.0690 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:34:23,666 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:34:23,861 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0573 AUC: 0.9978 | Val Loss: 0.0640 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:34:25,035 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:34:25,215 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0501 AUC: 0.9982 | Val Loss: 0.0608 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:34:26,355 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:34:26,541 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0466 AUC: 0.9985 | Val Loss: 0.0579 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:34:27,879 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9891. Model saved.
+2025-05-18 22:34:28,079 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3080 AUC: 0.9648 | Val Loss: 0.1629 AUC: 0.9891 | Patience: 0/3
+2025-05-18 22:34:29,217 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9927. Model saved.
+2025-05-18 22:34:29,407 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1496 AUC: 0.9884 | Val Loss: 0.1211 AUC: 0.9927 | Patience: 0/3
+2025-05-18 22:34:30,566 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:34:30,759 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1173 AUC: 0.9916 | Val Loss: 0.1018 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:34:31,973 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:34:32,163 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0997 AUC: 0.9940 | Val Loss: 0.0902 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:34:33,399 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:34:33,602 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0868 AUC: 0.9952 | Val Loss: 0.0816 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:34:34,768 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:34:34,969 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0743 AUC: 0.9962 | Val Loss: 0.0750 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:34:36,248 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:34:36,436 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0665 AUC: 0.9971 | Val Loss: 0.0711 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:34:37,587 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:34:37,781 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0582 AUC: 0.9976 | Val Loss: 0.0651 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:34:38,927 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:34:39,247 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0525 AUC: 0.9982 | Val Loss: 0.0636 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:34:40,409 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0477 AUC: 0.9985 | Val Loss: 0.0621 AUC: 0.9966 | Patience: 1/3
+2025-05-18 22:34:42,841 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9939. Model saved.
+2025-05-18 22:34:43,054 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1482 AUC: 0.9858 | Val Loss: 0.0869 AUC: 0.9939 | Patience: 0/3
+2025-05-18 22:34:45,311 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:34:45,504 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0858 AUC: 0.9938 | Val Loss: 0.0724 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:34:47,732 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:34:47,928 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0586 AUC: 0.9970 | Val Loss: 0.0722 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:34:50,176 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0502 AUC: 0.9977 | Val Loss: 0.0742 AUC: 0.9942 | Patience: 1/3
+2025-05-18 22:34:52,385 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0425 AUC: 0.9985 | Val Loss: 0.0742 AUC: 0.9945 | Patience: 2/3
+2025-05-18 22:34:54,618 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0383 AUC: 0.9986 | Val Loss: 0.0739 AUC: 0.9937 | Patience: 3/3
+2025-05-18 22:34:54,618 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:34:56,994 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:34:57,193 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1466 AUC: 0.9859 | Val Loss: 0.0843 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:34:59,407 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:34:59,619 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0848 AUC: 0.9941 | Val Loss: 0.0688 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:35:01,892 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:35:02,095 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0636 AUC: 0.9962 | Val Loss: 0.0651 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:35:04,374 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0540 AUC: 0.9973 | Val Loss: 0.0644 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:35:06,628 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:35:06,824 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0395 AUC: 0.9987 | Val Loss: 0.0619 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:35:09,066 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0374 AUC: 0.9985 | Val Loss: 0.0670 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:35:11,321 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0333 AUC: 0.9990 | Val Loss: 0.0670 AUC: 0.9956 | Patience: 2/3
+2025-05-18 22:35:13,602 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0318 AUC: 0.9990 | Val Loss: 0.0827 AUC: 0.9955 | Patience: 3/3
+2025-05-18 22:35:13,602 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:35:16,087 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9946. Model saved.
+2025-05-18 22:35:16,288 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1496 AUC: 0.9853 | Val Loss: 0.0872 AUC: 0.9946 | Patience: 0/3
+2025-05-18 22:35:18,541 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:35:18,735 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0902 AUC: 0.9930 | Val Loss: 0.0678 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:35:21,030 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:35:21,228 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0648 AUC: 0.9962 | Val Loss: 0.0620 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:35:23,452 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0567 AUC: 0.9974 | Val Loss: 0.0650 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:35:25,733 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0454 AUC: 0.9979 | Val Loss: 0.0696 AUC: 0.9967 | Patience: 2/3
+2025-05-18 22:35:27,944 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0376 AUC: 0.9987 | Val Loss: 0.0648 AUC: 0.9968 | Patience: 3/3
+2025-05-18 22:35:27,944 - __main__ - INFO - Early stopping triggered at epoch 6
+2025-05-18 22:35:29,248 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9826. Model saved.
+2025-05-18 22:35:29,443 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.4532 AUC: 0.8952 | Val Loss: 0.2586 AUC: 0.9826 | Patience: 0/3
+2025-05-18 22:35:30,574 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9870. Model saved.
+2025-05-18 22:35:30,762 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2334 AUC: 0.9810 | Val Loss: 0.1797 AUC: 0.9870 | Patience: 0/3
+2025-05-18 22:35:31,908 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9889. Model saved.
+2025-05-18 22:35:32,115 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1732 AUC: 0.9865 | Val Loss: 0.1471 AUC: 0.9889 | Patience: 0/3
+2025-05-18 22:35:33,256 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9903. Model saved.
+2025-05-18 22:35:33,439 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1509 AUC: 0.9880 | Val Loss: 0.1285 AUC: 0.9903 | Patience: 0/3
+2025-05-18 22:35:34,600 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9914. Model saved.
+2025-05-18 22:35:34,798 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1355 AUC: 0.9897 | Val Loss: 0.1172 AUC: 0.9914 | Patience: 0/3
+2025-05-18 22:35:35,957 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9922. Model saved.
+2025-05-18 22:35:36,279 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1197 AUC: 0.9921 | Val Loss: 0.1098 AUC: 0.9922 | Patience: 0/3
+2025-05-18 22:35:37,440 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:35:37,627 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1128 AUC: 0.9927 | Val Loss: 0.1030 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:35:38,771 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9933. Model saved.
+2025-05-18 22:35:38,960 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.1000 AUC: 0.9942 | Val Loss: 0.0977 AUC: 0.9933 | Patience: 0/3
+2025-05-18 22:35:40,120 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:35:40,308 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0940 AUC: 0.9949 | Val Loss: 0.0918 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:35:41,471 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:35:41,662 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0872 AUC: 0.9956 | Val Loss: 0.0887 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:35:42,971 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9844. Model saved.
+2025-05-18 22:35:43,168 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.4456 AUC: 0.8985 | Val Loss: 0.2457 AUC: 0.9844 | Patience: 0/3
+2025-05-18 22:35:44,324 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9885. Model saved.
+2025-05-18 22:35:44,522 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2244 AUC: 0.9800 | Val Loss: 0.1666 AUC: 0.9885 | Patience: 0/3
+2025-05-18 22:35:45,730 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9905. Model saved.
+2025-05-18 22:35:45,922 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1686 AUC: 0.9861 | Val Loss: 0.1369 AUC: 0.9905 | Patience: 0/3
+2025-05-18 22:35:47,068 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9920. Model saved.
+2025-05-18 22:35:47,261 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1433 AUC: 0.9879 | Val Loss: 0.1221 AUC: 0.9920 | Patience: 0/3
+2025-05-18 22:35:48,402 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:35:48,597 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1276 AUC: 0.9904 | Val Loss: 0.1118 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:35:49,742 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9936. Model saved.
+2025-05-18 22:35:49,935 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1161 AUC: 0.9916 | Val Loss: 0.1019 AUC: 0.9936 | Patience: 0/3
+2025-05-18 22:35:51,096 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:35:51,287 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1039 AUC: 0.9934 | Val Loss: 0.0962 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:35:52,441 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:35:52,642 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0996 AUC: 0.9940 | Val Loss: 0.0908 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:35:53,786 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:35:53,975 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0916 AUC: 0.9947 | Val Loss: 0.0871 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:35:55,123 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:35:55,318 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0854 AUC: 0.9950 | Val Loss: 0.0838 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:35:56,666 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9860. Model saved.
+2025-05-18 22:35:56,873 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.4345 AUC: 0.9175 | Val Loss: 0.2543 AUC: 0.9860 | Patience: 0/3
+2025-05-18 22:35:58,075 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9886. Model saved.
+2025-05-18 22:35:58,270 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2299 AUC: 0.9808 | Val Loss: 0.1725 AUC: 0.9886 | Patience: 0/3
+2025-05-18 22:35:59,410 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9905. Model saved.
+2025-05-18 22:35:59,718 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1741 AUC: 0.9857 | Val Loss: 0.1420 AUC: 0.9905 | Patience: 0/3
+2025-05-18 22:36:01,063 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9917. Model saved.
+2025-05-18 22:36:01,266 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1508 AUC: 0.9875 | Val Loss: 0.1261 AUC: 0.9917 | Patience: 0/3
+2025-05-18 22:36:02,467 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:36:02,681 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1311 AUC: 0.9905 | Val Loss: 0.1146 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:36:03,851 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9934. Model saved.
+2025-05-18 22:36:04,047 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1179 AUC: 0.9916 | Val Loss: 0.1065 AUC: 0.9934 | Patience: 0/3
+2025-05-18 22:36:05,224 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:36:05,427 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1084 AUC: 0.9928 | Val Loss: 0.0996 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:36:06,584 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9946. Model saved.
+2025-05-18 22:36:06,772 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.1005 AUC: 0.9937 | Val Loss: 0.0944 AUC: 0.9946 | Patience: 0/3
+2025-05-18 22:36:07,923 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:36:08,118 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0941 AUC: 0.9947 | Val Loss: 0.0893 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:36:09,280 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:36:09,468 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0875 AUC: 0.9950 | Val Loss: 0.0854 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:36:12,431 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:36:12,643 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1515 AUC: 0.9854 | Val Loss: 0.0839 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:36:15,417 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:36:15,620 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0805 AUC: 0.9943 | Val Loss: 0.0752 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:36:18,353 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:36:18,558 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0664 AUC: 0.9962 | Val Loss: 0.0739 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:36:21,278 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:36:21,480 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0563 AUC: 0.9971 | Val Loss: 0.0699 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:36:24,221 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0489 AUC: 0.9980 | Val Loss: 0.0749 AUC: 0.9946 | Patience: 1/3
+2025-05-18 22:36:27,160 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0378 AUC: 0.9986 | Val Loss: 0.0798 AUC: 0.9948 | Patience: 2/3
+2025-05-18 22:36:29,880 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0400 AUC: 0.9986 | Val Loss: 0.0766 AUC: 0.9948 | Patience: 3/3
+2025-05-18 22:36:29,880 - __main__ - INFO - Early stopping triggered at epoch 7
+2025-05-18 22:36:32,802 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:36:33,041 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1529 AUC: 0.9845 | Val Loss: 0.0840 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:36:35,830 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:36:36,025 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0905 AUC: 0.9928 | Val Loss: 0.0697 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:36:38,917 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0647 AUC: 0.9964 | Val Loss: 0.0713 AUC: 0.9953 | Patience: 1/3
+2025-05-18 22:36:41,701 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0589 AUC: 0.9969 | Val Loss: 0.0650 AUC: 0.9954 | Patience: 2/3
+2025-05-18 22:36:44,612 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:36:44,825 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0534 AUC: 0.9972 | Val Loss: 0.0641 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:36:47,892 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:36:48,110 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0416 AUC: 0.9982 | Val Loss: 0.0701 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:36:50,905 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0409 AUC: 0.9985 | Val Loss: 0.0692 AUC: 0.9955 | Patience: 1/3
+2025-05-18 22:36:53,759 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0383 AUC: 0.9988 | Val Loss: 0.0648 AUC: 0.9954 | Patience: 2/3
+2025-05-18 22:36:56,575 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0336 AUC: 0.9991 | Val Loss: 0.0737 AUC: 0.9945 | Patience: 3/3
+2025-05-18 22:36:56,575 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:36:59,694 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9939. Model saved.
+2025-05-18 22:36:59,923 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1593 AUC: 0.9837 | Val Loss: 0.0890 AUC: 0.9939 | Patience: 0/3
+2025-05-18 22:37:02,697 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:37:02,899 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0915 AUC: 0.9933 | Val Loss: 0.0643 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:37:05,688 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0644 AUC: 0.9959 | Val Loss: 0.0723 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:37:08,500 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0589 AUC: 0.9967 | Val Loss: 0.0726 AUC: 0.9959 | Patience: 2/3
+2025-05-18 22:37:11,341 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:37:11,684 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0584 AUC: 0.9970 | Val Loss: 0.0675 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:37:14,674 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0427 AUC: 0.9983 | Val Loss: 0.0638 AUC: 0.9963 | Patience: 1/3
+2025-05-18 22:37:17,823 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0406 AUC: 0.9984 | Val Loss: 0.0631 AUC: 0.9967 | Patience: 2/3
+2025-05-18 22:37:20,992 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0349 AUC: 0.9991 | Val Loss: 0.0753 AUC: 0.9967 | Patience: 3/3
+2025-05-18 22:37:20,992 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:37:24,294 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:37:24,528 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1524 AUC: 0.9853 | Val Loss: 0.0866 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:37:27,571 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:37:27,780 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0850 AUC: 0.9946 | Val Loss: 0.0741 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:37:30,811 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0625 AUC: 0.9967 | Val Loss: 0.0746 AUC: 0.9949 | Patience: 1/3
+2025-05-18 22:37:33,678 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0589 AUC: 0.9973 | Val Loss: 0.0740 AUC: 0.9947 | Patience: 2/3
+2025-05-18 22:37:36,446 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0435 AUC: 0.9985 | Val Loss: 0.0813 AUC: 0.9947 | Patience: 3/3
+2025-05-18 22:37:36,446 - __main__ - INFO - Early stopping triggered at epoch 5
+2025-05-18 22:37:39,485 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:37:39,734 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1544 AUC: 0.9843 | Val Loss: 0.0839 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:37:42,538 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:37:42,732 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0874 AUC: 0.9939 | Val Loss: 0.0719 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:37:45,638 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:37:45,856 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0721 AUC: 0.9956 | Val Loss: 0.0652 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:37:48,668 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:37:48,869 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0604 AUC: 0.9964 | Val Loss: 0.0643 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:37:51,596 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0523 AUC: 0.9973 | Val Loss: 0.0773 AUC: 0.9945 | Patience: 1/3
+2025-05-18 22:37:54,302 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0469 AUC: 0.9980 | Val Loss: 0.0770 AUC: 0.9949 | Patience: 2/3
+2025-05-18 22:37:57,055 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:37:57,247 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0387 AUC: 0.9985 | Val Loss: 0.0647 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:37:59,967 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:38:00,162 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0376 AUC: 0.9988 | Val Loss: 0.0690 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:38:02,967 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0383 AUC: 0.9989 | Val Loss: 0.0618 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:38:05,662 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0323 AUC: 0.9991 | Val Loss: 0.0781 AUC: 0.9951 | Patience: 2/3
+2025-05-18 22:38:08,598 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:38:08,821 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1533 AUC: 0.9850 | Val Loss: 0.0797 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:38:11,556 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:38:11,753 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0896 AUC: 0.9935 | Val Loss: 0.0698 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:38:14,567 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:38:14,769 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0757 AUC: 0.9948 | Val Loss: 0.0684 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:38:17,493 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0590 AUC: 0.9969 | Val Loss: 0.0757 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:38:20,181 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:38:20,389 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0501 AUC: 0.9979 | Val Loss: 0.0626 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:38:23,109 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0444 AUC: 0.9982 | Val Loss: 0.0670 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:38:25,816 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0411 AUC: 0.9984 | Val Loss: 0.0728 AUC: 0.9965 | Patience: 2/3
+2025-05-18 22:38:28,521 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0379 AUC: 0.9987 | Val Loss: 0.0696 AUC: 0.9961 | Patience: 3/3
+2025-05-18 22:38:28,522 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:38:30,122 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9924. Model saved.
+2025-05-18 22:38:30,356 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2205 AUC: 0.9786 | Val Loss: 0.1075 AUC: 0.9924 | Patience: 0/3
+2025-05-18 22:38:31,803 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:38:31,999 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0946 AUC: 0.9944 | Val Loss: 0.0792 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:38:33,461 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:38:33,658 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0674 AUC: 0.9969 | Val Loss: 0.0692 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:38:35,075 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:38:35,269 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0526 AUC: 0.9981 | Val Loss: 0.0652 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:38:36,721 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:38:37,049 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0417 AUC: 0.9986 | Val Loss: 0.0627 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:38:38,506 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0313 AUC: 0.9994 | Val Loss: 0.0635 AUC: 0.9946 | Patience: 1/3
+2025-05-18 22:38:39,955 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0261 AUC: 0.9994 | Val Loss: 0.0676 AUC: 0.9950 | Patience: 2/3
+2025-05-18 22:38:41,396 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0226 AUC: 0.9996 | Val Loss: 0.0673 AUC: 0.9949 | Patience: 3/3
+2025-05-18 22:38:41,396 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:38:43,030 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:38:43,239 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2203 AUC: 0.9787 | Val Loss: 0.1045 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:38:44,686 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:38:44,887 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0977 AUC: 0.9937 | Val Loss: 0.0774 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:38:46,339 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:38:46,542 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0682 AUC: 0.9970 | Val Loss: 0.0645 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:38:47,998 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:38:48,201 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0546 AUC: 0.9977 | Val Loss: 0.0587 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:38:49,642 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0425 AUC: 0.9987 | Val Loss: 0.0575 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:38:51,083 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0314 AUC: 0.9993 | Val Loss: 0.0569 AUC: 0.9963 | Patience: 2/3
+2025-05-18 22:38:52,523 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:38:52,724 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0232 AUC: 0.9997 | Val Loss: 0.0530 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:38:54,192 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:38:54,400 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0215 AUC: 0.9997 | Val Loss: 0.0512 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:38:55,851 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0158 AUC: 0.9998 | Val Loss: 0.0513 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:38:57,280 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:38:57,457 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0145 AUC: 0.9999 | Val Loss: 0.0533 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:38:59,036 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:38:59,253 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2222 AUC: 0.9770 | Val Loss: 0.1071 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:39:00,684 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:39:00,888 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0975 AUC: 0.9931 | Val Loss: 0.0783 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:39:02,335 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:39:02,539 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0705 AUC: 0.9962 | Val Loss: 0.0664 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:39:04,003 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0542 AUC: 0.9978 | Val Loss: 0.0617 AUC: 0.9969 | Patience: 1/3
+2025-05-18 22:39:05,457 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0419 AUC: 0.9987 | Val Loss: 0.0664 AUC: 0.9965 | Patience: 2/3
+2025-05-18 22:39:06,900 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:39:07,102 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0320 AUC: 0.9992 | Val Loss: 0.0578 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:39:08,533 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0266 AUC: 0.9994 | Val Loss: 0.0601 AUC: 0.9966 | Patience: 1/3
+2025-05-18 22:39:10,011 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0225 AUC: 0.9997 | Val Loss: 0.0563 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:39:11,478 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0201 AUC: 0.9997 | Val Loss: 0.0644 AUC: 0.9960 | Patience: 3/3
+2025-05-18 22:39:11,478 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:39:13,106 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9917. Model saved.
+2025-05-18 22:39:13,363 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2394 AUC: 0.9758 | Val Loss: 0.1183 AUC: 0.9917 | Patience: 0/3
+2025-05-18 22:39:14,856 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:39:15,061 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1064 AUC: 0.9927 | Val Loss: 0.0841 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:39:16,518 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:39:16,724 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0782 AUC: 0.9958 | Val Loss: 0.0717 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:39:18,175 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:39:18,389 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0598 AUC: 0.9976 | Val Loss: 0.0682 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:39:19,833 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:39:20,184 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0468 AUC: 0.9980 | Val Loss: 0.0628 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:39:21,655 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0384 AUC: 0.9988 | Val Loss: 0.0625 AUC: 0.9951 | Patience: 1/3
+2025-05-18 22:39:23,094 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0304 AUC: 0.9993 | Val Loss: 0.0624 AUC: 0.9952 | Patience: 2/3
+2025-05-18 22:39:24,532 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:39:24,726 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0268 AUC: 0.9995 | Val Loss: 0.0630 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:39:26,166 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0201 AUC: 0.9996 | Val Loss: 0.0628 AUC: 0.9952 | Patience: 1/3
+2025-05-18 22:39:27,639 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0204 AUC: 0.9997 | Val Loss: 0.0629 AUC: 0.9954 | Patience: 2/3
+2025-05-18 22:39:29,253 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:39:29,458 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2471 AUC: 0.9739 | Val Loss: 0.1145 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:39:30,909 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:39:31,106 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1081 AUC: 0.9923 | Val Loss: 0.0827 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:39:32,609 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:39:32,813 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0785 AUC: 0.9955 | Val Loss: 0.0694 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:39:34,294 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:39:34,493 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0618 AUC: 0.9970 | Val Loss: 0.0635 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:39:35,928 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:39:36,115 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0492 AUC: 0.9978 | Val Loss: 0.0556 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:39:37,572 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:39:37,782 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0407 AUC: 0.9987 | Val Loss: 0.0545 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:39:39,245 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:39:39,438 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0333 AUC: 0.9991 | Val Loss: 0.0536 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:39:40,882 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0268 AUC: 0.9996 | Val Loss: 0.0529 AUC: 0.9961 | Patience: 1/3
+2025-05-18 22:39:42,333 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0216 AUC: 0.9996 | Val Loss: 0.0558 AUC: 0.9962 | Patience: 2/3
+2025-05-18 22:39:43,777 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0216 AUC: 0.9997 | Val Loss: 0.0532 AUC: 0.9964 | Patience: 3/3
+2025-05-18 22:39:43,777 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:39:45,454 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9922. Model saved.
+2025-05-18 22:39:45,707 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2495 AUC: 0.9725 | Val Loss: 0.1138 AUC: 0.9922 | Patience: 0/3
+2025-05-18 22:39:47,171 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:39:47,380 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1081 AUC: 0.9924 | Val Loss: 0.0855 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:39:48,824 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:39:49,026 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0791 AUC: 0.9956 | Val Loss: 0.0734 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:39:50,482 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:39:50,679 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0630 AUC: 0.9968 | Val Loss: 0.0627 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:39:52,310 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0468 AUC: 0.9981 | Val Loss: 0.0617 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:39:53,774 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:39:53,960 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0423 AUC: 0.9984 | Val Loss: 0.0580 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:39:55,404 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:39:55,603 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0332 AUC: 0.9992 | Val Loss: 0.0578 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:39:57,032 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0254 AUC: 0.9996 | Val Loss: 0.0601 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:39:58,452 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0215 AUC: 0.9997 | Val Loss: 0.0629 AUC: 0.9969 | Patience: 2/3
+2025-05-18 22:39:59,969 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0186 AUC: 0.9998 | Val Loss: 0.0568 AUC: 0.9971 | Patience: 3/3
+2025-05-18 22:39:59,970 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:40:01,663 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9871. Model saved.
+2025-05-18 22:40:01,883 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3238 AUC: 0.9577 | Val Loss: 0.1679 AUC: 0.9871 | Patience: 0/3
+2025-05-18 22:40:03,357 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9915. Model saved.
+2025-05-18 22:40:03,563 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1539 AUC: 0.9878 | Val Loss: 0.1166 AUC: 0.9915 | Patience: 0/3
+2025-05-18 22:40:05,039 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9933. Model saved.
+2025-05-18 22:40:05,391 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1134 AUC: 0.9924 | Val Loss: 0.0963 AUC: 0.9933 | Patience: 0/3
+2025-05-18 22:40:06,872 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:40:07,080 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0961 AUC: 0.9941 | Val Loss: 0.0861 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:40:08,516 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:40:08,743 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0811 AUC: 0.9961 | Val Loss: 0.0788 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:40:10,191 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:40:10,394 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0691 AUC: 0.9972 | Val Loss: 0.0724 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:40:11,856 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:40:12,054 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0589 AUC: 0.9980 | Val Loss: 0.0680 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:40:13,647 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0516 AUC: 0.9985 | Val Loss: 0.0656 AUC: 0.9952 | Patience: 1/3
+2025-05-18 22:40:15,100 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:40:15,301 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0453 AUC: 0.9988 | Val Loss: 0.0615 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:40:16,811 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0404 AUC: 0.9991 | Val Loss: 0.0622 AUC: 0.9952 | Patience: 1/3
+2025-05-18 22:40:18,494 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9895. Model saved.
+2025-05-18 22:40:18,730 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3452 AUC: 0.9557 | Val Loss: 0.1726 AUC: 0.9895 | Patience: 0/3
+2025-05-18 22:40:20,169 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:40:20,383 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1619 AUC: 0.9878 | Val Loss: 0.1214 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:40:21,839 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:40:22,041 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1205 AUC: 0.9920 | Val Loss: 0.0996 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:40:23,480 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:40:23,685 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0992 AUC: 0.9939 | Val Loss: 0.0861 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:40:25,176 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:40:25,378 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0831 AUC: 0.9962 | Val Loss: 0.0750 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:40:26,821 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:40:27,019 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0705 AUC: 0.9968 | Val Loss: 0.0708 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:40:28,494 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:40:28,714 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0606 AUC: 0.9974 | Val Loss: 0.0650 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:40:30,167 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0520 AUC: 0.9983 | Val Loss: 0.0611 AUC: 0.9970 | Patience: 1/3
+2025-05-18 22:40:31,660 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0472 AUC: 0.9986 | Val Loss: 0.0586 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:40:33,130 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0449 AUC: 0.9986 | Val Loss: 0.0575 AUC: 0.9969 | Patience: 3/3
+2025-05-18 22:40:33,130 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:40:34,737 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9890. Model saved.
+2025-05-18 22:40:34,952 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3397 AUC: 0.9549 | Val Loss: 0.1772 AUC: 0.9890 | Patience: 0/3
+2025-05-18 22:40:36,410 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:40:36,614 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1589 AUC: 0.9882 | Val Loss: 0.1246 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:40:38,071 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:40:38,271 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1198 AUC: 0.9917 | Val Loss: 0.1007 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:40:39,745 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:40:39,948 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0996 AUC: 0.9943 | Val Loss: 0.0886 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:40:41,536 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:40:41,749 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0847 AUC: 0.9953 | Val Loss: 0.0776 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:40:43,395 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:40:43,777 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0720 AUC: 0.9966 | Val Loss: 0.0710 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:40:45,238 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9969. Model saved.
+2025-05-18 22:40:45,429 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0634 AUC: 0.9975 | Val Loss: 0.0665 AUC: 0.9969 | Patience: 0/3
+2025-05-18 22:40:46,876 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:40:47,087 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0559 AUC: 0.9978 | Val Loss: 0.0619 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:40:48,562 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:40:48,763 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0466 AUC: 0.9983 | Val Loss: 0.0587 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:40:50,231 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0432 AUC: 0.9987 | Val Loss: 0.0567 AUC: 0.9973 | Patience: 1/3
+2025-05-18 22:40:51,885 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9865. Model saved.
+2025-05-18 22:40:52,095 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3481 AUC: 0.9523 | Val Loss: 0.1858 AUC: 0.9865 | Patience: 0/3
+2025-05-18 22:40:53,556 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9908. Model saved.
+2025-05-18 22:40:53,752 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1608 AUC: 0.9885 | Val Loss: 0.1292 AUC: 0.9908 | Patience: 0/3
+2025-05-18 22:40:55,245 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:40:55,447 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1206 AUC: 0.9921 | Val Loss: 0.1049 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:40:56,905 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:40:57,106 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1025 AUC: 0.9941 | Val Loss: 0.0919 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:40:58,575 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:40:58,775 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0838 AUC: 0.9961 | Val Loss: 0.0821 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:41:00,238 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:41:00,450 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0753 AUC: 0.9968 | Val Loss: 0.0746 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:41:01,948 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:41:02,145 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0620 AUC: 0.9981 | Val Loss: 0.0708 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:41:03,619 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:41:03,835 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0549 AUC: 0.9980 | Val Loss: 0.0667 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:41:05,322 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0518 AUC: 0.9986 | Val Loss: 0.0630 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:41:06,811 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0436 AUC: 0.9989 | Val Loss: 0.0629 AUC: 0.9958 | Patience: 2/3
+2025-05-18 22:41:08,416 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9901. Model saved.
+2025-05-18 22:41:08,633 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3505 AUC: 0.9484 | Val Loss: 0.1725 AUC: 0.9901 | Patience: 0/3
+2025-05-18 22:41:10,110 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:41:10,319 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1604 AUC: 0.9881 | Val Loss: 0.1193 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:41:11,845 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:41:12,058 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1209 AUC: 0.9920 | Val Loss: 0.0980 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:41:13,603 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:41:13,803 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0990 AUC: 0.9940 | Val Loss: 0.0863 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:41:15,295 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:41:15,647 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0831 AUC: 0.9956 | Val Loss: 0.0778 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:41:17,145 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:41:17,349 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0700 AUC: 0.9969 | Val Loss: 0.0716 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:41:18,845 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:41:19,050 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0618 AUC: 0.9974 | Val Loss: 0.0672 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:41:20,534 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0541 AUC: 0.9982 | Val Loss: 0.0653 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:41:22,012 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:41:22,211 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0484 AUC: 0.9985 | Val Loss: 0.0640 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:41:23,686 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:41:23,894 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0416 AUC: 0.9988 | Val Loss: 0.0571 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:41:25,562 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9879. Model saved.
+2025-05-18 22:41:25,780 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3546 AUC: 0.9541 | Val Loss: 0.1864 AUC: 0.9879 | Patience: 0/3
+2025-05-18 22:41:27,255 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:41:27,462 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1694 AUC: 0.9866 | Val Loss: 0.1268 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:41:28,948 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9939. Model saved.
+2025-05-18 22:41:29,175 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1243 AUC: 0.9918 | Val Loss: 0.1045 AUC: 0.9939 | Patience: 0/3
+2025-05-18 22:41:30,652 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:41:30,867 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1008 AUC: 0.9936 | Val Loss: 0.0913 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:41:32,359 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:41:32,564 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0893 AUC: 0.9949 | Val Loss: 0.0804 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:41:34,051 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:41:34,258 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0777 AUC: 0.9957 | Val Loss: 0.0741 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:41:35,738 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:41:35,933 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0695 AUC: 0.9968 | Val Loss: 0.0715 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:41:37,444 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:41:37,640 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0593 AUC: 0.9977 | Val Loss: 0.0651 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:41:39,135 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:41:39,340 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0550 AUC: 0.9979 | Val Loss: 0.0610 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:41:40,810 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:41:41,024 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0463 AUC: 0.9986 | Val Loss: 0.0608 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:41:42,655 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9930. Model saved.
+2025-05-18 22:41:42,869 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2137 AUC: 0.9791 | Val Loss: 0.1032 AUC: 0.9930 | Patience: 0/3
+2025-05-18 22:41:44,353 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:41:44,564 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0937 AUC: 0.9939 | Val Loss: 0.0792 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:41:46,050 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:41:46,395 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0710 AUC: 0.9962 | Val Loss: 0.0670 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:41:47,911 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:41:48,117 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0516 AUC: 0.9983 | Val Loss: 0.0620 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:41:49,625 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:41:49,816 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0391 AUC: 0.9990 | Val Loss: 0.0611 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:41:51,316 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0330 AUC: 0.9991 | Val Loss: 0.0609 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:41:52,800 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0253 AUC: 0.9996 | Val Loss: 0.0594 AUC: 0.9959 | Patience: 2/3
+2025-05-18 22:41:54,282 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0202 AUC: 0.9996 | Val Loss: 0.0593 AUC: 0.9959 | Patience: 3/3
+2025-05-18 22:41:54,282 - __main__ - INFO - Early stopping triggered at epoch 8
+2025-05-18 22:41:55,917 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:41:56,133 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2164 AUC: 0.9787 | Val Loss: 0.1055 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:41:57,619 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:41:57,829 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0985 AUC: 0.9929 | Val Loss: 0.0775 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:41:59,308 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:41:59,516 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0688 AUC: 0.9966 | Val Loss: 0.0652 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:42:01,024 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0515 AUC: 0.9980 | Val Loss: 0.0624 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:42:02,517 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:42:02,722 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0385 AUC: 0.9990 | Val Loss: 0.0611 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:42:04,205 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0290 AUC: 0.9995 | Val Loss: 0.0549 AUC: 0.9962 | Patience: 1/3
+2025-05-18 22:42:05,697 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0275 AUC: 0.9994 | Val Loss: 0.0570 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:42:07,202 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:42:07,399 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0218 AUC: 0.9997 | Val Loss: 0.0544 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:42:08,874 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:42:09,049 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0181 AUC: 0.9998 | Val Loss: 0.0605 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:42:10,535 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0150 AUC: 0.9998 | Val Loss: 0.0570 AUC: 0.9964 | Patience: 1/3
+2025-05-18 22:42:12,155 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9932. Model saved.
+2025-05-18 22:42:12,383 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2258 AUC: 0.9776 | Val Loss: 0.1055 AUC: 0.9932 | Patience: 0/3
+2025-05-18 22:42:13,895 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:42:14,106 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0995 AUC: 0.9932 | Val Loss: 0.0794 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:42:15,604 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:42:15,811 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0715 AUC: 0.9959 | Val Loss: 0.0645 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:42:17,362 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:42:17,552 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0528 AUC: 0.9976 | Val Loss: 0.0597 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:42:19,046 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:42:19,239 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0425 AUC: 0.9986 | Val Loss: 0.0550 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:42:20,703 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0351 AUC: 0.9991 | Val Loss: 0.0547 AUC: 0.9968 | Patience: 1/3
+2025-05-18 22:42:22,177 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0278 AUC: 0.9994 | Val Loss: 0.0531 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:42:23,634 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:42:23,825 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0231 AUC: 0.9996 | Val Loss: 0.0580 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:42:25,261 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0201 AUC: 0.9998 | Val Loss: 0.0612 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:42:26,703 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0190 AUC: 0.9997 | Val Loss: 0.0557 AUC: 0.9970 | Patience: 2/3
+2025-05-18 22:42:28,339 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9879. Model saved.
+2025-05-18 22:42:28,550 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3100 AUC: 0.9601 | Val Loss: 0.1583 AUC: 0.9879 | Patience: 0/3
+2025-05-18 22:42:30,008 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9918. Model saved.
+2025-05-18 22:42:30,212 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1454 AUC: 0.9889 | Val Loss: 0.1143 AUC: 0.9918 | Patience: 0/3
+2025-05-18 22:42:31,790 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:42:32,166 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1136 AUC: 0.9924 | Val Loss: 0.0953 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:42:33,662 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9946. Model saved.
+2025-05-18 22:42:33,875 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0899 AUC: 0.9952 | Val Loss: 0.0856 AUC: 0.9946 | Patience: 0/3
+2025-05-18 22:42:35,368 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:42:35,598 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0787 AUC: 0.9962 | Val Loss: 0.0758 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:42:37,087 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:42:37,289 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0669 AUC: 0.9974 | Val Loss: 0.0705 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:42:38,785 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:42:38,980 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0560 AUC: 0.9980 | Val Loss: 0.0657 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:42:40,498 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:42:40,692 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0485 AUC: 0.9986 | Val Loss: 0.0624 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:42:42,199 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:42:42,399 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0425 AUC: 0.9990 | Val Loss: 0.0603 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:42:44,084 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0391 AUC: 0.9990 | Val Loss: 0.0591 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:42:45,817 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9903. Model saved.
+2025-05-18 22:42:46,045 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3193 AUC: 0.9640 | Val Loss: 0.1647 AUC: 0.9903 | Patience: 0/3
+2025-05-18 22:42:47,530 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:42:47,733 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1522 AUC: 0.9888 | Val Loss: 0.1144 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:42:49,240 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:42:49,450 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1163 AUC: 0.9923 | Val Loss: 0.0970 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:42:50,933 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:42:51,161 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0935 AUC: 0.9945 | Val Loss: 0.0836 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:42:52,617 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:42:52,826 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0778 AUC: 0.9965 | Val Loss: 0.0742 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:42:54,396 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:42:54,629 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0689 AUC: 0.9969 | Val Loss: 0.0704 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:42:56,170 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:42:56,369 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0606 AUC: 0.9972 | Val Loss: 0.0629 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:42:57,830 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0538 AUC: 0.9980 | Val Loss: 0.0585 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:42:59,307 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:42:59,507 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0426 AUC: 0.9987 | Val Loss: 0.0564 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:43:00,971 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0386 AUC: 0.9992 | Val Loss: 0.0570 AUC: 0.9965 | Patience: 1/3
+2025-05-18 22:43:02,674 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9889. Model saved.
+2025-05-18 22:43:02,898 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3426 AUC: 0.9545 | Val Loss: 0.1727 AUC: 0.9889 | Patience: 0/3
+2025-05-18 22:43:04,420 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:43:04,800 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1553 AUC: 0.9886 | Val Loss: 0.1195 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:43:06,319 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:43:06,534 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1155 AUC: 0.9923 | Val Loss: 0.0971 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:43:08,023 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:43:08,227 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0956 AUC: 0.9943 | Val Loss: 0.0851 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:43:09,856 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:43:10,082 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0779 AUC: 0.9962 | Val Loss: 0.0762 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:43:11,666 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:43:11,877 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0661 AUC: 0.9971 | Val Loss: 0.0692 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:43:13,493 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:43:13,699 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0610 AUC: 0.9976 | Val Loss: 0.0655 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:43:15,319 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:43:15,547 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0504 AUC: 0.9983 | Val Loss: 0.0622 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:43:17,100 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:43:17,293 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0447 AUC: 0.9987 | Val Loss: 0.0573 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:43:18,885 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0401 AUC: 0.9991 | Val Loss: 0.0563 AUC: 0.9974 | Patience: 1/3
+2025-05-18 22:43:20,705 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9861. Model saved.
+2025-05-18 22:43:20,936 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3519 AUC: 0.9519 | Val Loss: 0.1883 AUC: 0.9861 | Patience: 0/3
+2025-05-18 22:43:22,439 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9908. Model saved.
+2025-05-18 22:43:22,643 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1666 AUC: 0.9873 | Val Loss: 0.1296 AUC: 0.9908 | Patience: 0/3
+2025-05-18 22:43:24,101 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:43:24,308 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1262 AUC: 0.9910 | Val Loss: 0.1071 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:43:25,761 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:43:25,973 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1039 AUC: 0.9938 | Val Loss: 0.0921 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:43:27,418 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:43:27,622 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0893 AUC: 0.9954 | Val Loss: 0.0832 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:43:29,210 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:43:29,415 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0737 AUC: 0.9970 | Val Loss: 0.0756 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:43:31,006 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:43:31,207 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0692 AUC: 0.9973 | Val Loss: 0.0711 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:43:32,827 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:43:33,035 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0589 AUC: 0.9978 | Val Loss: 0.0674 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:43:34,654 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:43:34,857 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0537 AUC: 0.9981 | Val Loss: 0.0638 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:43:36,362 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:43:36,553 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0439 AUC: 0.9988 | Val Loss: 0.0625 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:43:38,239 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9889. Model saved.
+2025-05-18 22:43:38,653 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3446 AUC: 0.9504 | Val Loss: 0.1744 AUC: 0.9889 | Patience: 0/3
+2025-05-18 22:43:40,261 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9925. Model saved.
+2025-05-18 22:43:40,471 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1642 AUC: 0.9873 | Val Loss: 0.1234 AUC: 0.9925 | Patience: 0/3
+2025-05-18 22:43:42,003 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9940. Model saved.
+2025-05-18 22:43:42,222 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1239 AUC: 0.9910 | Val Loss: 0.1016 AUC: 0.9940 | Patience: 0/3
+2025-05-18 22:43:43,861 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:43:44,079 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1036 AUC: 0.9934 | Val Loss: 0.0896 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:43:45,648 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:43:45,850 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0897 AUC: 0.9946 | Val Loss: 0.0797 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:43:47,307 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:43:47,509 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0764 AUC: 0.9964 | Val Loss: 0.0754 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:43:48,963 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:43:49,136 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0666 AUC: 0.9971 | Val Loss: 0.0723 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:43:50,583 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:43:50,797 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0588 AUC: 0.9976 | Val Loss: 0.0639 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:43:52,250 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0540 AUC: 0.9981 | Val Loss: 0.0623 AUC: 0.9961 | Patience: 1/3
+2025-05-18 22:43:53,698 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:43:53,899 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0449 AUC: 0.9985 | Val Loss: 0.0566 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:43:55,601 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9882. Model saved.
+2025-05-18 22:43:55,816 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3661 AUC: 0.9457 | Val Loss: 0.1899 AUC: 0.9882 | Patience: 0/3
+2025-05-18 22:43:57,283 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9920. Model saved.
+2025-05-18 22:43:57,486 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1740 AUC: 0.9862 | Val Loss: 0.1328 AUC: 0.9920 | Patience: 0/3
+2025-05-18 22:43:58,918 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:43:59,125 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1296 AUC: 0.9910 | Val Loss: 0.1070 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:44:00,618 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:44:00,827 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1049 AUC: 0.9933 | Val Loss: 0.0916 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:44:02,309 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:44:02,542 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0949 AUC: 0.9945 | Val Loss: 0.0818 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:44:04,001 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:44:04,203 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0775 AUC: 0.9961 | Val Loss: 0.0752 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:44:05,659 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:44:05,867 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0696 AUC: 0.9971 | Val Loss: 0.0692 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:44:07,351 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:44:07,718 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0622 AUC: 0.9974 | Val Loss: 0.0653 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:44:09,277 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0547 AUC: 0.9980 | Val Loss: 0.0633 AUC: 0.9971 | Patience: 1/3
+2025-05-18 22:44:10,717 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:44:10,908 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0482 AUC: 0.9981 | Val Loss: 0.0616 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:44:12,633 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9824. Model saved.
+2025-05-18 22:44:12,844 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.4946 AUC: 0.8663 | Val Loss: 0.3006 AUC: 0.9824 | Patience: 0/3
+2025-05-18 22:44:14,476 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9866. Model saved.
+2025-05-18 22:44:14,700 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2671 AUC: 0.9772 | Val Loss: 0.1930 AUC: 0.9866 | Patience: 0/3
+2025-05-18 22:44:16,319 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9887. Model saved.
+2025-05-18 22:44:16,547 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1879 AUC: 0.9864 | Val Loss: 0.1530 AUC: 0.9887 | Patience: 0/3
+2025-05-18 22:44:18,179 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9904. Model saved.
+2025-05-18 22:44:18,386 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1533 AUC: 0.9887 | Val Loss: 0.1301 AUC: 0.9904 | Patience: 0/3
+2025-05-18 22:44:19,982 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9918. Model saved.
+2025-05-18 22:44:20,181 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1336 AUC: 0.9906 | Val Loss: 0.1153 AUC: 0.9918 | Patience: 0/3
+2025-05-18 22:44:21,772 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:44:21,990 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1166 AUC: 0.9919 | Val Loss: 0.1063 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:44:23,639 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9934. Model saved.
+2025-05-18 22:44:23,851 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1065 AUC: 0.9930 | Val Loss: 0.0981 AUC: 0.9934 | Patience: 0/3
+2025-05-18 22:44:25,439 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:44:25,669 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0972 AUC: 0.9946 | Val Loss: 0.0909 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:44:27,134 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:44:27,339 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0915 AUC: 0.9949 | Val Loss: 0.0862 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:44:28,839 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:44:29,052 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0837 AUC: 0.9957 | Val Loss: 0.0819 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:44:30,663 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9849. Model saved.
+2025-05-18 22:44:30,878 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.4962 AUC: 0.8784 | Val Loss: 0.3138 AUC: 0.9849 | Patience: 0/3
+2025-05-18 22:44:32,477 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9890. Model saved.
+2025-05-18 22:44:32,693 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2754 AUC: 0.9782 | Val Loss: 0.2061 AUC: 0.9890 | Patience: 0/3
+2025-05-18 22:44:34,338 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9908. Model saved.
+2025-05-18 22:44:34,558 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1967 AUC: 0.9853 | Val Loss: 0.1582 AUC: 0.9908 | Patience: 0/3
+2025-05-18 22:44:36,146 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9921. Model saved.
+2025-05-18 22:44:36,348 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1614 AUC: 0.9880 | Val Loss: 0.1364 AUC: 0.9921 | Patience: 0/3
+2025-05-18 22:44:37,956 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:44:38,171 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1414 AUC: 0.9898 | Val Loss: 0.1201 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:44:39,788 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:44:40,011 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1232 AUC: 0.9919 | Val Loss: 0.1083 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:44:41,493 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9940. Model saved.
+2025-05-18 22:44:41,828 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1144 AUC: 0.9928 | Val Loss: 0.1012 AUC: 0.9940 | Patience: 0/3
+2025-05-18 22:44:43,277 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:44:43,479 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.1006 AUC: 0.9940 | Val Loss: 0.0942 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:44:44,916 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:44:45,115 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0963 AUC: 0.9944 | Val Loss: 0.0877 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:44:46,560 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:44:46,770 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0861 AUC: 0.9958 | Val Loss: 0.0837 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:44:48,381 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9818. Model saved.
+2025-05-18 22:44:48,591 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.5183 AUC: 0.8505 | Val Loss: 0.3271 AUC: 0.9818 | Patience: 0/3
+2025-05-18 22:44:50,065 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9876. Model saved.
+2025-05-18 22:44:50,286 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.2931 AUC: 0.9740 | Val Loss: 0.2051 AUC: 0.9876 | Patience: 0/3
+2025-05-18 22:44:51,792 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9901. Model saved.
+2025-05-18 22:44:51,991 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.2014 AUC: 0.9844 | Val Loss: 0.1559 AUC: 0.9901 | Patience: 0/3
+2025-05-18 22:44:53,438 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9918. Model saved.
+2025-05-18 22:44:53,653 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1627 AUC: 0.9871 | Val Loss: 0.1325 AUC: 0.9918 | Patience: 0/3
+2025-05-18 22:44:55,160 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9929. Model saved.
+2025-05-18 22:44:55,360 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1371 AUC: 0.9898 | Val Loss: 0.1164 AUC: 0.9929 | Patience: 0/3
+2025-05-18 22:44:56,820 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9937. Model saved.
+2025-05-18 22:44:57,027 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1218 AUC: 0.9911 | Val Loss: 0.1065 AUC: 0.9937 | Patience: 0/3
+2025-05-18 22:44:58,542 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:44:58,769 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.1091 AUC: 0.9930 | Val Loss: 0.0980 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:45:00,342 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:45:00,554 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.1013 AUC: 0.9933 | Val Loss: 0.0910 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:45:02,025 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:45:02,281 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0932 AUC: 0.9939 | Val Loss: 0.0855 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:45:03,896 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:45:04,083 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0863 AUC: 0.9949 | Val Loss: 0.0817 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:45:05,613 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9893. Model saved.
+2025-05-18 22:45:05,839 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2493 AUC: 0.9722 | Val Loss: 0.1290 AUC: 0.9893 | Patience: 0/3
+2025-05-18 22:45:07,187 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9927. Model saved.
+2025-05-18 22:45:07,404 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1142 AUC: 0.9919 | Val Loss: 0.1002 AUC: 0.9927 | Patience: 0/3
+2025-05-18 22:45:08,760 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:45:08,964 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0908 AUC: 0.9948 | Val Loss: 0.0864 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:45:10,320 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9949. Model saved.
+2025-05-18 22:45:10,689 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0744 AUC: 0.9967 | Val Loss: 0.0775 AUC: 0.9949 | Patience: 0/3
+2025-05-18 22:45:12,002 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:45:12,205 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0666 AUC: 0.9970 | Val Loss: 0.0724 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:45:13,593 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:45:13,799 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0558 AUC: 0.9982 | Val Loss: 0.0661 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:45:15,156 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:45:15,366 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0454 AUC: 0.9989 | Val Loss: 0.0643 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:45:16,571 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0392 AUC: 0.9992 | Val Loss: 0.0638 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:45:17,746 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0342 AUC: 0.9994 | Val Loss: 0.0643 AUC: 0.9957 | Patience: 2/3
+2025-05-18 22:45:18,951 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:45:19,156 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0299 AUC: 0.9995 | Val Loss: 0.0599 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:45:20,625 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9911. Model saved.
+2025-05-18 22:45:20,891 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2418 AUC: 0.9728 | Val Loss: 0.1225 AUC: 0.9911 | Patience: 0/3
+2025-05-18 22:45:22,118 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9939. Model saved.
+2025-05-18 22:45:22,318 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1199 AUC: 0.9905 | Val Loss: 0.0959 AUC: 0.9939 | Patience: 0/3
+2025-05-18 22:45:23,516 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:45:23,722 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0914 AUC: 0.9944 | Val Loss: 0.0819 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:45:24,935 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9959. Model saved.
+2025-05-18 22:45:25,131 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0759 AUC: 0.9962 | Val Loss: 0.0735 AUC: 0.9959 | Patience: 0/3
+2025-05-18 22:45:26,394 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9962. Model saved.
+2025-05-18 22:45:26,596 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0636 AUC: 0.9972 | Val Loss: 0.0673 AUC: 0.9962 | Patience: 0/3
+2025-05-18 22:45:27,813 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:45:28,012 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0538 AUC: 0.9979 | Val Loss: 0.0646 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:45:29,217 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:45:29,419 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0473 AUC: 0.9985 | Val Loss: 0.0609 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:45:30,630 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9966. Model saved.
+2025-05-18 22:45:30,822 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0413 AUC: 0.9988 | Val Loss: 0.0561 AUC: 0.9966 | Patience: 0/3
+2025-05-18 22:45:32,010 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0365 AUC: 0.9993 | Val Loss: 0.0534 AUC: 0.9966 | Patience: 1/3
+2025-05-18 22:45:33,343 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:45:33,555 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0318 AUC: 0.9994 | Val Loss: 0.0518 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:45:35,038 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9908. Model saved.
+2025-05-18 22:45:35,253 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2522 AUC: 0.9705 | Val Loss: 0.1240 AUC: 0.9908 | Patience: 0/3
+2025-05-18 22:45:36,558 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9940. Model saved.
+2025-05-18 22:45:36,772 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1175 AUC: 0.9913 | Val Loss: 0.0966 AUC: 0.9940 | Patience: 0/3
+2025-05-18 22:45:38,079 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:45:38,289 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0928 AUC: 0.9940 | Val Loss: 0.0832 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:45:39,612 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9964. Model saved.
+2025-05-18 22:45:39,972 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0762 AUC: 0.9958 | Val Loss: 0.0736 AUC: 0.9964 | Patience: 0/3
+2025-05-18 22:45:41,316 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:45:41,522 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0658 AUC: 0.9968 | Val Loss: 0.0680 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:45:42,859 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9972. Model saved.
+2025-05-18 22:45:43,121 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0565 AUC: 0.9976 | Val Loss: 0.0635 AUC: 0.9972 | Patience: 0/3
+2025-05-18 22:45:44,514 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:45:44,713 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0515 AUC: 0.9979 | Val Loss: 0.0638 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:45:45,939 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:45:46,134 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0422 AUC: 0.9987 | Val Loss: 0.0578 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:45:47,354 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:45:47,552 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0361 AUC: 0.9991 | Val Loss: 0.0548 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:45:48,797 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9977. Model saved.
+2025-05-18 22:45:49,005 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0309 AUC: 0.9993 | Val Loss: 0.0536 AUC: 0.9977 | Patience: 0/3
+2025-05-18 22:45:50,411 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9904. Model saved.
+2025-05-18 22:45:50,637 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2412 AUC: 0.9732 | Val Loss: 0.1227 AUC: 0.9904 | Patience: 0/3
+2025-05-18 22:45:51,810 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9934. Model saved.
+2025-05-18 22:45:52,003 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1100 AUC: 0.9923 | Val Loss: 0.0952 AUC: 0.9934 | Patience: 0/3
+2025-05-18 22:45:53,192 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:45:53,395 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0853 AUC: 0.9955 | Val Loss: 0.0818 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:45:54,594 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:45:54,787 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0688 AUC: 0.9970 | Val Loss: 0.0745 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:45:56,044 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:45:56,248 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0588 AUC: 0.9977 | Val Loss: 0.0687 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:45:57,451 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:45:57,642 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0490 AUC: 0.9985 | Val Loss: 0.0648 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:45:58,832 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:45:59,007 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0390 AUC: 0.9990 | Val Loss: 0.0626 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:46:00,207 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:46:00,382 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0361 AUC: 0.9991 | Val Loss: 0.0602 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:46:01,589 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0283 AUC: 0.9995 | Val Loss: 0.0601 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:46:02,784 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0247 AUC: 0.9997 | Val Loss: 0.0581 AUC: 0.9960 | Patience: 2/3
+2025-05-18 22:46:04,137 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9919. Model saved.
+2025-05-18 22:46:04,342 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2358 AUC: 0.9748 | Val Loss: 0.1205 AUC: 0.9919 | Patience: 0/3
+2025-05-18 22:46:05,525 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:46:05,737 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1132 AUC: 0.9917 | Val Loss: 0.0922 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:46:06,947 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:46:07,171 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0870 AUC: 0.9947 | Val Loss: 0.0808 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:46:08,363 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:46:08,728 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0735 AUC: 0.9960 | Val Loss: 0.0724 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:46:09,962 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:46:10,156 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0580 AUC: 0.9979 | Val Loss: 0.0678 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:46:11,368 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0515 AUC: 0.9978 | Val Loss: 0.0660 AUC: 0.9960 | Patience: 1/3
+2025-05-18 22:46:12,642 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0434 AUC: 0.9987 | Val Loss: 0.0603 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:46:13,891 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:46:14,090 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0364 AUC: 0.9990 | Val Loss: 0.0564 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:46:15,274 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0333 AUC: 0.9992 | Val Loss: 0.0590 AUC: 0.9959 | Patience: 1/3
+2025-05-18 22:46:16,466 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0308 AUC: 0.9994 | Val Loss: 0.0537 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:46:17,878 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9901. Model saved.
+2025-05-18 22:46:18,088 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2594 AUC: 0.9687 | Val Loss: 0.1289 AUC: 0.9901 | Patience: 0/3
+2025-05-18 22:46:19,284 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9938. Model saved.
+2025-05-18 22:46:19,480 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1157 AUC: 0.9913 | Val Loss: 0.0964 AUC: 0.9938 | Patience: 0/3
+2025-05-18 22:46:20,763 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:46:20,971 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0911 AUC: 0.9942 | Val Loss: 0.0833 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:46:22,172 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9963. Model saved.
+2025-05-18 22:46:22,371 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0741 AUC: 0.9962 | Val Loss: 0.0731 AUC: 0.9963 | Patience: 0/3
+2025-05-18 22:46:23,623 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:46:23,829 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0633 AUC: 0.9969 | Val Loss: 0.0665 AUC: 0.9968 | Patience: 0/3
+2025-05-18 22:46:25,014 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9971. Model saved.
+2025-05-18 22:46:25,200 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0528 AUC: 0.9980 | Val Loss: 0.0646 AUC: 0.9971 | Patience: 0/3
+2025-05-18 22:46:26,396 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:46:26,619 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0460 AUC: 0.9986 | Val Loss: 0.0581 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:46:27,817 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0394 AUC: 0.9990 | Val Loss: 0.0561 AUC: 0.9973 | Patience: 1/3
+2025-05-18 22:46:29,040 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9975. Model saved.
+2025-05-18 22:46:29,237 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0336 AUC: 0.9992 | Val Loss: 0.0539 AUC: 0.9975 | Patience: 0/3
+2025-05-18 22:46:30,440 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0284 AUC: 0.9995 | Val Loss: 0.0570 AUC: 0.9973 | Patience: 1/3
+2025-05-18 22:46:31,801 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9838. Model saved.
+2025-05-18 22:46:32,013 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3722 AUC: 0.9422 | Val Loss: 0.2048 AUC: 0.9838 | Patience: 0/3
+2025-05-18 22:46:33,222 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9880. Model saved.
+2025-05-18 22:46:33,438 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1838 AUC: 0.9839 | Val Loss: 0.1452 AUC: 0.9880 | Patience: 0/3
+2025-05-18 22:46:34,675 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9901. Model saved.
+2025-05-18 22:46:34,911 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1429 AUC: 0.9883 | Val Loss: 0.1238 AUC: 0.9901 | Patience: 0/3
+2025-05-18 22:46:36,365 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9917. Model saved.
+2025-05-18 22:46:36,572 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1203 AUC: 0.9913 | Val Loss: 0.1090 AUC: 0.9917 | Patience: 0/3
+2025-05-18 22:46:37,870 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:46:38,075 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1070 AUC: 0.9930 | Val Loss: 0.1007 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:46:39,278 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9935. Model saved.
+2025-05-18 22:46:39,479 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0999 AUC: 0.9934 | Val Loss: 0.0938 AUC: 0.9935 | Patience: 0/3
+2025-05-18 22:46:40,729 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9940. Model saved.
+2025-05-18 22:46:41,118 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0903 AUC: 0.9950 | Val Loss: 0.0883 AUC: 0.9940 | Patience: 0/3
+2025-05-18 22:46:42,384 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9945. Model saved.
+2025-05-18 22:46:42,588 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0826 AUC: 0.9955 | Val Loss: 0.0838 AUC: 0.9945 | Patience: 0/3
+2025-05-18 22:46:43,880 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:46:44,138 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0773 AUC: 0.9962 | Val Loss: 0.0800 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:46:45,421 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:46:45,645 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0701 AUC: 0.9969 | Val Loss: 0.0760 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:46:47,140 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9875. Model saved.
+2025-05-18 22:46:47,353 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3808 AUC: 0.9380 | Val Loss: 0.2025 AUC: 0.9875 | Patience: 0/3
+2025-05-18 22:46:48,603 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9906. Model saved.
+2025-05-18 22:46:48,806 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1866 AUC: 0.9836 | Val Loss: 0.1415 AUC: 0.9906 | Patience: 0/3
+2025-05-18 22:46:50,107 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9922. Model saved.
+2025-05-18 22:46:50,329 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1449 AUC: 0.9880 | Val Loss: 0.1190 AUC: 0.9922 | Patience: 0/3
+2025-05-18 22:46:51,564 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:46:51,770 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1223 AUC: 0.9906 | Val Loss: 0.1078 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:46:53,029 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9937. Model saved.
+2025-05-18 22:46:53,245 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1126 AUC: 0.9919 | Val Loss: 0.1007 AUC: 0.9937 | Patience: 0/3
+2025-05-18 22:46:54,456 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9943. Model saved.
+2025-05-18 22:46:54,667 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.1006 AUC: 0.9932 | Val Loss: 0.0941 AUC: 0.9943 | Patience: 0/3
+2025-05-18 22:46:55,948 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:46:56,160 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0905 AUC: 0.9948 | Val Loss: 0.0888 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:46:57,396 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:46:57,597 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0826 AUC: 0.9956 | Val Loss: 0.0850 AUC: 0.9951 | Patience: 0/3
+2025-05-18 22:46:58,834 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:46:59,045 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0781 AUC: 0.9961 | Val Loss: 0.0793 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:47:00,269 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:47:00,462 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0720 AUC: 0.9966 | Val Loss: 0.0766 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:47:01,806 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9850. Model saved.
+2025-05-18 22:47:02,014 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.3782 AUC: 0.9359 | Val Loss: 0.2009 AUC: 0.9850 | Patience: 0/3
+2025-05-18 22:47:03,211 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9890. Model saved.
+2025-05-18 22:47:03,412 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1849 AUC: 0.9835 | Val Loss: 0.1429 AUC: 0.9890 | Patience: 0/3
+2025-05-18 22:47:04,604 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9909. Model saved.
+2025-05-18 22:47:04,804 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1418 AUC: 0.9887 | Val Loss: 0.1200 AUC: 0.9909 | Patience: 0/3
+2025-05-18 22:47:06,006 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9924. Model saved.
+2025-05-18 22:47:06,354 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.1218 AUC: 0.9906 | Val Loss: 0.1098 AUC: 0.9924 | Patience: 0/3
+2025-05-18 22:47:07,569 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9933. Model saved.
+2025-05-18 22:47:07,769 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.1111 AUC: 0.9915 | Val Loss: 0.0982 AUC: 0.9933 | Patience: 0/3
+2025-05-18 22:47:09,079 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9942. Model saved.
+2025-05-18 22:47:09,296 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0999 AUC: 0.9931 | Val Loss: 0.0931 AUC: 0.9942 | Patience: 0/3
+2025-05-18 22:47:10,487 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:47:10,695 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0916 AUC: 0.9942 | Val Loss: 0.0874 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:47:11,900 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:47:12,124 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0849 AUC: 0.9951 | Val Loss: 0.0818 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:47:13,365 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:47:13,571 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0782 AUC: 0.9955 | Val Loss: 0.0794 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:47:14,766 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:47:14,971 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0724 AUC: 0.9964 | Val Loss: 0.0746 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:47:16,364 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9881. Model saved.
+2025-05-18 22:47:16,586 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2777 AUC: 0.9655 | Val Loss: 0.1419 AUC: 0.9881 | Patience: 0/3
+2025-05-18 22:47:17,772 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9914. Model saved.
+2025-05-18 22:47:17,970 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1331 AUC: 0.9892 | Val Loss: 0.1081 AUC: 0.9914 | Patience: 0/3
+2025-05-18 22:47:19,163 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:47:19,378 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1042 AUC: 0.9931 | Val Loss: 0.0937 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:47:20,737 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:47:20,937 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0890 AUC: 0.9947 | Val Loss: 0.0861 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:47:22,125 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:47:22,324 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0762 AUC: 0.9963 | Val Loss: 0.0778 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:47:23,522 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9952. Model saved.
+2025-05-18 22:47:23,723 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0650 AUC: 0.9975 | Val Loss: 0.0717 AUC: 0.9952 | Patience: 0/3
+2025-05-18 22:47:24,922 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:47:25,120 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0583 AUC: 0.9977 | Val Loss: 0.0673 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:47:26,325 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0520 AUC: 0.9983 | Val Loss: 0.0664 AUC: 0.9955 | Patience: 1/3
+2025-05-18 22:47:27,516 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:47:27,713 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0436 AUC: 0.9988 | Val Loss: 0.0634 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:47:28,975 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0377 AUC: 0.9991 | Val Loss: 0.0622 AUC: 0.9955 | Patience: 1/3
+2025-05-18 22:47:30,362 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9899. Model saved.
+2025-05-18 22:47:30,582 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2804 AUC: 0.9651 | Val Loss: 0.1394 AUC: 0.9899 | Patience: 0/3
+2025-05-18 22:47:31,958 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9926. Model saved.
+2025-05-18 22:47:32,162 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1348 AUC: 0.9886 | Val Loss: 0.1073 AUC: 0.9926 | Patience: 0/3
+2025-05-18 22:47:33,367 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9941. Model saved.
+2025-05-18 22:47:33,572 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1050 AUC: 0.9927 | Val Loss: 0.0920 AUC: 0.9941 | Patience: 0/3
+2025-05-18 22:47:34,806 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9950. Model saved.
+2025-05-18 22:47:35,014 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0885 AUC: 0.9946 | Val Loss: 0.0824 AUC: 0.9950 | Patience: 0/3
+2025-05-18 22:47:36,216 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9953. Model saved.
+2025-05-18 22:47:36,419 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0759 AUC: 0.9962 | Val Loss: 0.0766 AUC: 0.9953 | Patience: 0/3
+2025-05-18 22:47:37,621 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:47:37,815 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0660 AUC: 0.9968 | Val Loss: 0.0714 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:47:38,996 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9958. Model saved.
+2025-05-18 22:47:39,194 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0576 AUC: 0.9976 | Val Loss: 0.0662 AUC: 0.9958 | Patience: 0/3
+2025-05-18 22:47:40,390 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0491 AUC: 0.9981 | Val Loss: 0.0628 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:47:41,579 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:47:41,785 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0452 AUC: 0.9986 | Val Loss: 0.0600 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:47:42,982 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:47:43,179 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0412 AUC: 0.9986 | Val Loss: 0.0581 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:47:44,511 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9886. Model saved.
+2025-05-18 22:47:44,753 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2770 AUC: 0.9655 | Val Loss: 0.1408 AUC: 0.9886 | Patience: 0/3
+2025-05-18 22:47:45,943 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9924. Model saved.
+2025-05-18 22:47:46,143 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.1344 AUC: 0.9890 | Val Loss: 0.1072 AUC: 0.9924 | Patience: 0/3
+2025-05-18 22:47:47,374 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9944. Model saved.
+2025-05-18 22:47:47,585 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.1046 AUC: 0.9925 | Val Loss: 0.0918 AUC: 0.9944 | Patience: 0/3
+2025-05-18 22:47:48,783 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9954. Model saved.
+2025-05-18 22:47:48,987 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0882 AUC: 0.9946 | Val Loss: 0.0834 AUC: 0.9954 | Patience: 0/3
+2025-05-18 22:47:50,181 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:47:50,389 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0782 AUC: 0.9956 | Val Loss: 0.0762 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:47:51,583 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9965. Model saved.
+2025-05-18 22:47:51,775 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0667 AUC: 0.9968 | Val Loss: 0.0701 AUC: 0.9965 | Patience: 0/3
+2025-05-18 22:47:52,970 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:47:53,169 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0594 AUC: 0.9977 | Val Loss: 0.0651 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:47:54,371 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9970. Model saved.
+2025-05-18 22:47:54,571 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0510 AUC: 0.9982 | Val Loss: 0.0624 AUC: 0.9970 | Patience: 0/3
+2025-05-18 22:47:55,920 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:47:56,334 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0472 AUC: 0.9982 | Val Loss: 0.0590 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:47:57,676 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0392 AUC: 0.9989 | Val Loss: 0.0579 AUC: 0.9972 | Patience: 1/3
+2025-05-18 22:47:59,178 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9922. Model saved.
+2025-05-18 22:47:59,430 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1928 AUC: 0.9812 | Val Loss: 0.1057 AUC: 0.9922 | Patience: 0/3
+2025-05-18 22:48:00,740 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9947. Model saved.
+2025-05-18 22:48:00,944 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0941 AUC: 0.9944 | Val Loss: 0.0818 AUC: 0.9947 | Patience: 0/3
+2025-05-18 22:48:02,172 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:48:02,368 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0697 AUC: 0.9969 | Val Loss: 0.0700 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:48:03,607 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0530 AUC: 0.9979 | Val Loss: 0.0668 AUC: 0.9954 | Patience: 1/3
+2025-05-18 22:48:04,819 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:48:05,071 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0429 AUC: 0.9988 | Val Loss: 0.0649 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:48:06,375 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0349 AUC: 0.9991 | Val Loss: 0.0627 AUC: 0.9951 | Patience: 1/3
+2025-05-18 22:48:07,729 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9957. Model saved.
+2025-05-18 22:48:07,932 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0271 AUC: 0.9996 | Val Loss: 0.0588 AUC: 0.9957 | Patience: 0/3
+2025-05-18 22:48:09,198 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0198 AUC: 0.9998 | Val Loss: 0.0611 AUC: 0.9957 | Patience: 1/3
+2025-05-18 22:48:10,419 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0153 AUC: 0.9999 | Val Loss: 0.0596 AUC: 0.9955 | Patience: 2/3
+2025-05-18 22:48:11,708 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0125 AUC: 1.0000 | Val Loss: 0.0613 AUC: 0.9955 | Patience: 3/3
+2025-05-18 22:48:11,708 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:48:13,101 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9928. Model saved.
+2025-05-18 22:48:13,350 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.1891 AUC: 0.9814 | Val Loss: 0.1013 AUC: 0.9928 | Patience: 0/3
+2025-05-18 22:48:14,583 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9948. Model saved.
+2025-05-18 22:48:14,821 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0895 AUC: 0.9944 | Val Loss: 0.0792 AUC: 0.9948 | Patience: 0/3
+2025-05-18 22:48:16,004 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9955. Model saved.
+2025-05-18 22:48:16,205 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0675 AUC: 0.9968 | Val Loss: 0.0699 AUC: 0.9955 | Patience: 0/3
+2025-05-18 22:48:17,396 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:48:17,596 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0543 AUC: 0.9979 | Val Loss: 0.0612 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:48:18,794 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9960. Model saved.
+2025-05-18 22:48:18,997 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0424 AUC: 0.9988 | Val Loss: 0.0573 AUC: 0.9960 | Patience: 0/3
+2025-05-18 22:48:20,187 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9961. Model saved.
+2025-05-18 22:48:20,412 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0342 AUC: 0.9993 | Val Loss: 0.0550 AUC: 0.9961 | Patience: 0/3
+2025-05-18 22:48:21,601 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0255 AUC: 0.9996 | Val Loss: 0.0567 AUC: 0.9958 | Patience: 1/3
+2025-05-18 22:48:22,799 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0207 AUC: 0.9998 | Val Loss: 0.0524 AUC: 0.9961 | Patience: 2/3
+2025-05-18 22:48:23,983 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0184 AUC: 0.9998 | Val Loss: 0.0555 AUC: 0.9960 | Patience: 3/3
+2025-05-18 22:48:23,983 - __main__ - INFO - Early stopping triggered at epoch 9
+2025-05-18 22:48:25,348 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9931. Model saved.
+2025-05-18 22:48:25,582 - __main__ - INFO - Epoch 1/10 | Train Loss: 0.2017 AUC: 0.9788 | Val Loss: 0.1061 AUC: 0.9931 | Patience: 0/3
+2025-05-18 22:48:26,767 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9956. Model saved.
+2025-05-18 22:48:26,966 - __main__ - INFO - Epoch 2/10 | Train Loss: 0.0948 AUC: 0.9936 | Val Loss: 0.0808 AUC: 0.9956 | Patience: 0/3
+2025-05-18 22:48:28,154 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9967. Model saved.
+2025-05-18 22:48:28,358 - __main__ - INFO - Epoch 3/10 | Train Loss: 0.0706 AUC: 0.9966 | Val Loss: 0.0692 AUC: 0.9967 | Patience: 0/3
+2025-05-18 22:48:29,555 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9973. Model saved.
+2025-05-18 22:48:29,752 - __main__ - INFO - Epoch 4/10 | Train Loss: 0.0579 AUC: 0.9974 | Val Loss: 0.0599 AUC: 0.9973 | Patience: 0/3
+2025-05-18 22:48:30,937 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9974. Model saved.
+2025-05-18 22:48:31,135 - __main__ - INFO - Epoch 5/10 | Train Loss: 0.0439 AUC: 0.9987 | Val Loss: 0.0565 AUC: 0.9974 | Patience: 0/3
+2025-05-18 22:48:32,339 - __main__ - INFO - Epoch 6/10 | Train Loss: 0.0384 AUC: 0.9989 | Val Loss: 0.0564 AUC: 0.9972 | Patience: 1/3
+2025-05-18 22:48:33,527 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9976. Model saved.
+2025-05-18 22:48:33,863 - __main__ - INFO - Epoch 7/10 | Train Loss: 0.0282 AUC: 0.9995 | Val Loss: 0.0541 AUC: 0.9976 | Patience: 0/3
+2025-05-18 22:48:35,187 - __main__ - INFO - Epoch 8/10 | Train Loss: 0.0222 AUC: 0.9997 | Val Loss: 0.0513 AUC: 0.9976 | Patience: 1/3
+2025-05-18 22:48:36,436 - __main__ - INFO - Epoch 9/10 | Train Loss: 0.0190 AUC: 0.9998 | Val Loss: 0.0517 AUC: 0.9976 | Patience: 2/3
+2025-05-18 22:48:37,726 - __main__ - INFO - Epoch 10/10 | Train Loss: 0.0163 AUC: 0.9999 | Val Loss: 0.0519 AUC: 0.9975 | Patience: 3/3
+2025-05-18 22:48:37,726 - __main__ - INFO - Early stopping triggered at epoch 10
+2025-05-18 22:48:37,739 - __main__ - INFO - Best Trial: FrozenTrial(number=25, state=1, values=[0.9967533185648074], datetime_start=datetime.datetime(2025, 5, 18, 22, 45, 4, 98730), datetime_complete=datetime.datetime(2025, 5, 18, 22, 45, 49, 21080), params={'hidden_layers': [512, 256], 'learning_rate': 2.8149357437872202e-05, 'dropout_rate': 0.22945109439470443, 'weight_decay': 0.00011358280247081316, 'batch_size': 64}, user_attrs={}, system_attrs={}, intermediate_values={}, distributions={'hidden_layers': CategoricalDistribution(choices=([512, 256], [256, 128], [512, 256, 128])), 'learning_rate': FloatDistribution(high=0.001, log=True, low=1e-05, step=None), 'dropout_rate': FloatDistribution(high=0.5, log=False, low=0.2, step=None), 'weight_decay': FloatDistribution(high=0.001, log=True, low=1e-05, step=None), 'batch_size': CategoricalDistribution(choices=(32, 64))}, trial_id=25, value=None)
+2025-05-18 22:48:37,739 - __main__ - INFO - 
+--- Training Final Model on Full Training Data ---
+2025-05-18 22:48:37,876 - __main__ - INFO - Final model scaler saved to /Users/jianzhouyao/AllergenPredict/results/run_20250518_222335/final_model_evaluation/final_model_scaler.joblib
+2025-05-18 22:48:40,159 - __main__ - INFO - Epoch 1: New best Val AUC: 0.9951. Model saved.
+2025-05-18 22:48:40,374 - __main__ - INFO - Epoch 1/100 | Train Loss: 0.2165 AUC: 0.9779 | Val Loss: 0.0942 AUC: 0.9951 | Patience: 0/15
+2025-05-18 22:48:41,942 - __main__ - INFO - Epoch 2: New best Val AUC: 0.9968. Model saved.
+2025-05-18 22:48:42,180 - __main__ - INFO - Epoch 2/100 | Train Loss: 0.1062 AUC: 0.9928 | Val Loss: 0.0705 AUC: 0.9968 | Patience: 0/15
+2025-05-18 22:48:43,740 - __main__ - INFO - Epoch 3: New best Val AUC: 0.9977. Model saved.
+2025-05-18 22:48:43,942 - __main__ - INFO - Epoch 3/100 | Train Loss: 0.0813 AUC: 0.9953 | Val Loss: 0.0587 AUC: 0.9977 | Patience: 0/15
+2025-05-18 22:48:45,392 - __main__ - INFO - Epoch 4: New best Val AUC: 0.9983. Model saved.
+2025-05-18 22:48:45,620 - __main__ - INFO - Epoch 4/100 | Train Loss: 0.0672 AUC: 0.9966 | Val Loss: 0.0504 AUC: 0.9983 | Patience: 0/15
+2025-05-18 22:48:47,194 - __main__ - INFO - Epoch 5: New best Val AUC: 0.9987. Model saved.
+2025-05-18 22:48:47,384 - __main__ - INFO - Epoch 5/100 | Train Loss: 0.0560 AUC: 0.9976 | Val Loss: 0.0459 AUC: 0.9987 | Patience: 0/15
+2025-05-18 22:48:48,947 - __main__ - INFO - Epoch 6: New best Val AUC: 0.9989. Model saved.
+2025-05-18 22:48:49,158 - __main__ - INFO - Epoch 6/100 | Train Loss: 0.0473 AUC: 0.9984 | Val Loss: 0.0411 AUC: 0.9989 | Patience: 0/15
+2025-05-18 22:48:50,650 - __main__ - INFO - Epoch 7: New best Val AUC: 0.9991. Model saved.
+2025-05-18 22:48:50,849 - __main__ - INFO - Epoch 7/100 | Train Loss: 0.0396 AUC: 0.9987 | Val Loss: 0.0358 AUC: 0.9991 | Patience: 0/15
+2025-05-18 22:48:52,349 - __main__ - INFO - Epoch 8: New best Val AUC: 0.9993. Model saved.
+2025-05-18 22:48:52,534 - __main__ - INFO - Epoch 8/100 | Train Loss: 0.0356 AUC: 0.9989 | Val Loss: 0.0317 AUC: 0.9993 | Patience: 0/15
+2025-05-18 22:48:53,985 - __main__ - INFO - Epoch 9: New best Val AUC: 0.9993. Model saved.
+2025-05-18 22:48:54,202 - __main__ - INFO - Epoch 9/100 | Train Loss: 0.0306 AUC: 0.9992 | Val Loss: 0.0285 AUC: 0.9993 | Patience: 0/15
+2025-05-18 22:48:55,866 - __main__ - INFO - Epoch 10: New best Val AUC: 0.9994. Model saved.
+2025-05-18 22:48:56,059 - __main__ - INFO - Epoch 10/100 | Train Loss: 0.0262 AUC: 0.9995 | Val Loss: 0.0265 AUC: 0.9994 | Patience: 0/15
+2025-05-18 22:48:57,521 - __main__ - INFO - Epoch 11/100 | Train Loss: 0.0234 AUC: 0.9996 | Val Loss: 0.0259 AUC: 0.9992 | Patience: 1/15
+2025-05-18 22:48:58,950 - __main__ - INFO - Epoch 12/100 | Train Loss: 0.0201 AUC: 0.9998 | Val Loss: 0.0280 AUC: 0.9990 | Patience: 2/15
+2025-05-18 22:49:00,393 - __main__ - INFO - Epoch 13/100 | Train Loss: 0.0154 AUC: 0.9999 | Val Loss: 0.0245 AUC: 0.9992 | Patience: 3/15
+2025-05-18 22:49:01,837 - __main__ - INFO - Epoch 14/100 | Train Loss: 0.0149 AUC: 0.9999 | Val Loss: 0.0244 AUC: 0.9992 | Patience: 4/15
+2025-05-18 22:49:03,283 - __main__ - INFO - Epoch 15/100 | Train Loss: 0.0133 AUC: 0.9999 | Val Loss: 0.0245 AUC: 0.9991 | Patience: 5/15
+2025-05-18 22:49:04,716 - __main__ - INFO - Epoch 16/100 | Train Loss: 0.0111 AUC: 1.0000 | Val Loss: 0.0236 AUC: 0.9990 | Patience: 6/15
+2025-05-18 22:49:06,157 - __main__ - INFO - Epoch 17/100 | Train Loss: 0.0081 AUC: 1.0000 | Val Loss: 0.0257 AUC: 0.9992 | Patience: 7/15
+2025-05-18 22:49:07,591 - __main__ - INFO - Epoch 18/100 | Train Loss: 0.0078 AUC: 1.0000 | Val Loss: 0.0262 AUC: 0.9990 | Patience: 8/15
+2025-05-18 22:49:09,045 - __main__ - INFO - Epoch 19/100 | Train Loss: 0.0067 AUC: 1.0000 | Val Loss: 0.0242 AUC: 0.9992 | Patience: 9/15
+2025-05-18 22:49:10,635 - __main__ - INFO - Epoch 20/100 | Train Loss: 0.0066 AUC: 1.0000 | Val Loss: 0.0245 AUC: 0.9992 | Patience: 10/15
+2025-05-18 22:49:12,177 - __main__ - INFO - Epoch 21/100 | Train Loss: 0.0061 AUC: 1.0000 | Val Loss: 0.0274 AUC: 0.9992 | Patience: 11/15
+2025-05-18 22:49:13,874 - __main__ - INFO - Epoch 22/100 | Train Loss: 0.0057 AUC: 1.0000 | Val Loss: 0.0260 AUC: 0.9991 | Patience: 12/15
+2025-05-18 22:49:15,373 - __main__ - INFO - Epoch 23/100 | Train Loss: 0.0053 AUC: 1.0000 | Val Loss: 0.0266 AUC: 0.9991 | Patience: 13/15
+2025-05-18 22:49:16,856 - __main__ - INFO - Epoch 24/100 | Train Loss: 0.0047 AUC: 1.0000 | Val Loss: 0.0260 AUC: 0.9991 | Patience: 14/15
+2025-05-18 22:49:18,293 - __main__ - INFO - Epoch 25/100 | Train Loss: 0.0051 AUC: 1.0000 | Val Loss: 0.0262 AUC: 0.9991 | Patience: 15/15
+2025-05-18 22:49:18,293 - __main__ - INFO - Early stopping triggered at epoch 25
+2025-05-18 22:49:18,688 - __main__ - INFO - 
+--- Evaluating Final Model on Test Set ---
+2025-05-18 22:49:18,700 - __main__ - INFO - Loaded best final model from: /Users/jianzhouyao/AllergenPredict/results/run_20250518_222335/model_checkpoints/final_model_best_auc.pt
+2025-05-18 22:49:18,846 - __main__ - INFO - Final Test Metrics - Loss: 0.5208
+2025-05-18 22:49:18,846 - __main__ - INFO -   accuracy: 0.8404
+2025-05-18 22:49:18,846 - __main__ - INFO -   precision: 0.9893
+2025-05-18 22:49:18,846 - __main__ - INFO -   recall: 0.6883
+2025-05-18 22:49:18,846 - __main__ - INFO -   f1_score: 0.8118
+2025-05-18 22:49:18,846 - __main__ - INFO -   mcc: 0.7148
+2025-05-18 22:49:18,846 - __main__ - INFO -   specificity: 0.9926
+2025-05-18 22:49:18,846 - __main__ - INFO -   roc_auc: 0.9693
+2025-05-18 22:49:18,846 - __main__ - INFO -   pr_auc: 0.9731
+2025-05-18 22:49:19,039 - __main__ - INFO - Saved final test metrics and predictions to /Users/jianzhouyao/AllergenPredict/results/run_20250518_222335/final_model_evaluation
