@@ -1,4 +1,4 @@
-name: app1_env
+name: xallergen_app_env
 channels:
   - defaults
   - conda-forge
