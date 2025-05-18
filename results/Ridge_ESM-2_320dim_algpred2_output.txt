@@ -57,6 +57,9 @@ algpred2 dataset chosen
  - Specificity  : 0.9325
  - ROC-AUC      : 0.8583
  - MCC          : 0.7246
+Precision: 0.9207
+Recall (Sensitivity): 0.7841
+F1 Score: 0.8470
 
 🧾 Confusion Matrix on Hold-Out Test Set:
 
