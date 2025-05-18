@@ -1,20 +1,15 @@
 streamlit
 torch
-<<<<<<< HEAD
 pandas
 numpy
-matplotlib
 seaborn
 py3Dmol
 plotly
 scipy
 esm
 captum
-=======
-numpy
 joblib
 shap
 fair-esm
 matplotlib
-xgboost
->>>>>>> c66dc97e7134c85cd5ba3038f3a689ebe148a7e3
+watchdog

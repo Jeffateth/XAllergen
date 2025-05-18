@@ -1,4 +1,4 @@
-name: allergen_app_env
+name: app1_env
 channels:
   - defaults
   - conda-forge
@@ -7,6 +7,7 @@ dependencies:
   - python=3.10
   - streamlit
   - pytorch
+  - watchdog
   - pandas
   - numpy
   - matplotlib
@@ -16,5 +17,5 @@ dependencies:
   - scipy
   - pip
   - pip:
-      - esm
+      - git+https://github.com/facebookresearch/esm.git
       - captum
