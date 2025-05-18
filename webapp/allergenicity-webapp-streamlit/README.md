@@ -16,7 +16,7 @@ This repository provides a web interface for XAllergen: an explainable machine l
 ---
 
 ## Getting Started
-``bash
+```bash
 1. Clone the Repository
 
 
