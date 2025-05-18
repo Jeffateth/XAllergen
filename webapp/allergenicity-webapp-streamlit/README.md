@@ -35,16 +35,14 @@ conda activate xallergen_env
 pip install -r requirements.txt
 
 or 
+# Create environment with dependencies 
+conda env create -f xallergen_env.yml
 
-
-3. Download Model Weights
-The app requires pre-trained or fine-tuned model weights. Download or place the weights in the specified folder (see documentation or the app’s sidebar for details).
 
 4. Run the Web Application
 streamlit run app.py
 
 
-Input your protein sequence in the provided text box, or upload a file.
 
 
 Troubleshooting
