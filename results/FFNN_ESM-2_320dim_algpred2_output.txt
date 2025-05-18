@@ -8,73 +8,55 @@ algpred2 dataset chosen
 
 🚀 5-Fold Cross-Validation (NN) on Training Set...
 
-📂 Fold 1 AUC: 0.9911
-              precision    recall  f1-score   support
-
-         0.0     0.9727    0.9708    0.9717      1612
-         1.0     0.9709    0.9727    0.9718      1612
-
-    accuracy                         0.9718      3224
-   macro avg     0.9718    0.9718    0.9718      3224
-weighted avg     0.9718    0.9718    0.9718      3224
-
+📂 Fold 1 Metrics:
+ - Accuracy     : 0.9696
+ - Sensitivity  : 0.9677
+ - Specificity  : 0.9715
+ - ROC-AUC      : 0.9907
+ - MCC          : 0.9392
 ------
-📂 Fold 2 AUC: 0.9929
-              precision    recall  f1-score   support
-
-         0.0     0.9656    0.9764    0.9710      1612
-         1.0     0.9762    0.9653    0.9707      1612
-
-    accuracy                         0.9708      3224
-   macro avg     0.9709    0.9708    0.9708      3224
-weighted avg     0.9709    0.9708    0.9708      3224
-
+📂 Fold 2 Metrics:
+ - Accuracy     : 0.9708
+ - Sensitivity  : 0.9733
+ - Specificity  : 0.9684
+ - ROC-AUC      : 0.9936
+ - MCC          : 0.9417
 ------
-📂 Fold 3 AUC: 0.9942
-              precision    recall  f1-score   support
-
-         0.0     0.9724    0.9622    0.9673      1612
-         1.0     0.9626    0.9727    0.9676      1612
-
-    accuracy                         0.9674      3224
-   macro avg     0.9675    0.9674    0.9674      3224
-weighted avg     0.9675    0.9674    0.9674      3224
-
+📂 Fold 3 Metrics:
+ - Accuracy     : 0.9640
+ - Sensitivity  : 0.9826
+ - Specificity  : 0.9454
+ - ROC-AUC      : 0.9944
+ - MCC          : 0.9287
 ------
-📂 Fold 4 AUC: 0.9946
-              precision    recall  f1-score   support
-
-         0.0     0.9791    0.9591    0.9690      1612
-         1.0     0.9599    0.9795    0.9696      1612
-
-    accuracy                         0.9693      3224
-   macro avg     0.9695    0.9693    0.9693      3224
-weighted avg     0.9695    0.9693    0.9693      3224
-
+📂 Fold 4 Metrics:
+ - Accuracy     : 0.9665
+ - Sensitivity  : 0.9684
+ - Specificity  : 0.9646
+ - ROC-AUC      : 0.9941
+ - MCC          : 0.9330
 ------
-📂 Fold 5 AUC: 0.9945
-              precision    recall  f1-score   support
-
-         0.0     0.9749    0.9646    0.9698      1612
-         1.0     0.9650    0.9752    0.9701      1612
-
-    accuracy                         0.9699      3224
-   macro avg     0.9700    0.9699    0.9699      3224
-weighted avg     0.9700    0.9699    0.9699      3224
-
+📂 Fold 5 Metrics:
+ - Accuracy     : 0.9690
+ - Sensitivity  : 0.9684
+ - Specificity  : 0.9696
+ - ROC-AUC      : 0.9952
+ - MCC          : 0.9380
 ------
 
-✅ Mean CV ROC-AUC: 0.9935 ± 0.0013
+✅ Mean CV ROC-AUC: 0.9936 ± 0.0015
 
 🔒 Final Evaluation on Hold-Out Test Set...
 
-              precision    recall  f1-score   support
+🧪 Final Test Set Metrics:
+ - Accuracy     : 0.8318
+ - Sensitivity  : 0.6913
+ - Specificity  : 0.9722
+ - ROC-AUC      : 0.9172
+ - MCC          : 0.6914
 
-         0.0     0.7175    0.9831    0.8296      2015
-         1.0     0.9732    0.6129    0.7521      2015
+🧾 Confusion Matrix on Hold-Out Test Set:
 
-    accuracy                         0.7980      4030
-   macro avg     0.8454    0.7980    0.7908      4030
-weighted avg     0.8454    0.7980    0.7908      4030
-
-🎯 Final Test ROC-AUC: 0.9254
+          Predicted 0  Predicted 1
+Actual 0         1959           56
+Actual 1          622         1393
