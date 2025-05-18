@@ -1,0 +1,2 @@
+train_samples,test_samples,train_allergens,train_non_allergens,test_allergens,test_non_allergens,train_allergen_pct,test_allergen_pct,max_seq_length
+15319,3946,8015,7304,2012,1934,52.320647561851295,50.98834262544349,1679

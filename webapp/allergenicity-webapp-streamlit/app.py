@@ -1,3 +1,105 @@
+<<<<<<< HEAD
+=======
+# # ==========================================
+# # 🧬 Protein Allergenicity Predictor (Streamlit)
+# # – Uses FAIR’s ESM-2 (1280-dim) + XGBoost
+# # – Includes runtime hacks to avoid MKL/OpenMP & numpy._core issues
+# # ==========================================
+
+# # 1) ENVIRONMENT VARIABLE HACKS (must be first!)
+# import os
+# os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
+# os.environ["OMP_NUM_THREADS"] = "1"
+
+# # 2) STANDARD IMPORTS
+# import streamlit as st
+# import torch
+# import joblib
+# import matplotlib.pyplot as plt
+
+# from esm import pretrained
+
+# # ==========================================
+# # === 4) MODEL & TOKENIZER LOADING
+# # ==========================================
+# @st.cache_resource
+# def load_esm2_model():
+#     model, alphabet = pretrained.esm2_t33_650M_UR50D()
+#     model.eval()
+#     batch_converter = alphabet.get_batch_converter()
+#     return model, batch_converter
+
+# @st.cache_resource
+# def load_xgb_model(path):
+#     return joblib.load(path)
+
+# # ==========================================
+# # === 5) PREDICTION FUNCTION
+# # ==========================================
+# def predict(sequence, esm_model, batch_converter, xgb_model):
+#     seq = ''.join(filter(str.isalpha, sequence.strip().upper()))
+#     valid = set("ACDEFGHIKLMNPQRSTVWY")
+
+#     if not seq:
+#         return "⚠️ Please enter a protein sequence.", None
+#     if any(aa not in valid for aa in seq):
+#         return "❌ Invalid sequence: use only 20 standard amino acids.", None
+#     if not (5 <= len(seq) <= 2000):
+#         return "⚠️ Sequence length must be 5–2000 AA.", None
+
+#     # Get [CLS] embedding
+#     batch = [("prot", seq)]
+#     _, _, tokens = batch_converter(batch)
+#     with torch.no_grad():
+#         out = esm_model(tokens, repr_layers=[33], return_contacts=False)
+#     emb = out["representations"][33][0, 0, :].cpu().numpy().reshape(1, -1)
+
+#     # Predict
+#     prob = xgb_model.predict_proba(emb)[0, 1]
+#     pred = xgb_model.predict(emb)[0]
+#     label = "🟢 Allergen" if pred else "🔴 Non-Allergen"
+#     result = f"**Label:** {label}  \n**P(Allergen):** `{prob:.4f}`"
+
+#     return result, emb
+
+# # ==========================================
+# # === 6) STREAMLIT APP
+# # ==========================================
+# def main():
+#     st.set_page_config(page_title="Protein Allergenicity Predictor", layout="centered")
+#     st.title("🧬 Protein Allergenicity Predictor")
+#     st.markdown("Paste one or more protein sequences (A,C,D,...,Y) — separate them with **line breaks** — and click **Predict**.")
+
+#     seq_input = st.text_area("Protein Sequence(s)", height=200)
+
+#     esm_model, batch_converter = load_esm2_model()
+#     xgb_model = load_xgb_model("/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/Github_repository_Allergen/XGBoost_ESM-2_1280dim_algpred2_xgboost_model.pkl")
+
+#     if st.button("Predict Allergenicity"):
+#         import pandas as pd
+
+#         results = []
+#         for idx, raw_seq in enumerate(seq_input.strip().splitlines(), 1):
+#             result_text, _ = predict(raw_seq, esm_model, batch_converter, xgb_model)
+#             label = "Allergen" if "🟢" in result_text else "Non-Allergen"
+#             prob = float(result_text.split("`")[1])  # extract probability
+#             results.append((f"Sequence {idx}", label, prob))
+
+#         df = pd.DataFrame(results, columns=["Sequence", "Prediction", "P(Allergen)"])
+#         st.dataframe(df, use_container_width=True)
+
+
+
+
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+
+>>>>>>> c66dc97e7134c85cd5ba3038f3a689ebe148a7e3
 # ==========================================
 # 🧬 Protein Allergenicity Predictor (Streamlit)
 # – Uses fine-tuned ESM-2 + PyTorch classifier
