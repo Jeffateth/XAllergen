@@ -379,15 +379,15 @@ def main():
 
 
 
-            # st.subheader("Attention Heatmap")
-            # fig2, ax2 = plt.subplots(figsize=(10, 8))
-            # sns.heatmap(st.session_state["attention_matrix"], xticklabels=st.session_state["valid_tokens"], yticklabels=st.session_state["valid_tokens"], cmap="viridis", ax=ax2)
-            # ax2.set_title("Attention Heatmap")
-            # st.pyplot(fig2)
+            st.subheader("Attention Heatmap")
+            fig2, ax2 = plt.subplots(figsize=(10, 8))
+            sns.heatmap(st.session_state["attention_matrix"], xticklabels=st.session_state["valid_tokens"], yticklabels=st.session_state["valid_tokens"], cmap="viridis", ax=ax2)
+            ax2.set_title("Attention Heatmap")
+            st.pyplot(fig2)
 
-            # st.subheader("Top Attention-Receiving Residues")
-            # _, _ = ESMModelInterpreter.plot_top_attention_residues(st.session_state["attention_matrix"], st.session_state["valid_tokens"], top_k=10, mode='received')
-            # st.pyplot(plt.gcf())
+            st.subheader("Top Attention-Receiving Residues")
+            _, _ = ESMModelInterpreter.plot_top_attention_residues(st.session_state["attention_matrix"], st.session_state["valid_tokens"], top_k=10, mode='received')
+            st.pyplot(plt.gcf())
 
         if (
             st.session_state.get("interpretation_done")
