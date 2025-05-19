@@ -1,6 +1,0 @@
-﻿🎯 Final Test Metrics:
-    AUC     : 0.9811
-    Accuracy: 0.8762
-    Precision: 0.8968
-    Recall: 0.8762
-    F1 Score: 0.8746
