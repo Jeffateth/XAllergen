@@ -3,7 +3,11 @@
 # – Uses fine-tuned ESM-2 + PyTorch classifier
 # – Includes runtime hacks to avoid MKL/OpenMP & numpy._core issues
 # ==========================================
-
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+##########################################################REPLACE THIS TO FIT TO THE DOWNLOADED MODEL ON YOUR LOCAL COMPUTER##########################################
+model_path = "/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/App/fine-tuned_esm2_allergen_classifier-final_version.pt"  # 🔁 <-- CHANGE THIS
+#########################################################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------------------------------------
 # 1) ENVIRONMENT VARIABLE HACKS (must be first!)
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
@@ -285,11 +289,7 @@ def main():
 
     # Load model + batch converter
     with st.spinner("Loading ESM + classifier model..."):
-        #----------------------------------------------------------------------------------------------------------------------------------------------------
-        ##########################################################REPLACE THIS TO FIT TO THE DOWNLOADED MODEL ON YOUR LOCAL COMPUTER##########################################
-        model_path = "/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/App/fine-tuned_esm2_allergen_classifier-final_version.pt"  # 🔁 <-- CHANGE THIS
-        #########################################################################################################################################################
-        #----------------------------------------------------------------------------------------------------------------------------------------------------
+        
         model, batch_converter = load_custom_model(model_path)
 
     if st.button("Predict Allergenicity"):

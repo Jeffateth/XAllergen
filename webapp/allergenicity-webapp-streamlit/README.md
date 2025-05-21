@@ -38,6 +38,7 @@ or
 # Create environment with dependencies 
 conda env create -f xallergen_env.yml
 
+3. Download the Model.pk and change the path to find the model on your local PC
 
 4. Run the Web Application
 streamlit run app.py
