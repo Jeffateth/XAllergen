@@ -38,7 +38,7 @@ ALLERGENPREDICT/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/XAllergen.git
+git clone https://github.com/Jeffateth/XAllergen.git
 cd XAllergen
 ```
 
