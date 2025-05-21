@@ -285,7 +285,11 @@ def main():
 
     # Load model + batch converter
     with st.spinner("Loading ESM + classifier model..."):
+        #----------------------------------------------------------------------------------------------------------------------------------------------------
+        ##########################################################REPLACE THIS TO FIT TO THE DOWNLOADED MODEL ON YOUR LOCAL COMPUTER##########################################
         model_path = "/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/App/fine-tuned_esm2_allergen_classifier-final_version.pt"  # 🔁 <-- CHANGE THIS
+        #########################################################################################################################################################
+        #----------------------------------------------------------------------------------------------------------------------------------------------------
         model, batch_converter = load_custom_model(model_path)
 
     if st.button("Predict Allergenicity"):
@@ -393,6 +397,7 @@ def main():
             st.session_state.get("interpretation_done")
             and os.path.exists(st.session_state.get("pdb_path", ""))
         ):
+            
             st.markdown("---")
             st.subheader("🧬 3D Structure Visualization")
 
