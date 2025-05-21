@@ -1,6 +1,4 @@
 .DS_Store
-<<<<<<< HEAD
-=======
 data/outputs/X_seq_train.npy
 data/outputs/X_seq_test.npy
->>>>>>> c66dc97e7134c85cd5ba3038f3a689ebe148a7e3
+data/esm-2-embeddings
