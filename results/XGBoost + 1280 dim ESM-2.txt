@@ -1,0 +1,21 @@
+﻿📊 Final Test Set Metrics:
+    ROC-AUC     : 0.9811
+    Accuracy    : 0.8762
+    Precision   : 0.9871
+    Recall      : 0.7623
+    F1 Score    : 0.8603
+    Specificity : 0.9901
+    MCC         : 0.7727
+
+
+ warnings.warn(smsg, UserWarning)
+✅ Best Parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 200, 'subsample': 1.0}
+
+
+📊 Cross-Validation Performance of Best Model:
+    Mean CV ROC-AUC: 0.9927 ± 0.0070
+
+
+warnings.warn(smsg, UserWarning)
+🔀 Y-Scrambled ROC-AUC: 0.4903 ± 0.0128
+👉 This should be near 0.5 if your real model learned something.

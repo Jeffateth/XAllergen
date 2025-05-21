@@ -1,15 +1,27 @@
 # ==========================================
-# 🧬 Protein Allergenicity Predictor (Streamlit)
+# Protein Allergenicity Predictor (Streamlit)
 # – Uses fine-tuned ESM-2 + PyTorch classifier
-# – Includes runtime hacks to avoid MKL/OpenMP & numpy._core issues
 # ==========================================
 
-# 1) ENVIRONMENT VARIABLE HACKS (must be first!)
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+##########################################################REPLACE THIS TO FIT TO THE DOWNLOADED MODEL ON YOUR LOCAL COMPUTER##########################################
+model_path = "/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/App/fine-tuned_esm2_allergen_classifier-final_version.pt" 
+######################################################################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# ==========================================
+# === 1) FIX FOR LIBRARY CRASH AND CPU OVERLOAD
+# ==========================================
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 os.environ["OMP_NUM_THREADS"] = "1"
 
-# 2) STANDARD IMPORTS
+
+# ==========================================
+# === 2) IMPORTS
+# ==========================================
 import streamlit as st
 import py3Dmol
 import torch
@@ -22,6 +34,8 @@ from esm import pretrained
 from esm_interpret import ESMModelInterpreter
 import streamlit.components.v1 as components
 import plotly.graph_objs as go
+
+
 # ==========================================
 # === 3) MODEL ARCHITECTURE
 # ==========================================
@@ -83,6 +97,7 @@ def load_custom_model(checkpoint_path):
 def load_model_for_interpretation(model_path: str) -> ESMModelInterpreter:
     return ESMModelInterpreter(model_path)
 
+
 # ==========================================
 # === 5) PREDICTION FUNCTION
 # ==========================================
@@ -107,8 +122,11 @@ def predict(sequence, model, batch_converter):
     label = "🟢 Allergen" if pred else "🔴 Non-Allergen"
     result = f"**Label:** {label}  \n**P(Allergen):** `{prob:.4f}`"
     return result, prob
-### 3D representation of the protein sequence
-#_____________________________
+
+
+# ==========================================
+# === 6) 3D STRUCTURE VISUALIZATION
+# ==========================================
 def get_color(attr, norm_score):
     if norm_score < 1e-6:
         return "#FFFFFF"  # White for near-zero attributions
@@ -143,61 +161,10 @@ def show_3d_structure(pdb_path, attributions, sequence, spin=True):
 
 
     view.zoomTo()
-    view.spin(spin)  # 🔁 Controlled here
+    view.spin(spin) 
     return view
 
-## with vertical description bar to the right of the 3D viewer
-# def render_pdb_in_streamlit(view):
-#     inner_html = view._make_html()
 
-#     bordered_viewer = f"""
-#     <div style="
-#         width: 800px;
-#         height: 500px;
-#         border: 1px solid black;
-#         overflow: hidden;
-#         background-color: grey;
-#     ">
-#         {inner_html}
-#     </div>
-#     """
-
-#     color_legend = """
-#     <div style="height: 500px; display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
-#         <!-- Color bar -->
-#         <div style="height: 450px; width: 20px; background: linear-gradient(to top, red, white, blue); 
-#                     border: 1px solid black; position: relative;">
-#         </div>
-
-#         <!-- Labels -->
-#         <div style="height: 450px; display: flex; flex-direction: column; justify-content: space-between;
-#                     margin-left: 6px; font-family: monospace; font-size: 12px;">
-#             <div>+1</div>
-#             <div>+0.5</div>
-#             <div>0</div>
-#             <div>-0.5</div>
-#             <div>-1</div>
-#         </div>
-
-#         <!-- Vertical label on the right -->
-#         <div style="writing-mode: vertical-rl; transform: rotate(0deg); 
-#                     font-family: monospace; font-size: 12px; margin-left: 12px;">
-#             Integrated Gradients Attribution
-#         </div>
-#     </div>
-#     """
-
-#     combined = f"""
-#     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-#         {bordered_viewer}
-#         {color_legend}
-#     </div>
-#     """
-
-#     st.components.v1.html(combined, height=520, width=920)
-
-
-# with horizontal description bar under the 3D viewer
 def render_pdb_in_streamlit(view):
     inner_html = view._make_html()
 
@@ -247,24 +214,8 @@ def render_pdb_in_streamlit(view):
     st.components.v1.html(combined, height=640, width=820)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ==========================================
-# === 6) STREAMLIT APP
+# === 7) STREAMLIT APP UI
 # ==========================================
 def main():
 
@@ -285,7 +236,7 @@ def main():
 
     # Load model + batch converter
     with st.spinner("Loading ESM + classifier model..."):
-        model_path = "/Users/rikardpettersson/Library/Mobile Documents/com~apple~CloudDocs/Documents/ETH Chemistry Ms/Digital Chemistry/App/fine-tuned_esm2_allergen_classifier-final_version.pt"  # 🔁 <-- CHANGE THIS
+        
         model, batch_converter = load_custom_model(model_path)
 
     if st.button("Predict Allergenicity"):
@@ -393,16 +344,17 @@ def main():
             st.session_state.get("interpretation_done")
             and os.path.exists(st.session_state.get("pdb_path", ""))
         ):
+            
             st.markdown("---")
             st.subheader("🧬 3D Structure Visualization")
 
             # --- Toggle Spin ---
             spin_now = st.toggle("Spin structure", value=st.session_state.get("spin", False), key="spin_toggle")
 
-            # Check if value changed and trigger rerun
+            # Check if value changed and trigger rerun (I had the problem of needing to press the toggle twice to get it to work, this was one solution)
             if "spin" in st.session_state and st.session_state["spin"] != spin_now:
                 st.session_state["spin"] = spin_now
-                st.rerun()  # <-- Ensures immediate visual/state update
+                st.rerun()  # Ensures immediate visual/state update
 
             
 
@@ -415,7 +367,6 @@ def main():
             )
             render_pdb_in_streamlit(view)
 
-                    
-            
+
 if __name__ == "__main__":
     main()
