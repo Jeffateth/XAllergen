@@ -26,13 +26,9 @@
 ALLERGENPREDICT/
 ├── data/                        # Datasets (AlgPred 2.0, IEDB, amino acid properties)
 ├── models/                     # Fine-tuned model weights
-├── Integrated_gradient/        # IG maps and 3D attribution results
 ├── webapp/                     # Streamlit web interface
 ├── src/                        # Training, analysis and preprocessing code
 ├── results/                    # Model evaluation and reports
-├── requirements.txt            # Dependencies
-├── env.yaml                    # Conda environment definition
-├── *.ipynb / *.py              # Analysis and training notebooks/scripts
 ```
 
 ---
@@ -48,17 +44,11 @@ cd XAllergen
 
 ### 2. Set Up Environment
 
-### Create environment with dependencies 
-conda env create -f xallergen_env.yml
-
-or
-
 #### Using conda
 ```bash
-conda create -n XAllergen python=3.8
+conda create -n XAllergen python=3.11
 conda activate XAllergen
 ```
-
 #### Using venv
 ```bash
 python -m venv venv
@@ -67,6 +57,7 @@ venv\Scripts\activate
 # On Unix or MacOS
 source venv/bin/activate
 ```
+### 2. Install Packages
 
 ```bash
 cd webapp/allergenicity-webapp-streamlit
