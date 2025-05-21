@@ -1,5 +1,0 @@
-fold,model,auc,stop_epoch
-1,dummy,0.5,
-1,CNN,0.6685362470965647,1.0
-2,dummy,0.5,
-2,CNN,0.6707615686764146,3.0
