@@ -14,8 +14,8 @@
 
 * ⚙️ **Protein Embedding**: Fine-tuned [ESM-2](https://github.com/facebookresearch/esm) models for deep representation of protein sequences.
 * 🧠 **Models**: XGBoost, Ridge Regression, FFNN, 1D-CNN, and full ESM-2 fine-tuning.
-* 🎯 **Evaluation**: Accuracy, F1-score, MCC, AUC-ROC.
-* 🎨 **Interpretability**: Integrated Gradients and 3D attribution visualization (PyMOL and py3Dmol).
+* 🎯 **Evaluation**: Accuracy, F1-score, MCC, AUC-ROC, Precision, Sensitivity, Specificity.
+* 🎨 **Interpretability**: Integrated Gradients and 3D attribution visualization (py3Dmol).
 * 🌐 **Web App**: Streamlit interface for interactive protein input and real-time visual predictions.
 
 ---
@@ -48,15 +48,34 @@ cd XAllergen
 
 ### 2. Set Up Environment
 
+### Create environment with dependencies 
+conda env create -f xallergen_env.yml
+
+or
+
+#### Using conda
 ```bash
-conda env create -f env.yaml
-conda activate xallergen
+conda create -n XAllergen python=3.8
+conda activate XAllergen
 ```
 
-### 3. Launch the Web App
+#### Using venv
+```bash
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On Unix or MacOS
+source venv/bin/activate
+```
 
 ```bash
 cd webapp/allergenicity-webapp-streamlit
+pip install -r requirements.txt
+```
+
+### 4. Launch the Web App
+
+```bash
 streamlit run app.py
 ```
 
@@ -67,10 +86,3 @@ streamlit run app.py
 Large files such as full model weights, PDB files, and high-resolution visualizations are hosted on Google Drive:
 
 📁 **[Download from Google Drive](https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing)**
-
----
-
-## 🧠 Explainable AI
-
-* **Integrated Gradients**: Highlights influential amino acids.
-* **3D Attribution Mapping**: Visual overlays of attributions on protein structures using PyMOL.
