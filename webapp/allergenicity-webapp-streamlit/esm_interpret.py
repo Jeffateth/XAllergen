@@ -9,6 +9,7 @@ from typing import Optional, List, Tuple, Dict
 from scipy.stats import entropy
 
 import esm  # make sure fair-esm is installed: pip install fair-esm
+
 # If using IntegratedGradients from Captum
 from captum.attr import IntegratedGradients
 
@@ -19,8 +20,7 @@ class ESMModelInterpreter:
     This utility works with models trained using the ESM-2 architecture for protein classification.
     """
 
-
-    def __init__(self, model_path: str, device: str = 'cuda' if torch.cuda.is_available() else 'cpu'):
+    def __init__(self, model_path: str, device: str = "cpu"):
         """
         Initialize the interpreter with a saved model.
 
@@ -29,16 +29,18 @@ class ESMModelInterpreter:
             device: Device to run the model on ('cuda' or 'cpu')
         """
         self.device = device
-        self.checkpoint = torch.load(model_path, map_location=device, weights_only = False)
+        self.checkpoint = torch.load(
+            model_path, map_location=device, weights_only=False
+        )
 
         # Load the ESM model first
-        self.esm_model_name = self.checkpoint.get('esm_model_name', 'esm2_t6_8M_UR50D')
+        self.esm_model_name = self.checkpoint.get("esm_model_name", "esm2_t6_8M_UR50D")
         self.esm_model, self.alphabet = self._load_esm_model(self.esm_model_name)
         self.batch_converter = self.alphabet.get_batch_converter()
 
         # Then recreate the full classifier
         self.model = self._recreate_model()
-        self.model.load_state_dict(self.checkpoint['model_state_dict'])
+        self.model.load_state_dict(self.checkpoint["model_state_dict"])
         self.model.to(device)
         self.model.eval()
 
@@ -47,23 +49,23 @@ class ESMModelInterpreter:
 
     def _load_esm_model(self, model_name: str):
         """Load the correct ESM model based on the name saved in the checkpoint."""
-        if model_name == 'esm2_t6_8M_UR50D':
+        if model_name == "esm2_t6_8M_UR50D":
             return esm.pretrained.esm2_t6_8M_UR50D()
-        elif model_name == 'esm2_t12_35M_UR50D':
+        elif model_name == "esm2_t12_35M_UR50D":
             return esm.pretrained.esm2_t12_35M_UR50D()
-        elif model_name == 'esm2_t30_150M_UR50D':
+        elif model_name == "esm2_t30_150M_UR50D":
             return esm.pretrained.esm2_t30_150M_UR50D()
-        elif model_name == 'esm2_t33_650M_UR50D':
+        elif model_name == "esm2_t33_650M_UR50D":
             return esm.pretrained.esm2_t33_650M_UR50D()
         else:
             raise ValueError(f"Unknown ESM model: {model_name}")
 
     def _recreate_model(self):
         """Recreate the model architecture from saved hyperparameters."""
-        architecture = self.checkpoint.get('model_architecture', {})
-        hidden_dim = architecture.get('hidden_dim', 128)
-        num_layers = architecture.get('num_layers', 1)
-        dropout = architecture.get('dropout', 0.3)
+        architecture = self.checkpoint.get("model_architecture", {})
+        hidden_dim = architecture.get("hidden_dim", 128)
+        num_layers = architecture.get("num_layers", 1)
+        dropout = architecture.get("dropout", 0.3)
 
         from torch import nn
 
@@ -94,7 +96,7 @@ class ESMModelInterpreter:
             self.esm_model,
             hidden_dim=hidden_dim,
             num_layers=num_layers,
-            dropout=dropout
+            dropout=dropout,
         )
 
     def predict(self, sequence: str) -> float:
@@ -141,7 +143,9 @@ class ESMModelInterpreter:
         num_layers = self.esm_model.num_layers
 
         # Register hook to the last attention layer
-        hook = self.esm_model.layers[num_layers-1].attention.register_forward_hook(hook_fn)
+        hook = self.esm_model.layers[num_layers - 1].attention.register_forward_hook(
+            hook_fn
+        )
 
         # Forward pass
         with torch.no_grad():
@@ -152,7 +156,13 @@ class ESMModelInterpreter:
 
         return attention_weights
 
-    def visualize_attention(self, sequence: str, layer: int = -1, head: int = 0, save_path: Optional[str] = None):
+    def visualize_attention(
+        self,
+        sequence: str,
+        layer: int = -1,
+        head: int = 0,
+        save_path: Optional[str] = None,
+    ):
         """
         Visualize attention weights for a sequence.
 
@@ -168,13 +178,18 @@ class ESMModelInterpreter:
         tokens = tokens.to(self.device)
 
         with torch.no_grad():
-            outputs = self.esm_model(tokens, repr_layers=[layer], return_contacts=False, need_head_weights=True)
+            outputs = self.esm_model(
+                tokens,
+                repr_layers=[layer],
+                return_contacts=False,
+                need_head_weights=True,
+            )
 
         # Get attention weights
-        attentions = outputs['attentions']
+        attentions = outputs["attentions"]
         if attentions is None:
             print("Attention weights not available. Try using a different ESM model.")
-            return
+            return None, None, None
 
         # Convert layer index
         layer_idx = layer if layer >= 0 else attentions.shape[1] + layer
@@ -191,35 +206,41 @@ class ESMModelInterpreter:
         # Filter out special tokens and their attention
         valid_tokens = []
         for i, aa in enumerate(amino_acids):
-            if aa not in ['<cls>', '<pad>', '<eos>', '<unk>', '<mask>']:
+            if aa not in ["<cls>", "<pad>", "<eos>", "<unk>", "<mask>"]:
                 valid_tokens.append(aa)
 
         valid_token_indices = []
         for i, aa in enumerate(amino_acids):
-            if aa not in ['<cls>', '<pad>', '<eos>', '<unk>', '<mask>']:
+            if aa not in ["<cls>", "<pad>", "<eos>", "<unk>", "<mask>"]:
                 valid_token_indices.append(i)
-
-
 
         # Filter attention weights using valid_token_indices
         filtered_attention = attention[np.ix_(valid_token_indices, valid_token_indices)]
 
         # Plot with seaborn heatmap
         plt.figure(figsize=(10, 8))
-        ax = sns.heatmap(filtered_attention, xticklabels=valid_tokens, yticklabels=valid_tokens, cmap="viridis")
+        ax = sns.heatmap(
+            filtered_attention,
+            xticklabels=valid_tokens,
+            yticklabels=valid_tokens,
+            cmap="viridis",
+        )
         plt.title(f"Attention Weights (Layer {layer}, Head {head})")
         plt.tight_layout()
 
         if save_path:
             plt.savefig(save_path)
 
-        plt.show()
-
         # Return entropy of each residue's attention distribution
-        entropies = [entropy(filtered_attention[i]) for i in range(len(filtered_attention))]
+        entropies = [
+            entropy(filtered_attention[i]) for i in range(len(filtered_attention))
+        ]
         return entropies, filtered_attention, valid_tokens
 
-    def plot_top_attention_residues(filtered_attention, valid_amino_acids, top_k=10, mode='received'):
+    @staticmethod
+    def plot_top_attention_residues(
+        filtered_attention, valid_amino_acids, top_k=10, mode="received"
+    ):
         """
         Plot top residues based on total attention received or sent.
 
@@ -229,7 +250,19 @@ class ESMModelInterpreter:
             top_k (int): Number of top residues to show.
             mode (str): 'received' or 'sent' to indicate direction of attention.
         """
-        if mode == 'received':
+        if filtered_attention is None or valid_amino_acids is None:
+            plt.figure(figsize=(10, 5))
+            plt.text(
+                0.5,
+                0.5,
+                "Attention data not available",
+                horizontalalignment="center",
+                verticalalignment="center",
+            )
+            plt.tight_layout()
+            return None, None
+
+        if mode == "received":
             scores = filtered_attention.sum(axis=0)  # attention received
         else:
             scores = filtered_attention.sum(axis=1)  # attention sent
@@ -241,23 +274,24 @@ class ESMModelInterpreter:
 
         # Plot
         plt.figure(figsize=(10, 5))
-        bars = plt.bar(range(top_k), top_scores, color='darkcyan')
-        plt.xticks(range(top_k), [f"{aa}-{i}" for aa, i in zip(top_residues, top_indices)], rotation=45)
-        plt.ylabel('Total Attention ' + ('Received' if mode == 'received' else 'Sent'))
-        plt.title(f'Top {top_k} Residues by Attention {mode.capitalize()}')
+        bars = plt.bar(range(top_k), top_scores, color="darkcyan")
+        plt.xticks(
+            range(top_k),
+            [f"{aa}-{i}" for aa, i in zip(top_residues, top_indices)],
+            rotation=45,
+        )
+        plt.ylabel("Total Attention " + ("Received" if mode == "received" else "Sent"))
+        plt.title(f"Top {top_k} Residues by Attention {mode.capitalize()}")
         plt.tight_layout()
-        plt.show()
 
         return top_residues, top_scores
-
-
 
     def integrated_gradients_attributions(
         self,
         sequence: str,
         n_steps: int = 50,
         internal_batch_size: int = 5,
-        save_path: Optional[str] = None
+        save_path: Optional[str] = None,
     ) -> Tuple[np.ndarray, list, float]:
         """
         Compute attributions using embedding-level integrated gradients.
@@ -306,11 +340,6 @@ class ESMModelInterpreter:
 
         embedding_model = EmbeddingModel(embedding_layer, self.model)
 
-        # # Get original embeddings
-        # with torch.no_grad():
-        #     original_embeddings = embedding_layer(tokens)
-        #     # Create a baseline of all zeros for the embedding
-        #     baseline_embeddings = torch.zeros_like(original_embeddings)
         # Get original embeddings
         with torch.no_grad():
             original_embeddings = embedding_layer(tokens)
@@ -319,7 +348,9 @@ class ESMModelInterpreter:
             masked_tokens = tokens.clone()
             seq_len = tokens.shape[1] - 2  # exclude BOS and EOS
             mask_idx = self.alphabet.mask_idx
-            masked_tokens[0, 1:1+seq_len] = mask_idx  # mask everything except BOS/EOS
+            masked_tokens[0, 1 : 1 + seq_len] = (
+                mask_idx  # mask everything except BOS/EOS
+            )
 
             # Pass masked tokens through same embedding layer
             baseline_embeddings = embedding_layer(masked_tokens)
@@ -337,7 +368,7 @@ class ESMModelInterpreter:
             original_embeddings,
             baselines=baseline_embeddings,
             n_steps=n_steps,
-            internal_batch_size=internal_batch_size
+            internal_batch_size=internal_batch_size,
         )
 
         # Sum across embedding dimensions to get token-level attributions
@@ -361,7 +392,7 @@ class ESMModelInterpreter:
         valid_attributions = []
         valid_amino_acids = []
         for i, aa in enumerate(amino_acids):
-            if aa not in ['<cls>', '<pad>', '<eos>', '<unk>', '<mask>']:
+            if aa not in ["<cls>", "<pad>", "<eos>", "<unk>", "<mask>"]:
                 valid_attributions.append(norm_attributions[i])
                 valid_amino_acids.append(aa)
 
@@ -369,19 +400,23 @@ class ESMModelInterpreter:
         plt.figure(figsize=(15, 5))
 
         # Create bar plot with colors
-        colors = ['red' if x < 0 else 'blue' for x in valid_attributions]
+        colors = ["red" if x < 0 else "blue" for x in valid_attributions]
         bars = plt.bar(range(len(valid_attributions)), valid_attributions, color=colors)
 
         # Add amino acid labels
-        if len(valid_amino_acids) <= 100:  # Only show labels if sequence is not too long
-            plt.xticks(range(len(valid_attributions)), valid_amino_acids, rotation='vertical')
+        if (
+            len(valid_amino_acids) <= 100
+        ):  # Only show labels if sequence is not too long
+            plt.xticks(
+                range(len(valid_attributions)), valid_amino_acids, rotation="vertical"
+            )
         else:
             plt.xticks([])  # Remove x-axis labels if too many
 
-        plt.xlabel('Amino Acid Position')
-        plt.ylabel('Attribution Score')
-        plt.title(f'Integrated Gradients Attribution (Prediction: {pred:.4f})')
-        plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+        plt.xlabel("Amino Acid Position")
+        plt.ylabel("Attribution Score")
+        plt.title(f"Integrated Gradients Attribution (Prediction: {pred:.4f})")
+        plt.axhline(y=0, color="k", linestyle="-", alpha=0.3)
         plt.tight_layout()
 
         if save_path:
@@ -392,13 +427,8 @@ class ESMModelInterpreter:
         # Return the processed attributions and prediction
         return valid_attributions, valid_amino_acids, pred
 
-
     def get_top_influential_residues(
-        self,
-        sequence: str,
-        top_n: int = 10,
-        n_steps: int = 50,
-        absolute: bool = True
+        self, sequence: str, top_n: int = 10, n_steps: int = 50, absolute: bool = True
     ) -> pd.DataFrame:
         """
         Return the top influential residues based on integrated gradients.
@@ -418,19 +448,21 @@ class ESMModelInterpreter:
         )
 
         # Create dataframe
-        df = pd.DataFrame({
-            'Position': range(1, len(attributions) + 1),
-            'Residue': amino_acids,
-            'Attribution': attributions
-        })
+        df = pd.DataFrame(
+            {
+                "Position": range(1, len(attributions) + 1),
+                "Residue": amino_acids,
+                "Attribution": attributions,
+            }
+        )
 
         # Sort by attribution score
         if absolute:
-            df['AbsAttribution'] = df['Attribution'].abs()
-            df = df.sort_values('AbsAttribution', ascending=False).head(top_n)
-            df = df.drop('AbsAttribution', axis=1)
+            df["AbsAttribution"] = df["Attribution"].abs()
+            df = df.sort_values("AbsAttribution", ascending=False).head(top_n)
+            df = df.drop("AbsAttribution", axis=1)
         else:
-            df = df.sort_values('Attribution', ascending=False).head(top_n)
+            df = df.sort_values("Attribution", ascending=False).head(top_n)
 
         return df
 
@@ -439,7 +471,7 @@ class ESMModelInterpreter:
         sequences: List[str],
         ids: Optional[List[str]] = None,
         output_dir: str = "attributions",
-        n_steps: int = 50
+        n_steps: int = 50,
     ) -> Dict[str, Dict]:
         """
         Process multiple sequences and save attributions.
@@ -478,20 +510,24 @@ class ESMModelInterpreter:
 
             # Get attention visualization
             attn_path = os.path.join(output_dir, f"{seq_id}_attention.png")
-            entropies, attention = self.visualize_attention(sequence, save_path=attn_path)
+            entropies, attention, tokens = self.visualize_attention(
+                sequence, save_path=attn_path
+            )
 
             # Get top influential residues
             top_residues = self.get_top_influential_residues(sequence)
 
             results[seq_id] = {
-                'prediction': pred,
-                'attributions': attributions,
-                'amino_acids': amino_acids,
-                'top_residues': top_residues,
-                'attention_entropies': entropies
+                "prediction": pred,
+                "attributions": attributions,
+                "amino_acids": amino_acids,
+                "top_residues": top_residues,
+                "attention_entropies": entropies,
             }
 
             # Save top residues to CSV
-            top_residues.to_csv(os.path.join(output_dir, f"{seq_id}_top_residues.csv"), index=False)
+            top_residues.to_csv(
+                os.path.join(output_dir, f"{seq_id}_top_residues.csv"), index=False
+            )
 
         return results

@@ -1,21 +1,21 @@
-name: xallergen_app_env
+name: XAllergen
 channels:
-  - defaults
   - conda-forge
   - pytorch
+  - defaults
 dependencies:
-  - python=3.10
-  - streamlit
-  - pytorch
-  - watchdog
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
-  - py3Dmol
-  - plotly
-  - scipy
-  - pip
+  - python=3.8
+  - pip>=22.0.0
+  - numpy>=1.22.0
+  - pandas>=1.5.0
+  - matplotlib>=3.5.0
+  - seaborn>=0.12.0
+  - scipy>=1.8.0
+  - pytorch>=1.13.0
+  - scikit-learn>=1.0.0
   - pip:
-      - git+https://github.com/facebookresearch/esm.git
-      - captum
+    - streamlit>=1.20.0
+    - fair-esm>=2.0.0
+    - captum>=0.6.0
+    - py3Dmol>=2.0.0
+    - plotly>=5.13.0
