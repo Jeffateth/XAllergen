@@ -57,7 +57,7 @@ venv\Scripts\activate
 # On Unix or MacOS
 source venv/bin/activate
 ```
-### 2. Install Packages
+### 3. Install Packages
 
 ```bash
 cd webapp/allergenicity-webapp-streamlit
