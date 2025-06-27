@@ -1,6 +1,0 @@
-Package,Current Version,Latest Version,Latest Release Date,Min Version for Python,Requires Update
-Bio,1.5.3,1.7.1,2024-05-29T16:32:56,1.0.2,False
-numpy,1.23.4,2.2.5,2025-04-19T22:31:01,1.13.0,False
-pandas,1.5.0,2.2.3,2024-09-20T13:08:42,0.23.0,False
-scikit_learn,1.2.1,1.6.1,2025-01-10T08:05:56,0.21.1,False
-torchmetrics,0.9.3,1.7.1,2025-04-07T19:39:50,0.2.0,False
