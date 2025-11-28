@@ -1,0 +1,30 @@
+Sources for amino acid properties
+
+pKa, residue weight, hydrophobicity indexes (pH 2 and 7):  https://www.sigmaaldrich.com/CH/en/technical-documents/technical-article/protein-biology/protein-structural-analysis/amino-acid-reference-chart?srsltid=AfmBOorXA-Rm-q7QzpREzmi5TTLxgLiKay1rm_JaZtAJCABbvt68HBwh
+
+Bulkiness: Zimmerman J.M., Eliezer N., Simha R., J. Theor. Biol. 21:170-201(1968).
+
+Average Flexibility: Bhaskaran R., Ponnuswamy P.K., Int. J. Pept. Protein. Res. 32:242-255(1988).
+
+Polarity: Grantham R., Science 185:862-864(1974).
+
+Polarity: Zimmerman J.M., Eliezer N., Simha R., J. Theor. Biol. 21:170-201(1968).
+
+OMH: Sweet R. M., Eisenberg D. . Mol. Biol. 171:479-488(1983).
+
+Hydrophobicity: Abraham D.J., Leo A.J., Proteins: Structure, Function and Genetics 2:130-152(1987).
+
+Hydrophobicity: Guy H. R., Biophys J. 47:61-70(1985).
+
+Hydrophobicity: Roseman M. A., J. Mol. Biol. 200:513-522(1988).
+
+Hydrophobicity: Tanford C., J. Am. Chem. Soc. 84:4240-4274(1962).
+
+Hydrophilicity: Hopp T.P., Woods K.R., Proc. Natl. Acad. Sci. U.S.A. 78:3824-3828(1981).
+
+Recognition factors: Fraga S., Can. J. Chem. 60:2606-2610(1982).
+
+Antigenicity values. Welling G.W., Weijer W.J., Van der Zee R., Welling-Wester S., FEBS Lett. 188:215-218(1985).
+
+
+Further parameters to potentially include: tendency for alpha helices/beta sheets/turns; https://web.expasy.org/protscale/

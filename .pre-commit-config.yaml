@@ -1,0 +1,17 @@
+repos:
+  # Black for Python scripts
+  - repo: https://github.com/psf/black
+    rev: 24.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--line-length=88]
+
+  # nbQA + Black for Jupyter notebooks
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.0
+    hooks:
+      - id: nbqa-black
+        additional_dependencies: [black]
+        args: [--line-length=88]
+        language_version: python3

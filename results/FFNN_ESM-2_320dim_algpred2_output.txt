@@ -1,0 +1,65 @@
+FFNN model chosen
+algpred2 dataset chosen
+✅ Loaded: Train=(16120, 320), Test=(4030, 320)
+
+📉 DummyClassifier (Stratified) on Training Set (CV):
+
+📊 Dummy ROC-AUC: 0.4991 ± 0.0000
+
+🚀 5-Fold Cross-Validation (NN) on Training Set...
+
+📂 Fold 1 Metrics:
+ - Accuracy     : 0.9696
+ - Sensitivity  : 0.9677
+ - Specificity  : 0.9715
+ - ROC-AUC      : 0.9907
+ - MCC          : 0.9392
+------
+📂 Fold 2 Metrics:
+ - Accuracy     : 0.9708
+ - Sensitivity  : 0.9733
+ - Specificity  : 0.9684
+ - ROC-AUC      : 0.9936
+ - MCC          : 0.9417
+------
+📂 Fold 3 Metrics:
+ - Accuracy     : 0.9640
+ - Sensitivity  : 0.9826
+ - Specificity  : 0.9454
+ - ROC-AUC      : 0.9944
+ - MCC          : 0.9287
+------
+📂 Fold 4 Metrics:
+ - Accuracy     : 0.9665
+ - Sensitivity  : 0.9684
+ - Specificity  : 0.9646
+ - ROC-AUC      : 0.9941
+ - MCC          : 0.9330
+------
+📂 Fold 5 Metrics:
+ - Accuracy     : 0.9690
+ - Sensitivity  : 0.9684
+ - Specificity  : 0.9696
+ - ROC-AUC      : 0.9952
+ - MCC          : 0.9380
+------
+
+✅ Mean CV ROC-AUC: 0.9936 ± 0.0015
+
+🔒 Final Evaluation on Hold-Out Test Set...
+
+🧪 Final Test Set Metrics:
+ - Accuracy     : 0.8318
+ - Sensitivity  : 0.6913
+ - Specificity  : 0.9722
+ - ROC-AUC      : 0.9172
+ - MCC          : 0.6914
+Precision: 0.9614
+Recall (Sensitivity): 0.6913
+F1 Score: 0.8043
+
+🧾 Confusion Matrix on Hold-Out Test Set:
+
+          Predicted 0  Predicted 1
+Actual 0         1959           56
+Actual 1          622         1393
