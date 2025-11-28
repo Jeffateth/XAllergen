@@ -2,6 +2,23 @@
 
 **(eXplainable Allergenicity Prediction of Proteins using AI)**
 
+<p align="center">
+  <a href="docs/XAllergen_final_documentation.pdf">
+    <img src="https://img.shields.io/badge/📄_Documentation-Full_Report-b31b1b?style=for-the-badge" alt="Documentation">
+  </a>
+  <a href="docs/XAllergen_poster.pdf">
+    <img src="https://img.shields.io/badge/🎨_Poster-ETH_Poster_Presentation-1f77b4?style=for-the-badge" alt="Poster">
+  </a>
+  <a href="https://xallergen.streamlit.app">
+    <img src="https://img.shields.io/badge/🌐_Demo-Live_Application-00ab41?style=for-the-badge" alt="Live Demo">
+  </a>
+  <a href="https://drive.google.com/drive/folders/1Jjc4-SqccRb75_gBKfQ-pPC6kVCk8WeY?usp=sharing">
+    <img src="https://img.shields.io/badge/💾_Downloads-More_Data-f4b400?style=for-the-badge" alt="Downloads">
+  </a>
+</p>
+
+> ⚠️ **Demo Notice:** Hosted on Streamlit's free tier. Initial load may take ~8 minutes if the app is sleeping.
+
 ---
 
 ## 🧪 Project Overview
