@@ -346,7 +346,7 @@ def main():
         "Protein Sequence(s)",
         height=200,
         value=st.session_state["seq_input"],
-        key="seq_input_area",
+        key="seq_input",
     )
 
     # Load model + batch converter
